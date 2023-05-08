@@ -5,6 +5,7 @@ $white: #ffffff;
 $main-accent-color: #4f2ee8;
 $secondary-accent-color: #eac645;
 $accent-text-color: #4f2ee8;
+$black-accent-color: #111111;
 
 //!light-theme//
 
@@ -31,3 +32,6 @@ $dt-bg-color: #202024;
 $dt-btn-grad: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
 //backdrop
 $dt-backdrop: #202024;
+
+//transition
+$transition: 250ms cubic-bezier(0.65, 0.05, 0.36, 1);
