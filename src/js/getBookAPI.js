@@ -7,7 +7,7 @@ const URL = {
   bookId: 'https://books-backend.p.goit.global/books/',
 };
 
-export async function getBookAPI(type, value = '') {
+export default async function getBookAPI(type, value = '') {
   const response = await axios.get(`${URL[type]}${value}`);
   return response.data;
 }
