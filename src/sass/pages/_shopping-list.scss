@@ -1,6 +1,10 @@
 .shopping-list-container {
   display: flex;
 }
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+}
 .support-wrap {
   width: 356px;
   height: 490px;
@@ -21,7 +25,7 @@
   line-height: 1.08;
   letter-spacing: -0.04em;
   color: $lt-main-text-color;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-top: 40px;
 }
 .shopping-list-title-part {
