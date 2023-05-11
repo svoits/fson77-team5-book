@@ -1,0 +1,233 @@
+.page-header {
+    position: relative;
+    background: $white;
+    border: 1.5px solid $lt-main-text-color;
+    border-radius: 0px 0px 8px 8px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: $white;
+    z-index: 31;
+  }
+
+  .header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.logo-link {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logo-link:hover,
+.logo-link:focus {
+    transform: scale(1.2);
+}
+.logo-icon {
+    width: 24px;
+    height: 24px;
+}
+.logo-name {
+    color: $black;
+    width: 77px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.header-btn-box {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+.sign-up-btn {
+    display: none;
+}
+.authorizated-btn {
+    display: none;
+}
+.log-out-btn {
+    display: none;
+}
+.mobile-menu-open-btn {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+.burger-icon {
+    fill: $lt-main-text-color;
+}
+.burger-icon:hover,
+.burger-icon:focus {
+  fill: $accent-text-color;
+}
+.burger-icon .mobile-menu-close-icon {
+  display: none;
+}
+.theme-switcher-input {
+    appearance: none;
+    display: block;
+    width: 40px;
+    height: 28px;
+    margin: 0;
+    cursor: pointer;
+}
+.theme-switcher-input::before {
+    content: '';
+    width: 40px;
+    height: 20px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+}
+.theme-switcher-input::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.1),
+      1px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: left 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    left: 1px;
+}
+
+
+
+/* ----------------MOBILE-MENU----------------- */
+
+// .mobile-menu-container {
+
+// }
+
+
+/* ----------------MOBILE-MENU-SIGN-UP---------------- */
+
+  .sign-up-btn-mobile:hover {
+    transform: scale(1.2);
+  }
+  .sign-up-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 90px;
+    fill: rgba(234, 198, 69, 1);
+  }
+
+
+
+
+
+/* ----------------TABLET---------------- */
+// @media screen and (min-width: 768px) {
+
+//   .mobile-menu-container,
+//   .mobile-menu-container.is-open {
+//     display: none;
+//   }
+.page-header {
+  z-index: 0;
+  padding-top: 14px;
+  padding-bottom: 13px;
+}
+.header-box {
+  justify-content: flex-start;
+}
+.logo-link {
+  margin-right: 40px;
+}
+.header-nav-main {
+  display: block;
+}
+.header-nav-list {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.header-nav-item {
+  position: relative;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: $lt-main-text-color;
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-nav-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+.header-nav-item:hover {
+  transform: scale(1.1);
+}
+.current {
+  background-color: $secondary-accent-color;
+  font-weight: 700;
+  border-radius: 36px;
+  color: $lt-main-text-color;
+}
+.logo-shop {
+  color: inherit;
+}
+.logo-shop-path {
+  fill: currentColor;
+}
+.mobile-menu-open-btn {
+  display: none;
+}
+.header-btn-box {
+  gap: 24px;
+  align-items: center;
+  margin-left: auto;
+}
+.sign-up-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  padding: 14px;
+  border: 1.5px solid $black-accent-color;
+  border-radius: 18px;
+  color: $lt-bg-color;
+  background: $main-accent-color;
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sign-up-btn:hover {
+  transform: scale(1.1);
+}
+.sign-up-icon {
+  margin-left: 90px;
+}
+
+
+
+/* ----------------PC---------------- */
+
+
+/* ----------------MOBILE-MENU-AUTHORIZED---------------- */
+
+/* -----------------TABLET-AUTHORIZED--------------- */
+
+
+/* ----------------DARK-THEME-MOBILE---------------- */
+
+/* ----------------DARK-THEME-TABLET---------------- */
+
+/* ----------------DARK-THEME-PC---------------- */

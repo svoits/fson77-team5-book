@@ -1,3 +1,132 @@
 <header class="page-header">
-  <div class="container"></div>
+  <div class="container">
+    <div class="header-box">
+      <a class="logo-link" href="./index.html">
+        <svg class="logo-icon">
+          <use href="./images/logo.svg"></use>
+        </svg>
+        <svg class="logo-name">
+          <use href="./images/symbol-defs.svg#logo-dark"></use>
+        </svg>
+      </a>
+
+      <!----- Navigation ----->
+      <nav class="header-nav-main">
+        <ul class="header-nav-list">
+          <li class="header-nav-item current">
+            <a class="header-nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="./shopping-list.html"
+              >Shopping List
+              <svg class="logo-shop">
+                <use href="./images/symbol-defs.svg#shop-bag"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-btn-box">
+        <input
+          class="theme-switcher-input"
+          type="checkbox"
+          name="checkbox"
+          id="checkbox"
+        />
+
+        <!---- Burger button ---->
+        <button class="mobile-menu-open-btn" type="button" data-mobile-menu-btn>
+          <svg class="burger-icon" width="28" height="28">
+            <use
+              class="mobile-menu-open-icon"
+              href="./images/symbol-defs.svg#burger"
+            ></use>
+            <use
+              class="mobile-menu-close-icon"
+              href="./images/symbol-defs.svg#close"
+            ></use>
+          </svg>
+        </button>
+
+        <div class="sign-up-box">
+          <button
+            class="sign-up-btn signUpBtn"
+            type="button"
+            data-modal-open-sign
+          >
+            Sign up
+            <svg class="sign-up-icon">
+              <use href="./images/symbol-defs.svg#arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="authorized-box">
+          <button class="authorized-btn" type="button">
+            <div class="user-icon-box">
+              <svg class="user-icon">
+                <use href="./images/symbol-defs.svg#user"></use>
+              </svg>
+            </div>
+            <p class="user-name">Stephen</p>
+            <svg class="user-icon-arrow">
+              <!-- <use href="./images/symbol-defs.svg#"></use> -->
+            </svg>
+          </button>
+          <button type="button" class="log-out-btn visually-hidden">
+            Log out
+            <svg class="sign-up-icon">
+              <use href="./images/symbol-defs.svg#arrow-down"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
+
+<!----- Mobile ----->
+<div class="mobile-menu-container" data-mobile-menu>
+  <div class="sign-up-mobile-menu-box">
+    <button
+      type="button"
+      class="sign-up-btn-mobile signUpBtn"
+      data-modal-open-sign-mobile
+    >
+      Sign up
+      <svg class="sign-up-icon">
+        <use href="./images/symbol-defs.svg#arrow-right"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="authorized-mobile-menu-box">
+    <div class="authorized-mobile-menu-user">
+      <div class="user-icon-box">
+        <svg class="user-icon">
+          <use href="./images/symbol-defs.svg#user"></use>
+        </svg>
+      </div>
+      <p class="user-name">Stephen</p>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item current">
+        <a class="mobile-nav-link" href="./index.html">home</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a class="mobile-nav-link" href="./shopping-list.html"
+          >shopping list
+          <svg class="logo-shop">
+            <use href="./images/symbol-defs.svg#shop-bag"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <button type="button" class="log-out-mobile-btn">
+      Log out
+      <svg class="sign-up-icon">
+        <!-- <use href="./images/symbol-defs.svg#"></use> -->
+      </svg>
+    </button>
+  </div>
+</div>
