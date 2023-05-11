@@ -1,0 +1,9 @@
+body.dark-theme {
+  .categories-list-button {
+    color: $dt-secondary-text-color;
+  }
+
+  .categories-list-button.is-active {
+    color: $secondary-accent-color;
+  }
+}
