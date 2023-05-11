@@ -1,5 +1,6 @@
 import getBookAPI from './getBookAPI';
 import categoriesListMarkup from './categories-markup';
+import { renderBestsellers } from './renderBestsellers';
 
 const categoriesListEl = document.querySelector('.js-categories-list');
 const mainTitleEl = document.querySelector('.js-main-title');
@@ -43,7 +44,7 @@ function onCategoryBtnClick(e) {
 
   if (currentCategory === 'All categories') {
     mainTitleEl.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
-    // renderBestsellers();
+    renderBestsellers();
   } else {
     mainTitleEl.innerHTML = `${currentCategoryArr
       .slice(0, arrLength - 1)
