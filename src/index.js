@@ -1,1 +1,1 @@
-import { onBtnClick } from './js/modal-auth';
+import './js/firebase-auth';

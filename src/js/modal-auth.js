@@ -1,7 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-const btnEl = document.querySelector('[sign-modal-open]');
+const openAuthModalBtn = document.querySelector('[sign-modal-open]');
 const modalForm = document.querySelector('.modal-form');
 const { username, signIn, signUp, submitBtn } = modalForm.elements;
 const signBtnWrapper = document.querySelector('.modal-sign-btn-wrapper');
@@ -19,7 +19,7 @@ const modalInstance = basicLightbox.create(
   }
 );
 
-btnEl.addEventListener('click', onBtnClick);
+openAuthModalBtn.addEventListener('click', onAuthModalBtnClick);
 modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
 signBtnWrapper.addEventListener('click', onSignBtnWrapperClick);
 
@@ -44,7 +44,7 @@ function onSignBtnWrapperClick(e) {
   }
 }
 
-function onBtnClick(e) {
+function onAuthModalBtnClick(e) {
   modalInstance.show();
 }
 
@@ -58,4 +58,9 @@ function onEscClick(e) {
   }
 }
 
-export { onBtnClick };
+export {
+  onSignBtnWrapperClick,
+  onAuthModalBtnClick,
+  onModalCloseBtnClick,
+  onEscClick,
+};
