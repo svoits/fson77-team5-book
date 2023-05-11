@@ -7,3 +7,8 @@ body {
   color: $lt-main-text-color;
   background-color: $lt-bg-color;
 }
+
+body.dark-theme {
+  color: $dt-main-text-color;
+  background-color: $dt-bg-color;
+}

@@ -1,0 +1,32 @@
+.main-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    gap: 100px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: column;
+    gap: 86px;
+  }
+}
