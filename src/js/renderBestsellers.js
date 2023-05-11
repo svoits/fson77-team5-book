@@ -2,24 +2,25 @@ import Notiflix from 'notiflix';
 import  getBookAPI from './getBookAPI';
 import { createMarkUpTop } from './createMarkUpTop';
 
-export async function renderBestsellers() {
+const contentWrapper = document.querySelector('.js-content-wrapper');
 
-await getBookAPI('top').then((responce) => {
-    console.log(responce);
-    if(!responce.length){
-        // коли будуть refs почистити js-content-wraper innerHTML = ''
+export async function renderBestsellers() {
+try{
+const data = await getBookAPI('top');
+    console.log(data);
+    if(!data.length) {
+        contentWrapper.innerHTML = '';
         
         Notiflix.Notify.failure('Oops... Empty result');
         return;
     }
 
-    const markup =  createMarkUpTop(responce);
-    // для перевірки, прибрати потім
-    //document.querySelector('.js-content-wrapper').innerHTML = markup;
-    return markup;
-}).catch((e) => {
+   console.log(createMarkUpTop(data));
+    contentWrapper.innerHTML = createMarkUpTop(data);
+    
+}catch(e) {
     console.log(e);
-});
+};
 
 }
 

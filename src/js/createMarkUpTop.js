@@ -9,17 +9,14 @@ export function createMarkUpTop(data) {
 
     const listCategories = data.map(({list_name, books}) => {
        
-        return `<div class="category">
-        <p>${list_name}</p>
-        <ul>
+        return `<div class="top-category-wrapper">
+        <p class="top-category-title">${list_name}</p>
+        
          ${ createListCardsTop(books.splice(0, count))}
-        </ul>
-        <button>See more</button>
+       
+        <button type="button" class="top-category-btn js-top-btn">See more</button>
       </div>`;
     }).join('');
 
-const result = `<h1>Best Sellers Books</h1>
-   ${listCategories}`;
-
-    return result;
+    return listCategories;
     }
