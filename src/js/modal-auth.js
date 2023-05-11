@@ -37,6 +37,7 @@ function onSignBtnWrapperClick(e) {
 
   if (signIn.classList.contains('is-active')) {
     modalForm.firstElementChild.hidden = true;
+    modalForm.username.required = false;
     submitBtn.textContent = 'sign in';
   } else {
     modalForm.firstElementChild.hidden = false;
