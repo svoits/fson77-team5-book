@@ -1,0 +1,120 @@
+.top-category-wrapper {
+  margin-bottom: 40px;
+}
+
+.top-category-title {
+  margin-bottom: 18px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $lt-subtitle-color;
+
+  @media screen and (min-width: 768px) {
+    line-height: 1.71;
+  }
+}
+
+.card-category-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    row-gap: 40px;
+
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    column-gap: 24px;
+    grid-template-columns: repeat(5, 1fr);
+
+    margin-bottom: 32px;
+  }
+}
+
+.card-category-img-wrap {
+  width: 335px;
+  height: 485px;
+
+  margin-bottom: 14px;
+
+  @media screen and (min-width: 768px) {
+    width: 218px;
+    height: 316px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 180px;
+    height: 256px;
+  }
+}
+
+.card-category-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+
+  border: 1px $lt-subtitle-color solid;
+}
+
+.card-category-title {
+  margin-bottom: 4px;
+
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.card-category-author {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  font-style: italic;
+
+  color: $lt-subtitle-color;
+}
+
+.top-category-btn {
+  display: block;
+  padding: 12px 26px;
+  margin-left: auto;
+  min-width: 124px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid $main-accent-color;
+  border-radius: 40px;
+
+  cursor: pointer;
+
+  transition: background-color $transition, box-shadow $transition;
+
+  &:hover {
+    background-color: $main-accent-color;
+    color: $white;
+  }
+
+  &:focus {
+    background-color: $main-accent-color;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
+    color: $white;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1440px) {
+}
