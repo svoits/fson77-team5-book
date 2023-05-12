@@ -1,0 +1,16 @@
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: $lt-main-text-color;
+    border: none;
+    border-radius: 50%;
+    color: $lt-bg-color;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center; 
+    line-height: 48px;
+    width: 48px;
+
+
+}
