@@ -1,0 +1,64 @@
+<div class="auth-modal-wrapper" hidden>
+  <div class="auth-modal">
+    <button class="modal-close-btn" js-modal-close>
+      <svg class="modal-close-icon" width="20" height="20">
+        <use href="./images/symbol-defs.svg#close"></use>
+      </svg>
+    </button>
+    <form action="submit" class="modal-form">
+      <div class="input-wrapper">
+        <input
+          required
+          class="modal-input"
+          type="text"
+          name="username"
+          placeholder="name"
+        />
+      </div>
+      <div class="input-wrapper">
+        <input
+          required
+          class="modal-input"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
+        <svg class="modal-icon" width="18" height="18">
+          <use href="./images/symbol-defs.svg#mail" />
+        </svg>
+      </div>
+      <div class="input-wrapper">
+        <input
+          required
+          class="modal-input"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <svg class="modal-icon" width="18" height="18">
+          <use href="./images/symbol-defs.svg#lock" />
+        </svg>
+      </div>
+      <button class="modal-submit-btn" name="submitBtn">Sign up</button>
+      <div class="modal-sign-btn-wrapper">
+        <button
+          data-sign="up"
+          name="signUp"
+          type="button"
+          class="modal-sign-btn is-active"
+        >
+          Sign up
+        </button>
+        <button
+          data-sign="in"
+          name="signIn"
+          type="button"
+          class="modal-sign-btn"
+        >
+          Sign in
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <button sign-modal-open>Open modal</button> -->

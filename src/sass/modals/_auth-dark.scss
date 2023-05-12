@@ -1,0 +1,40 @@
+body.dark-theme {
+  .auth-modal {
+    background-color: $dt-bg-color;
+    border-color: $lt-bg-color;
+  }
+  .modal-icon {
+    stroke: $lt-bg-color;
+  }
+  .modal-input {
+    color: $lt-bg-color;
+    background-color: $dt-bg-color;
+    border-color: $lt-bg-color;
+
+    &:focus {
+      border-color: $main-accent-color;
+      outline: transparent;
+    }
+    &::placeholder {
+      color: $lt-bg-color;
+    }
+  }
+  .modal-submit-btn {
+    background-color: $lt-bg-color;
+    color: $dt-backdrop;
+    &:hover,
+    &:focus {
+      color: $dt-main-text-color;
+      background-color: $main-accent-color;
+    }
+  }
+  .modal-sign-btn {
+    color: $dt-secondary-text-color;
+    &.is-active {
+      color: $accent-text-color;
+    }
+  }
+  .modal-close-icon {
+    stroke: $lt-bg-color;
+  }
+}
