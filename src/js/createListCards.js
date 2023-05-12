@@ -13,5 +13,5 @@ export function createListCards(books) {
     })
     .join('');
 
-  return `<ul class="top-category-list list">${listCardCategory}</ul>`;
+  return `<ul class="card-category-list list">${listCardCategory}</ul>`;
 }
