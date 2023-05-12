@@ -36,7 +36,7 @@ const markupSetFunds = supportArr
 
 supportListEl.innerHTML = markupSetFunds;
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.my-swiper', {
     direction: 'vertical',
     spaceBetween: 20,
     slidesPerView: 'auto',

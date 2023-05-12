@@ -80,17 +80,12 @@
 
   .support-list-item {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     align-items: center;
     height: 32px;
     font-size: 14px;
     line-height: calc(18 / 14);
     color: $white;
-
-
-    @media screen and (min-width: 768px) {
-      gap: 16px;
-    }
   }
 
   .support-btn {
