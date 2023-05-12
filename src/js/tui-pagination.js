@@ -9,7 +9,7 @@ const pagination = new Pagination(paginationContainer, paginationOptions());
 // let visiblePageBtns;
 
 function paginationOptions() {
-  //   const shoppingList = JSON.parse(localStorage.getItem(SHOP_LIST_KEY)) || [];
+  //   const shoppingList = JSON.parse(localStorage.getItem(SHOP_LIST_KEY)) ?? [];
   //   if (window.screen.width >= 768) {
   //     perPage = 3;
   //     visiblePageBtns = 3;
@@ -24,7 +24,8 @@ function paginationOptions() {
     itemsPerPage: 5,
     visiblePages: 3,
     page: 1,
-    centerAlign: true,
+
+    // centerAlign: true,
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
     template: {
@@ -49,6 +50,6 @@ function paginationOptions() {
 }
 
 // pagination.on('beforeMove', evt => {
-//   const currentPage = evt.page;
+//    const currentPage = evt.page;
 //   //   renderShoppingList(currentPage);
 // });

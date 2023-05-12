@@ -49,12 +49,13 @@
 
 .wrap-about-book {
   background-color: $white;
-  width: 335px;
+  max-width: 335px;
   padding: 14px;
   display: flex;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   @media screen and (min-width: 768px) {
+    max-width: none;
     width: 704px;
     padding: 24px;
   }
@@ -109,7 +110,7 @@
 
 .wrap-about-description {
   overflow-x: scroll;
-  width: 193px;
+  max-width: 193px;
   height: 68px;
   font-weight: 400;
   font-size: 14px;
@@ -119,6 +120,7 @@
   margin-bottom: 14px;
 
   @media screen and (min-width: 768px) {
+    max-width: none;
     width: 508px;
     height: 53px;
     margin-bottom: 32px;
@@ -239,7 +241,7 @@
 
   border: 1px solid $black;
   text-align: center;
-  padding: 10px 12px;
+  padding: 8px;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.22;
@@ -263,11 +265,9 @@
     margin-right: 24px;
   }
 }
-#pagination .tui-first-child {
-  background-color: $black;
-  color: $white;
-}
-
+// #pagination .tui-first-child {
+//   display: none;
+// }
 #pagination .tui-last-child {
   margin-right: 14px;
   @media screen and (min-width: 768px) {
@@ -287,5 +287,46 @@
   border: 1px solid $black;
   margin-right: 0;
 }
-// #pagination .tui-ico-first {
-// }
+
+#pagination .tui-is-selected,
+.tui-pagination strong {
+  background-color: $black;
+  color: $white;
+}
+
+#pagination .tui-first.tui-is-disabled,
+#pagination .tui-prev.tui-is-disabled,
+#pagination .tui-next.tui-is-disabled,
+#pagination .tui-last.tui-is-disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+#pagination .tui-first:not(.tui-is-disabled),
+#pagination .tui-prev:not(.tui-is-disabled),
+#pagination .tui-next:not(.tui-is-disabled),
+#pagination .tui-last:not(.tui-is-disabled) {
+  cursor: pointer;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tui-page-btn.tui-is-disabled .tui-ico-first,
+.tui-page-btn.tui-is-disabled .tui-ico-prev {
+  display: inline-block;
+}
+
+.tui-page-btn.tui-is-disabled .tui-ico-next,
+.tui-page-btn.tui-is-disabled .tui-ico-last {
+  display: none;
+}
+
+.tui-page-btn:not(.tui-is-disabled) .tui-ico-next,
+.tui-page-btn:not(.tui-is-disabled) .tui-ico-last {
+  display: inline-block;
+}
+.tui-page-btn:not(.tui-is-disabled) .tui-ico-first,
+.tui-page-btn:not(.tui-is-disabled) .tui-ico-prev {
+  display: inline-block;
+}

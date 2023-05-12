@@ -1,11 +1,24 @@
-body.dark-theme .shopping-list-container {
-  background-color: $dt-bg-color;
-}
+.body.dark-theme {
+  .shopping-list-container {
+    background-color: $dt-bg-color;
+  }
 
-body.dark-theme .wrap-about-book {
-  background-color: $black;
-}
+  .wrap-about-book {
+    background-color: $black;
+  }
 
-body.dark-theme .trading-platforms-list {
-  filter: brightness(100%);
+  .trading-platforms-list {
+    filter: brightness(100%);
+  }
+
+  #pagination .tui-page-btn {
+    background-color: &black;
+    border: 1x solid &white;
+    color: &white;
+  }
+  #pagination .tui-is-selected,
+  .tui-pagination strong {
+    background-color: $white;
+    color: $black;
+  }
 }
