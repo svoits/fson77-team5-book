@@ -16,7 +16,7 @@ const markupCardFund = (
   <p class="support-number">${position}</p>
   <a class="support-link" href="${url}" target="_blank" rel="noopener noreferrer nofollow">
     <img
-
+    srcset="${img} 1x, ${img2x} 2x"
       src="${img}"
       alt="${title}"
       width="149"
@@ -24,6 +24,7 @@ const markupCardFund = (
     />
   </a>
 </li>`;
+
 
 const markupSetFunds = supportArr
     .map((el, i) => {
@@ -38,8 +39,8 @@ supportListEl.innerHTML = markupSetFunds;
 const swiper = new Swiper('.swiper', {
     direction: 'vertical',
     spaceBetween: 20,
-    slidesPerView: 'auto',
-    rewind: true,
+    slidesPerView: 1,
+    loop: true,
 
     navigation: {
         nextEl: '.swiper-button',
