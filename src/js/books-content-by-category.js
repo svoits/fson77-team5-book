@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
-import getBookAPI from "./getBookAPI";
-import { createListCardsTop } from "./createListCardsTop";
+import getBookAPI from './getBookAPI';
+import { createListCardsTop } from './createListCardsTop';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
 
@@ -16,8 +16,6 @@ export default async function renderBooksByCategory(currentCategory) {
     }
 
     contentWrapper.innerHTML = createListCardsTop(data);
-    console.log(contentWrapper);
-
   } catch (err) {
     console.log(err);
   }
