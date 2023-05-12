@@ -172,7 +172,8 @@
   }
 
   &-icon {
-    fill: $lt-bg-color;
+    fill: none;
+    stroke: $lt-bg-color;
     @media screen and (min-width: 1440px) {
       width: 18px;
       height: 18px;
@@ -231,6 +232,9 @@
   margin: 0;
 }
 #pagination .tui-page-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background-color: $lt-main-text-color;
   width: 38px;
   height: 38px;
