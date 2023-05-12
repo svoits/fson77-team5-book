@@ -1,5 +1,11 @@
 import { scrollToTop } from "./scrollToTop";
 
+const optionsObserver = {
+    root:  null,
+    rootMargin: '700px',
+    threshold: 1.0
+}
+
 const btnUp = document.querySelector(".js-scrollToTopBtn");
 
 const scrollObserver = function(entries, observer) {
@@ -19,7 +25,7 @@ const scrollObserver = function(entries, observer) {
     })
 }
 
-export const observer = new IntersectionObserver(scrollObserver);
+export const observer = new IntersectionObserver(scrollObserver, optionsObserver);
 
 function isActiveBtn() {
     if(btnUp.classList.contains('visually-hidden')){
