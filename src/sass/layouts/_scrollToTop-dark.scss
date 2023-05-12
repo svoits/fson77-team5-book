@@ -1,6 +1,9 @@
 body.dark-theme {
     .scrollToTopBtn {
-        background-color: $dt-main-text-color;
-        color: $dt-bg-color;
+        background-color: $lt-bg-color;
     }
+
+    .scrollup-btn-icon {
+        fill: $main-accent-color$lt-bg-color;
+      }
 }
