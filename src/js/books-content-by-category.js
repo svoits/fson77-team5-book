@@ -1,12 +1,12 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getBookAPI from './getBookAPI';
-import { createMarkUpTop } from './createMarkUpTop';
+import { createListCardsTop } from './createListCardsTop';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
 
-export async function renderBestsellers() {
+export default async function renderBooksByCategory(currentCategory) {
   try {
-    const data = await getBookAPI('top');
+    const data = await getBookAPI('category', currentCategory);
 
     if (!data.length) {
       contentWrapper.innerHTML = '';
@@ -15,10 +15,8 @@ export async function renderBestsellers() {
       return;
     }
 
-    contentWrapper.innerHTML = createMarkUpTop(data);
-  } catch (e) {
-    console.log(e);
+    contentWrapper.innerHTML = createListCardsTop(data);
+  } catch (err) {
+    console.log(err);
   }
 }
-
-renderBestsellers();

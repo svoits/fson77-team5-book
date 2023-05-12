@@ -1,6 +1,7 @@
 import getBookAPI from './getBookAPI';
 import categoriesListMarkup from './categories-markup';
 import { renderBestsellers } from './renderBestsellers';
+import renderBooksByCategory from './books-content-by-category';
 
 const categoriesListEl = document.querySelector('.js-categories-list');
 const mainTitleEl = document.querySelector('.js-main-title');
@@ -52,7 +53,7 @@ function onCategoryBtnClick(e) {
           <span class="main-title-accent">
           ${currentCategoryArr.slice(-1)}</span>`;
 
-    // renderBooksByCategory(currentCategory);
+    renderBooksByCategory(currentCategory);
   }
 }
 
