@@ -1,12 +1,18 @@
 <main>
   <div class="container main-wrapper">
     <aside class="sidebar">
+      
       <include src="./partials/book-categories.html"></include>
+      <div class="js-scrollToTop"></div>
+      <span  class="scrollToTopBtn js-scrollToTopBtn">
+        <svg class="scrollup-btn-icon" width="38" height="38">
+          <use href="./images/symbol-defs.svg#arrow-up"></use>
+      </svg>
+    </span>
       <include src="./partials/support.html"></include>
     </aside>
     <div class="books-content-wrapper">
-      <div class="js-scrollToTop"></div>
-      <span  class="scrollToTopBtn js-scrollToTopBtn">Up</span>
+     
       <include src="./partials/books-content.html"></include>
     </div>
   </div>
