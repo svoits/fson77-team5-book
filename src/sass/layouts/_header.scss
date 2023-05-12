@@ -122,39 +122,123 @@
 .burger-icon .mobile-menu-close-icon {
   display: none;
 }
-.theme-switcher-input {
-  appearance: none;
+
+//=== SWITCH ===//
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(var(--hue), 90%, 50%);
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.76, 0.05, 0.24, 0.95);
+  --trans-timing-in: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  --trans-timing-out: cubic-bezier(0.05, 0.76, 0.06, 0.86);
+  font-size: calc(40px + (80 - 40) * (100vw - 320px) / (2560 - 320));
+}
+.switch {
+  margin: auto;
+  position: relative;
+}
+.switch__icon,
+.switch__input {
   display: block;
-  width: 40px;
-  height: 28px;
-  margin: 0;
+}
+.switch__icon {
+  position: absolute;
+  top: 0.375em;
+  right: 0.375em;
+  width: 0.75em;
+  height: 0.75em;
+  transition: opacity $transition, transform $transition;
+}
+.switch__icon polyline {
+  transition: stroke-dashoffset $transition;
+}
+.switch__icon--light,
+.switch__icon--light polyline {
+  transition-delay: 150ms;
+  transition: $transition;
+}
+.switch__icon--dark {
+  opacity: 0;
+  transform: translateX(-0.75em) rotate(30deg) scale(0.75);
+  transition: $transition;
+}
+.switch__input {
+  background-color: hsl(210, 90%, 70%);
+  border-radius: 0.75em;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  outline: transparent;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color $transition, box-shadow 0.15s linear;
   cursor: pointer;
 }
-.theme-switcher-input::before {
-  content: '';
-  width: 40px;
-  height: 20px;
-  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+.switch__input:focus-visible {
+  box-shadow: 0 0 0 0.125em hsl(var(--hue), 90%, 50%),
+    0.125em 0.125em 0.25em hsla(var(--hue), 90%, 10%, 0.2);
 }
-.theme-switcher-input::after {
+.switch__input:before,
+.switch__input:after {
   content: '';
+  display: block;
   position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 50%;
+}
+.switch__input:before {
+  background: $lt-btn-grad;
+  border-radius: inherit;
+
+  inset: 0;
+  transition: background-color $transition;
+}
+.switch__input:after {
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.1),
     1px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: left 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  left: 1px;
+  top: 0.125em;
+  left: 0.125em;
+  width: 1.25em;
+  height: 1.25em;
+  transition: background-color $transition, transform $transition;
+  z-index: 1;
+}
+.switch__input:checked {
+  background-color: hsl(290, 90%, 40%);
+}
+.switch__input:checked:before {
+  background: $dt-btn-grad;
+}
+.switch__input:checked:after {
+  transform: translateX(1.5em);
+}
+.switch__input:checked ~ .switch__icon--light,
+.switch__input:checked ~ .switch__icon--light polyline {
+  transition: $transition;
+}
+.switch__input:checked ~ .switch__icon--light {
+  opacity: 0;
+  transform: translateX(-0.75em) rotate(-30deg) scale(0.75);
+}
+.switch__input:checked ~ .switch__icon--light polyline {
+  stroke-dashoffset: 1.5;
+}
+.switch__input:checked ~ .switch__icon--dark {
+  opacity: 1;
+  transform: translateX(-1.5em);
+  transition-delay: 150ms;
+  transition: $transition;
+}
+
+.switch__sr {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
 }
 
 /* ----------------MOBILE-MENU----------------- */
