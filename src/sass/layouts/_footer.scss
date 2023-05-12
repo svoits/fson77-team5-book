@@ -1,30 +1,29 @@
 .footer {
-  padding: 40px 0;
-  color: #111111;
-  background-color: #f6f6f6;
+  padding: 50px 0;
+  color: #fff;
+  background-color: #4f2ee8;
 
   @media screen and (max-width: 767px) {
-    padding-top: 40px;
-    padding-bottom: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    padding-top: 40px;
-    padding-top: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 .footer__section {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 .footer-logo {
   justify-content: center;
   width: 100%;
   margin-bottom: 30px;
-  color: #111111;
-  border-bottom: 1px solid #111111;
-
+  color: #fff;
+  
   @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
   }
@@ -34,15 +33,20 @@
     align-items: baseline;
   }
 }
+.footer-logo__team {
+  margin-right: 150px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin: 0 0 30px 0;
+  }
+}
 .footer__copyright {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: #fff;
 }
 .footer__text {
   display: flex;
-  color: #b4afaf;
-
   @media screen and (min-width: 320px) {
     &:not(:last-child) {
       margin-bottom: 10px;
@@ -54,39 +58,13 @@
     }
   }
 }
-
 .footer__link {
-  text-decoration: none;
-  color: #111111;
+  
 }
 .footer__link--name {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-
-  &:hover,
-  &:focus {
-    color: #4f2ee8;
-  }
-}
-.footer__text--begin {
-  font-weight: 700;
-
-  color: #111111;
-  &:hover,
-    &:focus {
-      color: #4f2ee8;
-    }
-}
-.footer__text--end {
-  font-weight: 700;
-  color: #eac645;
-}
-
-.main {
-  min-height: calc(100vh - 320px);
 }
 
 /* DARK THEME */
@@ -99,21 +77,16 @@ body.dark__theme {
   .footer-logo,
   .footer__text,
   .footer__link--name {
-    fill: #ffffff;
+    // fill: #ffffff;
     color: #ffffff;
 
-    &:hover,
-    &:focus {
-      color: #eac645;
-      fill: #eac645;
-    }
+    // &:hover,
+    // &:focus {
+    //   color: #eac645;
+    //   fill: #eac645;
+    // }
   }
-
   .footer__link {
     text-decoration: underline;
-  }
-
-  .footer__text--begin {
-    color: var(--dt-main-text-color);
   }
 }
