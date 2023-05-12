@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getBookAPI from './getBookAPI';
-import { createListCardsTop } from './createListCardsTop';
+import { createListCards } from './createListCards';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
 
@@ -15,7 +15,7 @@ export default async function renderBooksByCategory(currentCategory) {
       return;
     }
 
-    contentWrapper.innerHTML = createListCardsTop(data);
+    contentWrapper.innerHTML = createListCards(data);
   } catch (err) {
     console.log(err);
   }
