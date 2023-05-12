@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getBookAPI from './getBookAPI';
 import { createListCardsTop } from './createListCardsTop';
 
@@ -11,7 +11,7 @@ export default async function renderBooksByCategory(currentCategory) {
     if (!data.length) {
       contentWrapper.innerHTML = '';
 
-      Notiflix.Notify.failure('Oops... Empty result');
+      Notify.failure('Oops... Empty result');
       return;
     }
 

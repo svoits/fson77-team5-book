@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getBookAPI from './getBookAPI';
 import { createMarkUpTop } from './createMarkUpTop';
 
@@ -11,7 +11,7 @@ export async function renderBestsellers() {
     if (!data.length) {
       contentWrapper.innerHTML = '';
 
-      Notiflix.Notify.failure('Oops... Empty result');
+      Notify.failure('Oops... Empty result');
       return;
     }
 
