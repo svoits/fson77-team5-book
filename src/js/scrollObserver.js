@@ -6,7 +6,7 @@ const optionsObserver = {
     threshold: 1.0
 }
 
-const btnUp = document.querySelector(".js-scrollToTopBtn");
+const btnUp = document.querySelector(".js-scroll-top-btn");
 
 const scrollObserver = function(entries, observer) {
     
