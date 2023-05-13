@@ -4,11 +4,9 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
-const modalInfoClose = document.querySelector('[data-modal-close]');
-const cardModalBookInfo = document.querySelector('[data-info-close]');
 
 contentWrapper.addEventListener('click', onBookInfoClick);
-modalInfoClose.addEventListener('click', onBookInfoModalCloses);
+
 
 async function onBookInfoClick(evt) {
   try {
@@ -23,11 +21,19 @@ async function onBookInfoClick(evt) {
     const infoMarkup = markupCardBookInfo(data);
 
     const instance = basicLightbox.create(infoMarkup, {
-      onShow: () => window.addEventListener('keydown', onEscButtonClick),
+      onShow: () => {
+        window.addEventListener('keydown', onEscButtonClick)
+      },
       onClose: () => window.removeEventListener('keydown', onEscButtonClick),
     });
 
     instance.show();
+    const modalInfoClose = document.querySelector('[data-modal-close]');
+    modalInfoClose.addEventListener('click', onBookInfoModalCloses);
+
+    function onBookInfoModalCloses() {
+      instance.close();
+    }
 
     function onEscButtonClick(evt) {
       if (evt.code === 'Escape') {
@@ -39,12 +45,7 @@ async function onBookInfoClick(evt) {
   }
 }
 
-function onBookInfoModalCloses(evt) {
-  console.log(evt.target);
-  if(evt.currentTarget){
-    instance.close();
-  }
-}
+
 // let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
 
 // addRemoveBookButton.addEventListener('click', (e) => {
