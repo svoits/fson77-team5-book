@@ -5,9 +5,8 @@ import {
 import { parseDiv } from './parseDiv';
 import { markupCardBookInfo } from './markup-books-info';
 
-// notification.classList.remove('is-hidden');
-
 export function onClickBtn(evt) {
+  //
   const notification = document.querySelector('.book-infoBtn-explanation');
   if (evt.target.classList.contains('book_add__to_list')) {
     addToLocalStorage(parseDiv(evt.target.closest('div')));

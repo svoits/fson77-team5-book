@@ -8,7 +8,6 @@ export function parseDiv(div) {
       case 'IMG':
         dataToLocalStorage.book_image = i.src;
         dataToLocalStorage.title = i.alt;
-        console.log(i.alt);
         break;
       case 'P':
         if (i.classList.contains('book_info_author')) {

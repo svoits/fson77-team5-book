@@ -32,8 +32,6 @@ async function onBookInfoClick(evt) {
 
     actionBtn.addEventListener('click', onClickBtn);
 
-    // console.log(actionBtn);
-
     function onEscButtonClick(evt) {
       if (evt.code === 'Escape') {
         instance.close();
