@@ -8,10 +8,49 @@
     gap: 40px;
   }
 }
+// ***************backgroud shopping list********************
+.js-back {
+  display: block;
+  margin: auto;
+  width: 322px;
+  height: 241px;
+  background-image: url(../images/bg-shopping-list.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 265px 198px;
+  @media screen and (min-width: 768px) {
+    background-size: 322px 241px;
+  }
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .js-back {
+    background-image: url(../images/bg-shopping-list@2x.png);
+  }
+}
+.js-text {
+  margin: 80px 0 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.33;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+}
 
+// **************************************************************
 .content-wrap {
   display: flex;
   flex-direction: column;
+  @media screen and (min-width: 1440px) {
+    width: 100%;
+  }
 }
 
 .support-wrap {

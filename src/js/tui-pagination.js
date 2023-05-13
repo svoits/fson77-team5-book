@@ -17,6 +17,12 @@ function paginationOptions() {
   //     perPage = 4;
   //     visiblePageBtns = 2;
   //   }
+  // if (perPage >= 3) {
+  //   paginationContainer.style.display="block"
+  // } else {
+  //   paginationContainer.style.display = 'none';
+
+  // }
   const options = {
     totalItems: 100,
     // totalItems: shoppingList.length,
