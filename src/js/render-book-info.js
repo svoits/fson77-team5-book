@@ -4,8 +4,11 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
+const modalInfoClose = document.querySelector('[data-modal-close]');
+const cardModalBookInfo = document.querySelector('[data-info-close]');
 
 contentWrapper.addEventListener('click', onBookInfoClick);
+// modalInfoClose.addEventListener('click', onBookInfoModalCloses);
 
 async function onBookInfoClick(evt) {
   try {
@@ -36,6 +39,12 @@ async function onBookInfoClick(evt) {
   }
 }
 
+function onBookInfoModalCloses(evt) {
+  console.log(evt.target);
+  if(evt.currentTarget){
+    cardModalBookInfo.classList.add('is-hidden');
+  }
+}
 // let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
 
 // addRemoveBookButton.addEventListener('click', (e) => {
