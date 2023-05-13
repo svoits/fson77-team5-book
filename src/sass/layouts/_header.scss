@@ -4,8 +4,8 @@
   background: $white;
   border: 1.5px solid $black-accent-color;
   border-radius: 0px 0px 8px 8px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 16.5px;
+  padding-bottom: 16.5px;
   color: $white;
   min-width: 320px;
   width: 100%;
@@ -34,6 +34,10 @@
   cursor: pointer;
   display: flex;
   gap: 8px;
+}
+
+.logo-dark {
+  display: none;
 }
 
 .header-btn-box {
@@ -260,11 +264,16 @@
     #4f2ee8 18.03%,
     #ffffff 100%
   );
-
+  overflow: hidden;
   padding: 20px;
   padding-top: 104px;
 
+  padding-top: 84px;
+
   transition: transform $transition, opacity $transition, visibility $transition;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
   &.is-open {
     opacity: 1;
     visibility: visible;
@@ -288,9 +297,7 @@
   line-height: 1.29;
   cursor: pointer;
 }
-// .sign-up-btn-mobile:hover {
-//   // transform: scale(1.2);
-// }
+
 .sign-up-icon {
   width: 20px;
   height: 20px;
@@ -298,6 +305,93 @@
   fill: rgba(234, 198, 69, 1);
 }
 
+.authorized-mobile-menu-box {
+  // display: none;
+}
+.authorized-mobile-menu-user {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 9px;
+}
+.user-name-mobile {
+  font-size: 22px;
+  margin: 0;
+  color: $white;
+}
+
+.mobile-nav-list {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+.mobile-nav-item {
+  border-radius: 36px;
+  text-transform: uppercase;
+
+  &.current {
+    .mobile-nav-link {
+      padding: 8px 16px;
+
+      background-color: $secondary-accent-color;
+      font-weight: 700;
+      color: $lt-main-text-color;
+      .mobile-nav-link {
+        column-gap: 8px;
+      }
+      .logo-shop-mobile {
+        fill: $black-accent-color;
+      }
+    }
+  }
+  &:last-child {
+    margin-top: 9px;
+    .mobile-nav-link {
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    &.current {
+      margin-top: 16px;
+    }
+  }
+}
+.mobile-nav-link {
+  display: inline-flex;
+  // display: none;
+  align-items: center;
+  color: inherit;
+  column-gap: 4px;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: $white;
+  cursor: pointer;
+  border-radius: 36px;
+
+  transition: transform $transition;
+}
+.logo-shop-mobile {
+  fill: $white;
+}
+.log-out-mobile-btn {
+  display: flex;
+  align-items: center;
+  background: $white;
+  border: 1.5px solid $black-accent-color;
+  border-radius: 18px;
+  padding: 13px 23px;
+  column-gap: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
 /* ----------------TABLET---------------- */
 
 .header-nav-main {
@@ -307,11 +401,14 @@
   }
 }
 .header-nav-list {
-  display: flex;
+  display: none;
   gap: 16px;
   align-items: center;
   &[hidden] {
     display: none;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
   }
 }
 .header-nav-item {
@@ -348,13 +445,6 @@
   color: $lt-main-text-color;
   cursor: pointer;
   transition: transform $transition;
-}
-
-.logo-shop {
-  color: inherit;
-}
-.logo-shop-path {
-  fill: currentColor;
 }
 
 .sign-up-box {
@@ -451,10 +541,6 @@
 /* ----------------PC---------------- */
 
 /* ----------------MOBILE-MENU-AUTHORIZED---------------- */
-
-.authorized-mobile-menu-box {
-  display: none;
-}
 
 /* -----------------TABLET-AUTHORIZED--------------- */
 

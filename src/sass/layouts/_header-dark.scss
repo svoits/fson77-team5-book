@@ -1,0 +1,35 @@
+body.dark-theme {
+  .page-header {
+    background-color: $black-accent-color;
+    border: 1.5px solid $white;
+  }
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: inline-block;
+  }
+  .burger-icon {
+    stroke: $white;
+  }
+  .header-nav-link {
+    color: $white;
+  }
+  .header-nav-item {
+    border-radius: 36px;
+
+    &.current {
+      .header-nav-link {
+        color: $lt-main-text-color;
+      }
+    }
+  }
+  .logo-shop {
+    fill: $white;
+  }
+  .header-nav-item.current {
+    .logo-shop {
+      fill: $black-accent-color;
+    }
+  }
+}
