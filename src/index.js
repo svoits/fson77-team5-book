@@ -5,5 +5,6 @@ import './js/render-support';
 import './js/renderBestsellers';
 import './js/render-book-info';
 import './js/theme-toggle';
-import './js/modal-auth';
+// import './js/modal-auth';
 import './js/firebase-auth';
+import './js/modalButtonAction.js';
