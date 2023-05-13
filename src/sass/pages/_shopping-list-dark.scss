@@ -1,20 +1,28 @@
-.body.dark-theme {
-  .shopping-list-container {
-    background-color: $dt-bg-color;
+body.dark-theme {
+  .shopping-list-title {
+    color: $dt-main-text-color;
   }
-
   .wrap-about-book {
     background-color: $black;
   }
 
-  .trading-platforms-list {
-    filter: brightness(100%);
+  .wrap-about-description {
+    color: $dt-main-text-color;
+  }
+  .trading-platforms-list-item-img-amazon {
+    filter: invert(50%) brightness(200%);
   }
 
   #pagination .tui-page-btn {
-    background-color: &black;
-    border: 1x solid &white;
-    color: &white;
+    background-color: $black;
+    border: 1px solid $white;
+    color: $white;
+  }
+  #pagination .tui-next {
+    background-color: $secondary-accent-color;
+  }
+  #pagination .tui-last {
+    background-color: $secondary-accent-color;
   }
   #pagination .tui-is-selected,
   .tui-pagination strong {
