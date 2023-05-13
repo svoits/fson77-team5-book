@@ -1,5 +1,6 @@
 .page-header {
   position: fixed;
+  z-index: 100;
   background: $white;
   border: 1.5px solid $black-accent-color;
   border-radius: 0px 0px 8px 8px;
@@ -86,9 +87,9 @@
   background-color: $lt-bg-color;
   border-radius: 50%;
 }
-.authorized-box {
-  // display: none;
-}
+// .authorized-box {
+//   // display: none;
+// }
 .log-out-btn {
   display: none;
 }
@@ -285,9 +286,9 @@
   line-height: 1.29;
   cursor: pointer;
 }
-.sign-up-btn-mobile:hover {
-  // transform: scale(1.2);
-}
+// .sign-up-btn-mobile:hover {
+//   // transform: scale(1.2);
+// }
 .sign-up-icon {
   width: 20px;
   height: 20px;
