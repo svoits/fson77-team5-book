@@ -11,10 +11,12 @@ contentWrapper.addEventListener('click', onBookInfoClick);
 async function onBookInfoClick(evt) {
 try {
   evt.preventDefault();
-  if(!evt.target.classList.contains('js-top-link')) {
+  const cardLink = evt.target.closest('.js-top-link');
+  if(!cardLink) {
     return;
   }
-  const bookId = evt.target.dataset.id;
+  
+  const bookId = cardLink.dataset.id;
   const data = await getBookAPI('bookId', bookId);
   const infoMarkup = markupCardBookInfo(data);
 
