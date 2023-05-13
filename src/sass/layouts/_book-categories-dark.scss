@@ -1,6 +1,11 @@
 body.dark-theme {
   .categories-list-button {
     color: $dt-secondary-text-color;
+
+    &:hover,
+    &:focus {
+      color: $secondary-accent-color;
+    }
   }
 
   .categories-list-button.is-active {
