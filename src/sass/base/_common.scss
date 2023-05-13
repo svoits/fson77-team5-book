@@ -12,3 +12,24 @@ body.dark-theme {
   color: $dt-main-text-color;
   background-color: $dt-bg-color;
 }
+
+/* Hide scrollbar background */
+::-webkit-scrollbar {
+  background-color: transparent; /* For Chrome, Safari, and Opera */
+  width: 8px;
+}
+
+/* Optional: Style the scrollbar thumb and track */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: lightgray; /* Color of the thumb */
+  // width: 8px;
+
+  &:hover {
+    background-color: grey;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Color of the track */
+}
