@@ -1,0 +1,116 @@
+.book_info_card {
+    position: relative;
+    padding-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+    overflow: scroll;
+
+    width: 100%;
+    max-width: 100vw;
+    background-color: $white;
+
+    @media screen and (min-width: 768px) {
+        width: 579px;
+        height: 465px;
+        padding: 40px;
+    }
+}
+
+.book_info_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+    width: 287px;
+    height: 408px;
+    object-fit: cover;
+    border: 1px $lt-subtitle-color solid;
+    @media screen and (min-width: 768px) {
+        width: 192px;
+        height: 281px;
+    }
+}
+
+.modal-info-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+
+.close-modal-info {
+    stroke: black;
+}
+
+.book_info_name {
+    margin-bottom: 4px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: $lt-main-text-color;
+}
+
+.book_info_author {
+    margin-bottom: 18px;
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: $lt-subtitle-color;
+}
+
+.book_info_description {
+    margin-bottom: 14px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: $lt-main-text-color;
+}
+
+.info-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+.btn-book-info {
+    margin-left: 62px;
+    margin-right: 62px;
+    margin-bottom: 8px;
+    padding: 14px 28px;
+    height: 46px;
+    border: 2px solid $accent-text-color;
+    border-radius: 40px;
+
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: $lt-main-text-color;
+    background-color: $white;
+
+    &_book_add__to_list {
+        width: 215px;
+    }
+
+    &_book_remove_from_list {
+        width: 279px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 499px;
+        height: 64px;
+        padding: 20px 100px;
+    }
+}
