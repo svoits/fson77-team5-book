@@ -1,72 +1,74 @@
-export const teamgallery = [
-  {  
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/SerhiiVoitsekhovskyi.jpg',
+import SerhiiVoitsekhovskyi from '../images/footer/SerhiiVoitsekhovskyi.jpg';
+import AllaKaplia from '../images/footer/AllaKaplia.jpg';
+import IlliaShulha from '../images/footer/IlliaShulha.jpg';
+import Artem from '../images/footer/Artem.jpg';
+import OlenaKhomutovska from '../images/footer/OlenaKhomutovska.jpg';
+import SkepskaKateryna from '../images/footer/SkepskaKateryna.jpg';
+import YuriiRodenko from '../images/footer/YuriiRodenko.jpg';
+import NatalyaSkyrda from '../images/footer/NatalyaSkyrda.jpg';
+import MykolaIvanyshyn from '../images/footer/MykolaIvanyshyn.jpg';
+import NataliaDemydenko from '../images/footer/NataliaDemydenko.jpg';
+
+export const teamGallery = [
+  {
+    original: SerhiiVoitsekhovskyi,
     username: 'Serhii Voitsekhovskyi',
-    position: 'Team-lead/Developer',
-    submitGit: 'https://github.com/svoits',
+    position: 'Team-Lead / Developer',
+    git: 'https://github.com/svoits',
   },
   {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/AllaKaplia.jpg',
+    original: AllaKaplia,
     username: 'Alla Kaplia',
-    position: 'Scrum-master/Developer',
-    submitGit: 'https://github.com/AllaKaplia',
+    position: 'Scrum-Master / Developer',
+    git: 'https://github.com/AllaKaplia',
   },
   {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/IlliaShulha.jpg',
+    original: IlliaShulha,
     username: 'Illia Shulha',
     position: 'Developer',
-    submitGit: 'https://github.com/cutestsun',
+    git: 'https://github.com/cutestsun',
   },
   {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/OlenaKhomutovska.jpg',
-    username: 'Olena Khomutovska',
-    position: 'Developer',
-    submitGit: 'https://github.com/Helen-A-lex',
-  },
-  {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/SkepskaKateryna.jpg',
-    username: 'Skepska Kateryna',
-    position: 'Developer',
-    submitGit: 'https://github.com/wonderotter',
-  },
-  {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/YuriiRodenko.jpg',
-    username: 'Yurii Rodenko',
-    position: 'Developer',
-    submitGit: 'https://github.com/YuriiRodenko',
-  },
-  {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/NatalyaSkyrda.jpg',
-    username: 'Natalya Skyrda',
-    position: 'Developer',
-    submitGit: 'https://github.com/talask',
-  },
-  {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/previewModal.png',
+    original:  Artem,
     username: 'Artem',
     position: 'Developer',
-    submitGit: 'https://github.com/ArtGer7',
+    git: 'https://github.com/ArtGer7',
   },
   {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/Mykola Ivanyshyn.jpg',
+    original: OlenaKhomutovska,
+    username: 'Olena Khomutovska',
+    position: 'Developer',
+    git: 'https://github.com/Helen-A-lex',
+  },
+  {
+    original: SkepskaKateryna,
+    username: 'Skepska Kateryna',
+    position: 'Developer',
+    git: 'https://github.com/wonderotter',
+  },
+  {
+    original: YuriiRodenko,
+    username: 'Yurii Rodenko',
+    position: 'Developer',
+    git: 'https://github.com/YuriiRodenko',
+  },
+  {
+    original: NatalyaSkyrda,
+    username: 'Natalya Skyrda',
+    position: 'Developer',
+    git: 'https://github.com/talask',
+  },
+  
+  {
+    original: MykolaIvanyshyn,
     username: 'Mykola Ivanyshyn',
     position: 'Developer',
-    submitGit: 'https://github.com/Mikaeri',
+    git: 'https://github.com/Mikaeri',
   },
   {
-    preview: './images/footer/previewModal.png',
-    original: './images/footer/NataliaDemydenko.jpg',
+    original: NataliaDemydenko,
     username: 'Natalia Demydenko',
     position: 'Developer',
-    submitGit: 'https://github.com/Natalucia777',
-    },
+    git: 'https://github.com/Natalucia777',
+  },
 ];
