@@ -51,12 +51,15 @@ function onClickBtn(evt) {
 
 function addToLocalStorage(obj) {
   const getLocalStorage = localStorage.getItem(SHOP_LIST_KEY);
-  const parseLocalStorage = getLocalStorage ? parse.JSON(getLocalStorage) : [];
-  
-  if (!parseLocalStorage.length) {
+  const parseLocalStorage = getLocalStorage ? JSON.parse(getLocalStorage) : [];
+  console.log(parseLocalStorage);
+  const isLocaleStorage = parseLocalStorage.some(
+    ({ title, author }) => title === obj.title && author === obj.author
+  );
+  if (!isLocaleStorage) {
     parseLocalStorage.push(obj);
   }
-  else()
+
   console.log(parseLocalStorage);
   localStorage.setItem(SHOP_LIST_KEY, JSON.stringify(parseLocalStorage));
 }
