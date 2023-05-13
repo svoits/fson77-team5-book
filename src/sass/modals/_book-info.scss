@@ -152,7 +152,8 @@
     color: rgba(17, 17, 17, 0.5);
 }
 
-.book-infoBtn-explanation.is-hidden {
+.book-infoBtn-explanation.is-hidden,
+.book_info_card.is-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
