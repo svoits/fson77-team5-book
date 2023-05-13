@@ -1,5 +1,5 @@
-import { markupCardBookInfo } from "./markup-books-info";
-import getBookAPI from "./getBookAPI";
+import { markupCardBookInfo } from './markup-books-info';
+import getBookAPI from './getBookAPI';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
@@ -7,36 +7,34 @@ const contentWrapper = document.querySelector('.js-content-wrapper');
 
 contentWrapper.addEventListener('click', onBookInfoClick);
 
-
 async function onBookInfoClick(evt) {
-try {
-  evt.preventDefault();
-  const cardLink = evt.target.closest('.js-top-link');
-  if(!cardLink) {
-    return;
-  }
-  
-  const bookId = cardLink.dataset.id;
-  const data = await getBookAPI('bookId', bookId);
-  const infoMarkup = markupCardBookInfo(data);
-
-  const instance = basicLightbox.create(infoMarkup, {
-    onShow: () => window.addEventListener('keydown', onEscButtonClick),
-    onClose: () => window.removeEventListener('keydown', onEscButtonClick),
-  });
-
-  instance.show();
-
-  function onEscButtonClick(evt) {
-    if (evt.code === 'Escape') {
-      instance.close();
+  try {
+    evt.preventDefault();
+    const cardLink = evt.target.closest('.js-card-link');
+    if (!cardLink) {
+      return;
     }
-  }
-} catch (error) {
-  console.log(error);
-}
-}
 
+    const bookId = cardLink.dataset.id;
+    const data = await getBookAPI('bookId', bookId);
+    const infoMarkup = markupCardBookInfo(data);
+
+    const instance = basicLightbox.create(infoMarkup, {
+      onShow: () => window.addEventListener('keydown', onEscButtonClick),
+      onClose: () => window.removeEventListener('keydown', onEscButtonClick),
+    });
+
+    instance.show();
+
+    function onEscButtonClick(evt) {
+      if (evt.code === 'Escape') {
+        instance.close();
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 // let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
 
@@ -49,4 +47,3 @@ try {
 //     document.querySelector('#addRemoveBookButton').innerHTML = '';
 //   }
 // });
-
