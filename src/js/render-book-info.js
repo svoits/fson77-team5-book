@@ -8,7 +8,7 @@ const modalInfoClose = document.querySelector('[data-modal-close]');
 const cardModalBookInfo = document.querySelector('[data-info-close]');
 
 contentWrapper.addEventListener('click', onBookInfoClick);
-// modalInfoClose.addEventListener('click', onBookInfoModalCloses);
+modalInfoClose.addEventListener('click', onBookInfoModalCloses);
 
 async function onBookInfoClick(evt) {
   try {
@@ -42,7 +42,7 @@ async function onBookInfoClick(evt) {
 function onBookInfoModalCloses(evt) {
   console.log(evt.target);
   if(evt.currentTarget){
-    cardModalBookInfo.classList.add('is-hidden');
+    instance.close();
   }
 }
 // let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
