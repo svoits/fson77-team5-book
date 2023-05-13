@@ -9,10 +9,10 @@
     width: 100%;
     max-width: 100vw;
     background-color: $white;
+    border-radius: 18px;
 
     @media screen and (min-width: 768px) {
         width: 579px;
-        height: 465px;
         padding: 40px;
     }
 }
@@ -25,7 +25,8 @@
     width: 287px;
     height: 408px;
     object-fit: cover;
-    border: 1px $lt-subtitle-color solid;
+    border: 1px solid $lt-subtitle-color;
+
     @media screen and (min-width: 768px) {
         width: 192px;
         height: 281px;
@@ -34,23 +35,37 @@
 
 .modal-info-close {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 14px;
+    right: 14px;
 
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+    &:hover,
+    &:focus {
+        .modal-close-icon {
+        stroke: $accent-text-color;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        top: 24px;
+        right: 24px;
+    }
 }
 
 .close-modal-info {
-    stroke: black;
+    stroke:  $lt-main-text-color;
 }
 
 .book_info_name {
     margin-bottom: 4px;
     font-family: 'DM Sans';
-    font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    color: $lt-main-text-color;
 }
 
 .book_info_author {
@@ -60,18 +75,14 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: $lt-subtitle-color;
 }
 
 .book_info_description {
     margin-bottom: 14px;
     font-family: 'DM Sans';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: -0.04em;
-    color: $lt-main-text-color;
 }
 
 .info-logo-container{
@@ -81,6 +92,14 @@
     gap: 20px;
 
     margin-bottom: 40px;
+}
+
+.info_img-author_container {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
 }
 
 .btn-book-info {
@@ -97,7 +116,6 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.01em;
-    color: $lt-main-text-color;
     background-color: $white;
 
     &_book_add__to_list {
@@ -108,9 +126,34 @@
         width: 279px;
     }
 
+    &:focus,
+    &:hover {
+        color: #fff;
+        background-color: #4f2ee8;
+    }
+
     @media screen and (min-width: 768px) {
         width: 499px;
         height: 64px;
         padding: 20px 100px;
+        margin-left: auto;
+        margin-right: auto;
     }
+}
+
+.book-infoBtn-explanation {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.04em;
+
+    color: rgba(17, 17, 17, 0.5);
+}
+
+.book-infoBtn-explanation.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
