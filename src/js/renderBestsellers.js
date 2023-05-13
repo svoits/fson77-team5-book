@@ -1,7 +1,6 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getBookAPI from './getBookAPI';
 import { createMarkUpTop } from './createMarkUpTop';
-import { renderBestsellers } from './renderBestsellers';
 import renderBooksByCategory from './books-content-by-category';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
