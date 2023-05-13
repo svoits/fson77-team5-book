@@ -1,31 +1,33 @@
-// const checkBoxEl = document.querySelector('.js-theme-toggle');
-// const body = document.querySelector('body');
+const checkBoxEl = document.querySelector('.js-theme-toggle');
+const body = document.querySelector('body');
 
-// const STORAGE_KEY = 'theme';
-// const theme = {
-//   LIGHT: 'light-theme',
-//   DARK: 'dark-theme',
-// };
+const STORAGE_KEY = 'theme';
+const theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
 
-// export default function onCheckBoxClick(e) {
-//   let themeValue = '';
-//   if (e.currentTarget.checked) {
-//     themeValue = theme.DARK;
-//     body.classList.add(themeValue);
-//   } else {
-//     themeValue = theme.LIGHT;
-//     body.classList.remove(theme.DARK);
-//   }
-//   localStorage.setItem(STORAGE_KEY, themeValue);
-// }
+checkBoxEl.addEventListener('click', onCheckBoxClick);
 
-// function savedThemeOnPageReload() {
-//   const savedTheme = localStorage.getItem(STORAGE_KEY);
+export default function onCheckBoxClick(e) {
+  let themeValue = '';
+  if (e.currentTarget.checked) {
+    themeValue = theme.DARK;
+    body.classList.add(themeValue);
+  } else {
+    themeValue = theme.LIGHT;
+    body.classList.remove(theme.DARK);
+  }
+  localStorage.setItem(STORAGE_KEY, themeValue);
+}
 
-//   if (savedValue === theme.DARK) {
-//     body.classList.add(savedTheme);
-//     checkBoxEl.setAttribute('checked', true);
-//   }
-// }
+function savedThemeOnPageReload() {
+  const savedTheme = localStorage.getItem(STORAGE_KEY);
 
-// savedThemeOnPageReload();
+  if (savedTheme === theme.DARK) {
+    body.classList.add(savedTheme);
+    checkBoxEl.setAttribute('checked', true);
+  }
+}
+
+savedThemeOnPageReload();
