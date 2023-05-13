@@ -2,10 +2,11 @@
   display: flex;
   gap: 40px;
   flex-direction: column;
-  padding-top: 117px;
+  padding-top: 104px;
   padding-bottom: 80px;
 
   @media screen and (min-width: 768px) {
+    padding-top: 112px;
     gap: 100px;
   }
 
