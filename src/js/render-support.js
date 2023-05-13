@@ -43,7 +43,8 @@ const swiper = new Swiper('.my-swiper', {
   direction: 'vertical',
   spaceBetween: 20,
   slidesPerView: 'auto',
-  loop: true,
+  // loop: true,
+  rewind: true,
 
   navigation: {
     nextEl: '.swiper-button',
