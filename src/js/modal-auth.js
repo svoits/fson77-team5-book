@@ -47,6 +47,7 @@ function onSignBtnWrapperClick(e) {
 
 function onAuthModalBtnClick(e) {
   modalInstance.show();
+  modalInstance.element().classList.add('basic-auth');
 }
 
 function onModalCloseBtnClick(e) {

@@ -47,16 +47,6 @@
   }
 }
 
-.basicLightbox {
-  background: radial-gradient(
-      circle at -850 -850,
-      rgba(204, 236, 231, 0.5) -250,
-      #4f2ee8,
-      #4f2ee8 130%
-    )
-    no-repeat !important;
-}
-
 .modal-input {
   width: 100%;
   border: 2px solid $black-accent-color;
@@ -167,4 +157,14 @@
     top: 24px;
     right: 24px;
   }
+}
+
+.basic-auth.basicLightbox {
+  background: radial-gradient(
+      circle at -850 -850,
+      rgba(204, 236, 231, 0.5) -250,
+      #4f2ee8,
+      #4f2ee8 130%
+    )
+    no-repeat;
 }
