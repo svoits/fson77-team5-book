@@ -1,17 +1,15 @@
 var throttle = require('lodash.throttle');
 
-const myButton = document.querySelector('.scroll-up');
+const myButton = document.querySelector('.scroll-up__btn');
+myButton.addEventListener('click', topFunction);
 
-// When the user scrolls down 20px from the top of the document, show the button
-(window.onscroll = throttle(function () {
-  scrollFunction();
-})),
-  500;
+// When the user scrolls down 350px from the top of the document, show the button
+window.onscroll = throttle(scrollFunction, 300);
 
 function scrollFunction() {
   if (
-    document.body.scrollTop > 400 ||
-    document.documentElement.scrollTop > 400
+    document.body.scrollTop > 350 ||
+    document.documentElement.scrollTop > 350
   ) {
     myButton.style.opacity = '1';
     myButton.style.visibility = 'visible';
@@ -20,8 +18,6 @@ function scrollFunction() {
     myButton.style.visibility = 'hidden';
   }
 }
-//   opacity: 1;
-//   visibility: visible;
 
 function topFunction() {
   window.scrollTo({
@@ -29,5 +25,3 @@ function topFunction() {
     behavior: 'smooth',
   });
 }
-
-myButton.addEventListener('click', topFunction);
