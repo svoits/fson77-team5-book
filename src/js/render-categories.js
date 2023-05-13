@@ -39,7 +39,7 @@ function onCategoryBtnClick(e) {
   activeCategory.classList.remove('is-active');
   e.target.classList.add('is-active');
 
-  const currentCategory = e.target.textContent.trim();
+  const currentCategory = e.target.dataset.category.trim();
   const currentCategoryArr = currentCategory.split(' ');
   const arrLength = currentCategoryArr.length;
 
