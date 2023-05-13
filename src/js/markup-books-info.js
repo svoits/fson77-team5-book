@@ -22,10 +22,14 @@ export function markupCardBookInfo(data) {
                 <img src="" alt="Bookshop" class="store-info-book" width="38" height="36">
             </a>
         </div>
-        <button class="book_add__to_list" type="button" id="addRemoveBookButton">ADD TO SHOPPING LIST</button>
+        <button class="btn-book-info book_add__to_list" type="button" id="addRemoveBookButton">ADD TO SHOPPING LIST</button>
         <p class="book-infoBtn-explanation is-hidden">
         Сongratulations! You have added the book to the shopping list. 
         To delete, press the button “Remove from the shopping list”.
         </p>
     </div>`
 }
+
+// REMOVE FROM SHOPPING LIST
+// ADD TO SHOPPING LIST
+// book_remove_from_list
