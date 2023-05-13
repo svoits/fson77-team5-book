@@ -1,4 +1,4 @@
-//let  throttle = require('lodash.throttle'); 
+let  throttle = require('lodash.throttle'); 
 
 export const btnUp = {
     el: document.querySelector('.js-scroll-top-btn'),
@@ -9,11 +9,11 @@ export const btnUp = {
       this.el.classList.add('visually-hidden');
     },
     addEventListener() {
-      window.addEventListener('scroll', () => {
-        console.log('scroll');
+      window.addEventListener('scroll', throttle(() => {
+       
         const scrollY = window.scrollY || document.documentElement.scrollTop;
         scrollY > 400 ? this.show() : this.hide();
-      });
+      }, 1500));
     }
   }
   
