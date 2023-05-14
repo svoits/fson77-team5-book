@@ -20,7 +20,7 @@ function onTeamLogoClick(e) {
   });
 
 instance.show();
-const modalCloseBtn = document.querySelector('js-modal-close');
+const modalCloseBtn = document.querySelector('.js-modal-close');
 modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
 
 function onModalCloseBtnClick() {
