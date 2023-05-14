@@ -34,7 +34,7 @@ export function shoppingListMarkup(books) {
             <p class="wrap-about-author">${author}</p>
             <ul class="trading-platforms-list list">
               <li class="trading-platforms-list-item">
-                <a class="trading-platforms-list-item-link" href="${buy_links[0].url}}">
+                <a class="trading-platforms-list-item-link" href="${buy_links[0]}">
                   <img
                     class="trading-platforms-list-item-img-amazon"
                     srcset="
@@ -47,7 +47,7 @@ export function shoppingListMarkup(books) {
                 </a>
               </li>
               <li class="trading-platforms-list-item">
-              <a class="trading-platforms-list-item-link" href="${buy_links[1].url} ">
+              <a class="trading-platforms-list-item-link" href="${buy_links[1]} ">
                 <img
                   class="trading-platforms-list-item-img-apple-books"
                   srcset="
@@ -60,7 +60,7 @@ export function shoppingListMarkup(books) {
               </a>
             </li>
             <li class="trading-platforms-list-item">
-              <a class="trading-platforms-list-item-link" href="${buy_links[2].url}">
+              <a class="trading-platforms-list-item-link" href="${buy_links[2]}">
                 <img
                   class="trading-platforms-list-item-img-bookshop"
                   srcset="
