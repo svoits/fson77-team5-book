@@ -18,7 +18,7 @@ export function parseDiv(div) {
           ) {
             const descr = childElementsDiv.textContent
               ? childElementsDiv.textContent
-              : `Опис даної книги можна подивитись на сайті`;
+              : `Sorry, there is no description. You can visit any of the following sites below for more information about book.`;
             dataToLocalStorage.description = descr;
           }
           break;

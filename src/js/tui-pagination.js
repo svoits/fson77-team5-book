@@ -6,7 +6,6 @@ const SHOP_LIST_KEY = 'shopping-list';
 const paginationContainer = document.getElementById('pagination');
 const perPage = window.screen.width >= 768 ? 3 : 4;
 const visiblePageBtns = window.screen.width >= 768 ? 3 : 2;
-// let currentPage = 1;
 
 const options = {
   totalItems: 3,
@@ -35,7 +34,6 @@ const options = {
 };
 
 const pagination = new Pagination(paginationContainer, paginationOptions());
-// renderShoppingList(currentPage);
 
 pagination.on('beforeMove', evt => {
   const currentPage = evt.page;

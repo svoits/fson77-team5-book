@@ -1,9 +1,6 @@
 import { shoppingListMarkup } from './shoppingListMarkup';
-// import backgroundImage from '../images/bg-shopping-list.png';
-
 const SHOP_LIST_KEY = 'shopping-list';
 
-// Це посилання закинути в refs
 const shoppingListWrapper = document.querySelector('.shopping-list-wrap');
 const paginationContainer = document.getElementById('pagination');
 const imageForEmpty = document.querySelector('.js-back');
@@ -23,8 +20,6 @@ export async function renderShoppingList(pageNumber) {
     (await JSON.parse(localStorage.getItem(SHOP_LIST_KEY))) ?? [];
 
   if (!getItemsFromLocaleStorage.length) {
-    // shoppingListWrapper.style.backgroundImage = `url("${backgroundImage})`;
-    console.log('Немає нічого');
     paginationContainer.classList.add('visually-hidden');
   } else if (getItemsFromLocaleStorage.length <= 3) {
     paginationContainer.classList.add('visually-hidden');
