@@ -5,8 +5,11 @@ const SHOP_LIST_KEY = 'shopping-list';
 // Це посилання закинути в refs
 const shoppingListWrapper = document.querySelector('.shopping-list-wrap');
 const paginationContainer = document.getElementById('pagination');
+const backdropLoader = document.querySelector('.loader-backdrop');
 
 export async function renderShoppingList(pageNumber) {
+  backdropLoader.classList.add('is-active');
+
   let getItemsFromLocaleStorage;
   let perPage;
   if (window.innerWidth >= 768) {
@@ -45,4 +48,5 @@ export async function renderShoppingList(pageNumber) {
       )
     );
   }
+  backdropLoader.classList.remove('is-active');
 }
