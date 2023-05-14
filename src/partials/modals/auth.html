@@ -9,7 +9,7 @@
       <div class="input-wrapper">
         <input
           required
-          class="modal-input"
+          class="modal-input username-input"
           type="text"
           name="username"
           placeholder="name"
@@ -18,7 +18,7 @@
       <div class="input-wrapper">
         <input
           required
-          class="modal-input"
+          class="modal-input email-input"
           type="email"
           name="email"
           placeholder="email"
@@ -30,7 +30,7 @@
       <div class="input-wrapper">
         <input
           required
-          class="modal-input"
+          class="modal-input password-input"
           type="password"
           name="password"
           placeholder="password"
@@ -39,7 +39,16 @@
           <use href="./images/symbol-defs.svg#lock" />
         </svg>
       </div>
-      <button class="modal-submit-btn" name="submitBtn">Sign up</button>
+      <button class="modal-submit-up-btn modal-submit-btn" name="submitUpBtn">
+        Sign up
+      </button>
+      <button
+        class="modal-submit-in-btn modal-submit-btn"
+        name="submitInBtn"
+        hidden
+      >
+        Sign in
+      </button>
       <div class="modal-sign-btn-wrapper">
         <button
           data-sign="up"
