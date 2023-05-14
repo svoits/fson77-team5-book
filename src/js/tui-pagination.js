@@ -7,7 +7,7 @@ const paginationContainer = document.getElementById('pagination');
 const perPage = window.screen.width >= 768 ? 3 : 4;
 const visiblePageBtns = window.screen.width >= 768 ? 3 : 2;
 // let currentPage = 1;
-renderShoppingList(1);
+
 const options = {
   totalItems: 3,
   itemsPerPage: perPage,
@@ -39,7 +39,6 @@ const pagination = new Pagination(paginationContainer, paginationOptions());
 
 pagination.on('beforeMove', evt => {
   const currentPage = evt.page;
-  // console.log(paginationContainer);
   renderShoppingList(currentPage);
 });
 

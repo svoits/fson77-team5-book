@@ -23,10 +23,8 @@ export async function renderShoppingList(pageNumber) {
     shoppingListWrapper.style.backgroundImage = `url("./images/shopping-list/background-image")`;
     console.log('Немає нічого');
     paginationContainer.classList.add('visually-hidden');
-    console.log(paginationContainer);
   } else if (getItemsFromLocaleStorage.length <= 3) {
     paginationContainer.classList.add('visually-hidden');
-    console.log(paginationContainer);
     shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(

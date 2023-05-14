@@ -3,19 +3,19 @@ import { pagination } from './tui-pagination';
 
 // Refs
 const SHOP_LIST_KEY = 'shopping-list';
-
 // Закинути в refs
 const shoppingListWrapper = document.querySelector('.shopping-list-wrap');
-// pagination;
-
+renderShoppingList(1);
 // Закинути в shopping-list.js або в файл з функцією, яка буде до нього підключатись
 shoppingListWrapper.addEventListener('click', onRemoveClick);
 
 export function onRemoveClick(evt) {
-  const paginationContainer = document.getElementById('#pagination');
-  // evt.preventDefault();
   const dataString = localStorage.getItem(SHOP_LIST_KEY);
   const removeBtn = evt.target.closest('.wrap-about-book-remove');
+  const selectedPaginationBtn = document.querySelector('.tui-is-selected');
+  const deletePaginationPageByWrapper = document.querySelector(
+    '.shopping-list-wrap'
+  );
 
   if (!removeBtn) {
     return;
@@ -28,12 +28,10 @@ export function onRemoveClick(evt) {
   const updatedDataString = JSON.stringify(newBooks);
 
   localStorage.setItem(SHOP_LIST_KEY, updatedDataString);
-  const paginationElement = document.querySelector('.tui-page-btn');
-  if (newBooks.length <= 3) {
-    // paginationElement.classList.add('visually-hidden');
-    console.log(paginationContainer);
-  }
 
-  location.reload();
-  // pagination;
+  if (deletePaginationPageByWrapper.children.length > 1) {
+    renderShoppingList(selectedPaginationBtn.innerText);
+  } else {
+    location.reload();
+  }
 }
