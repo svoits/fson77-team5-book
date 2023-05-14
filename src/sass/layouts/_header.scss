@@ -1,6 +1,6 @@
 .page-header {
   position: fixed;
-  z-index: 1002;
+  z-index: 1003;
   background: $white;
   border: 1.5px solid $black-accent-color;
   border-radius: 0px 0px 8px 8px;
@@ -288,7 +288,7 @@
   height: 100vh;
   opacity: 0;
   visibility: hidden;
-  z-index: 1001;
+  z-index: 1002;
   transform: translateY(-100%);
   background-image: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
@@ -307,7 +307,6 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    z-index: 1001;
   }
   &.logged-in {
     padding-top: 84px;

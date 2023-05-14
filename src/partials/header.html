@@ -105,7 +105,11 @@
         </button>
 
         <div class="sign-up-box">
-          <button class="sign-up-btn signUpBtn" type="button" sign-modal-open>
+          <button
+            class="sign-up-btn signUpBtn"
+            type="button"
+            data-sign-modal-open
+          >
             Sign up
             <svg class="sign-up-icon" width="20" height="20">
               <use href="./images/symbol-defs.svg#arrow-right"></use>
@@ -115,12 +119,12 @@
 
         <div class="authorized-box" hidden>
           <button class="authorized-btn" type="button">
-            <div class="user-icon-box">
+            <span class="user-icon-box">
               <svg class="user-icon" width="19" height="19">
                 <use href="./images/symbol-defs.svg#user"></use>
               </svg>
-            </div>
-            <p class="user-name">Stephen</p>
+            </span>
+            <span class="user-name">Stephen</span>
             <svg class="user-icon-arrow" width="23" height="26">
               <use href="./images/symbol-defs.svg#caret-down"></use>
             </svg>
@@ -140,7 +144,11 @@
 <!----- Mobile ----->
 <div class="mobile-menu-container js-menu-container" data-mobile-menu>
   <div class="sign-up-mobile-menu-box">
-    <button type="button" class="sign-up-btn-mobile signUpBtn" sign-modal-open>
+    <button
+      type="button"
+      class="sign-up-btn-mobile signUpBtn"
+      data-sign-modal-open
+    >
       Sign up
       <svg class="sign-up-icon">
         <use href="./images/symbol-defs.svg#arrow-right"></use>
@@ -155,7 +163,7 @@
           <use href="./images/symbol-defs.svg#user"></use>
         </svg>
       </div>
-      <p class="user-name user-name-mobile">Stephen</p>
+      <span class="user-name user-name-mobile">Stephen</span>
     </div>
     <ul class="mobile-nav-list list">
       <li class="mobile-nav-item mobile-home-btn">
@@ -164,7 +172,7 @@
       <li class="mobile-nav-item mobile-shopping-btn">
         <a class="mobile-nav-link link" href="./shopping-list.html"
           >shopping list
-          <svg class="logo-shop logo-shop-mobile" width="20" height="20" hidden>
+          <svg class="logo-shop logo-shop-mobile" width="20" height="20">
             <use href="./images/symbol-defs.svg#shop-bag"></use>
           </svg>
         </a>

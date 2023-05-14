@@ -1,7 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-const openAuthModalBtn = document.querySelectorAll('[sign-modal-open]');
+const openAuthModalBtn = document.querySelectorAll('[data-sign-modal-open]');
 export const modalForm = document.querySelector('.modal-form');
 export const {
   username,
@@ -13,9 +13,7 @@ export const {
   submitUpBtn,
 } = modalForm.elements;
 export const signBtnWrapper = document.querySelector('.modal-sign-btn-wrapper');
-const modalCloseBtn = document.querySelector('[js-modal-close]');
-// const signUpBtn = document.querySelector('.modal-submit-up-btn');
-// const signInBtn = document.querySelector('.modal-submit-in-btn');
+const modalCloseBtn = document.querySelector('.js-modal-close');
 
 export const modalInstance = basicLightbox.create(
   document.querySelector('.auth-modal-wrapper'),
