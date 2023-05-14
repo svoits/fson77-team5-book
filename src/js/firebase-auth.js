@@ -41,11 +41,6 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-// const modalForm = document.querySelector('.modal-form');
-// const usernameEl = document.querySelector('.username-input');
-// const emailEl = document.querySelector('.email-input');
-// const passwordEl = document.querySelector('.password-input');
-
 const headerNavList = document.querySelector('.header-nav-list');
 const signUpHeader = document.querySelector('.sign-up-box');
 const authorizedHeader = document.querySelector('.authorized-box');
@@ -59,6 +54,7 @@ const authorizedMobileBox = document.querySelector(
 const mobileUsername = document.querySelector('.user-name-mobile');
 const logOutMobileBtn = document.querySelector('.log-out-mobile-btn');
 const mobileMenuContainer = document.querySelector('.mobile-menu-container');
+const backdropLoader = document.querySelector('.loader-backdrop');
 
 signUpBtn.addEventListener('click', onSignUpFormSubmit);
 signInBtn.addEventListener('click', onLoginFormSubmit);
@@ -109,13 +105,11 @@ export function onLoginFormSubmit(e) {
 
   const email = emailEl.value.trim();
   const password = passwordEl.value.trim();
-  // const userData = [];
-  // new FormData(e.currentTarget).forEach((value, name) => {
-  //   userData[name] = value;
-  // });
 
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
+      backdropLoader.classList.add('is-active');
+
       const user = userCredential.user;
 
       const currentDate = new Date();
@@ -125,6 +119,7 @@ export function onLoginFormSubmit(e) {
       modalInstance.close();
       modalForm.reset();
 
+      backdropLoader.classList.remove('is-active');
       Notify.success('Logged in!', {
         timeout: 2500,
       });

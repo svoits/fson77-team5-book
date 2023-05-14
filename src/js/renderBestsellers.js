@@ -5,9 +5,11 @@ import renderBooksByCategory from './books-content-by-category';
 
 const contentWrapper = document.querySelector('.js-content-wrapper');
 const mainTitleEl = document.querySelector('.js-main-title');
+const backdropLoader = document.querySelector('.loader-backdrop');
 
 export async function renderBestsellers() {
   try {
+    backdropLoader.classList.add('is-active');
     const data = await getBookAPI('top');
 
     if (!data.length) {
@@ -18,6 +20,8 @@ export async function renderBestsellers() {
     }
 
     contentWrapper.innerHTML = createMarkUpTop(data);
+    backdropLoader.classList.remove('is-active');
+
     addEventsListenersToLoadMoreBtns();
   } catch (e) {
     console.log(e);

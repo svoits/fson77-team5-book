@@ -9,7 +9,6 @@ const contentWrapper = document.querySelector('.js-content-wrapper');
 
 contentWrapper.addEventListener('click', onBookInfoClick);
 
-
 async function onBookInfoClick(evt) {
   try {
     evt.preventDefault();
@@ -24,7 +23,7 @@ async function onBookInfoClick(evt) {
 
     const instance = basicLightbox.create(infoMarkup, {
       onShow: () => {
-        window.addEventListener('keydown', onEscButtonClick)
+        window.addEventListener('keydown', onEscButtonClick);
       },
       onClose: () => window.removeEventListener('keydown', onEscButtonClick),
     });
@@ -50,7 +49,6 @@ async function onBookInfoClick(evt) {
     console.log(error);
   }
 }
-
 
 // let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
 
