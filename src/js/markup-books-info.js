@@ -12,7 +12,7 @@ export function markupCardBookInfo(data, flag) {
     ? 'REMOVE FROM SHOPPING LIST'
     : 'ADD TO SHOPPING LIST';
   const buttonClass = flag ? 'book_remove__from_list' : 'book_add__to_list';
-  const { book_image, author, description, title, buy_links } = data;
+  const { book_image, author, description, title, buy_links, list_name } = data;
   return `<div class="book_info_card">
   <button class="modal-info-close" type="button" data-modal-close>
     <svg class="info-modal-close-icon" width="24" height="24">
@@ -21,11 +21,11 @@ export function markupCardBookInfo(data, flag) {
   </button>
   <div class="info_img-author_container">
     <div class="book-info-img-wrap">
-      <img src="${book_image}" alt="${title}" class="book_info_img" />
+      <img src="${book_image}" alt="${title}"  class="book_info_img" />
     </div>
 
     <div class="info_about_book">
-      <h2 class="book_info_name">${title}</h2>
+      <h2 class="book_info_name" data-category="${list_name}">${title}</h2>
       <p class="book_info_author">${author}</p>
       <p class="book_info_description">${description}</p>
       <div class="info-logo-container">

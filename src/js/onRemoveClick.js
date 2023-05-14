@@ -1,12 +1,10 @@
 import { renderShoppingList } from './renderShoppingList';
-import { pagination } from './tui-pagination';
 
-// Refs
 const SHOP_LIST_KEY = 'shopping-list';
-// Закинути в refs
+
 const shoppingListWrapper = document.querySelector('.shopping-list-wrap');
 renderShoppingList(1);
-// Закинути в shopping-list.js або в файл з функцією, яка буде до нього підключатись
+
 shoppingListWrapper.addEventListener('click', onRemoveClick);
 
 export function onRemoveClick(evt) {

@@ -1,11 +1,11 @@
 import { shoppingListMarkup } from './shoppingListMarkup';
-
 const SHOP_LIST_KEY = 'shopping-list';
 
-// Це посилання закинути в refs
 const shoppingListWrapper = document.querySelector('.shopping-list-wrap');
 const paginationContainer = document.getElementById('pagination');
 const backdropLoader = document.querySelector('.loader-backdrop');
+const imageForEmpty = document.querySelector('.js-back');
+const textForEmpty = document.querySelector('.js-text');
 
 export async function renderShoppingList(pageNumber) {
   backdropLoader.classList.add('is-active');
@@ -23,11 +23,11 @@ export async function renderShoppingList(pageNumber) {
     (await JSON.parse(localStorage.getItem(SHOP_LIST_KEY))) ?? [];
 
   if (!getItemsFromLocaleStorage.length) {
-    shoppingListWrapper.style.backgroundImage = `url("./images/shopping-list/background-image")`;
-    console.log('Немає нічого');
     paginationContainer.classList.add('visually-hidden');
   } else if (getItemsFromLocaleStorage.length <= 3) {
     paginationContainer.classList.add('visually-hidden');
+    imageForEmpty.classList.add('visually-hidden');
+    textForEmpty.classList.add('visually-hidden');
     shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(
@@ -38,6 +38,8 @@ export async function renderShoppingList(pageNumber) {
       )
     );
   } else {
+    imageForEmpty.classList.add('visually-hidden');
+    textForEmpty.classList.add('visually-hidden');
     shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(
