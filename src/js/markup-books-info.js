@@ -6,7 +6,7 @@ import bookshop from '../images/trading-platforms/bookshop.png';
 import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
 import logos from '../images/symbol-defs.svg';
 
-export function markupCardBookInfo(data) {
+export function markupCardBookInfo(data, flag) {
   const classDescription = flag ? '' : 'visually-hidden';
   const buttonText = flag
     ? 'REMOVE FROM SHOPPING LIST'
