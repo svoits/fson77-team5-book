@@ -24,7 +24,7 @@ const modalCloseBtn = document.querySelector('js-modal-close');
 modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
 
 function onModalCloseBtnClick() {
-  Instance.close();
+  instance.close();
 }
 
   function onEscButton(e) {
