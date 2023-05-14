@@ -4,12 +4,11 @@ export function parseDiv(div) {
     [...childDivs.children].forEach(childElementsDiv => {
       switch (childElementsDiv.tagName) {
         case 'H2':
-          console.log(childElementsDiv.textContent);
           dataToLocalStorage.title = childElementsDiv.textContent;
+          dataToLocalStorage.list_name = childElementsDiv.dataset.category;
           break;
         case 'IMG':
-          dataToLocalStorage.book_image = childElementsDiv.children.src;
-          // dataToLocalStorage.title = childElementsDiv.children.alt;
+          dataToLocalStorage.book_image = childElementsDiv.src;
           break;
         case 'P':
           if (childElementsDiv.classList.contains('book_info_author')) {
