@@ -160,6 +160,7 @@
 }
 
 .basic-auth.basicLightbox {
+  z-index: 1003;
   background: radial-gradient(
       circle at -850 -850,
       rgba(204, 236, 231, 0.5) -250,

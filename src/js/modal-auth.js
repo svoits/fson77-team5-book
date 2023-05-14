@@ -1,13 +1,23 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-const openAuthModalBtn = document.querySelector('[sign-modal-open]');
-const modalForm = document.querySelector('.modal-form');
-const { username, signIn, signUp, submitBtn } = modalForm.elements;
-const signBtnWrapper = document.querySelector('.modal-sign-btn-wrapper');
+const openAuthModalBtn = document.querySelectorAll('[sign-modal-open]');
+export const modalForm = document.querySelector('.modal-form');
+export const {
+  username,
+  email,
+  password,
+  signIn,
+  signUp,
+  submitInBtn,
+  submitUpBtn,
+} = modalForm.elements;
+export const signBtnWrapper = document.querySelector('.modal-sign-btn-wrapper');
 const modalCloseBtn = document.querySelector('[js-modal-close]');
+// const signUpBtn = document.querySelector('.modal-submit-up-btn');
+// const signInBtn = document.querySelector('.modal-submit-in-btn');
 
-const modalInstance = basicLightbox.create(
+export const modalInstance = basicLightbox.create(
   document.querySelector('.auth-modal-wrapper'),
   {
     onShow: () => {
@@ -19,32 +29,36 @@ const modalInstance = basicLightbox.create(
   }
 );
 
-openAuthModalBtn.addEventListener('click', onAuthModalBtnClick);
+openAuthModalBtn.forEach(btn =>
+  btn.addEventListener('click', onAuthModalBtnClick)
+);
 modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
-signBtnWrapper.addEventListener('click', onSignBtnWrapperClick);
 
-function onSignBtnWrapperClick(e) {
-  if (
-    e.target.nodeName !== 'BUTTON' ||
-    e.target.classList.contains('is-active')
-  ) {
-    return;
-  }
+signIn.addEventListener('click', onSignInBtnClick);
+signUp.addEventListener('click', onSignUpBtnClick);
 
-  const activeSignBtn = document.querySelector('.modal-sign-btn.is-active');
-  activeSignBtn.classList.remove('is-active');
-  e.target.classList.add('is-active');
+export function onSignInBtnClick(e) {
+  // const activeSignBtn = document.querySelector('.modal-sign-btn.is-active');
+  // activeSignBtn.classList.remove('is-active');
+  e.currentTarget.classList.add('is-active');
+  signUp.classList.remove('is-active');
 
-  if (signIn.classList.contains('is-active')) {
-    modalForm.firstElementChild.hidden = true;
-    modalForm.username.required = false;
-    submitBtn.textContent = 'sign in';
-  } else {
-    modalForm.firstElementChild.hidden = false;
-    submitBtn.textContent = 'sign up';
-  }
+  modalForm.firstElementChild.hidden = true;
+  modalForm.username.required = false;
+  submitInBtn.hidden = false;
+  submitUpBtn.hidden = true;
+
+  submitInBtn.parentNode.insertBefore(submitInBtn, submitUpBtn);
 }
+function onSignUpBtnClick(e) {
+  e.currentTarget.classList.add('is-active');
+  signIn.classList.remove('is-active');
 
+  modalForm.firstElementChild.hidden = false;
+  submitInBtn.hidden = true;
+  submitUpBtn.hidden = false;
+  submitUpBtn.parentNode.insertBefore(submitUpBtn, submitInBtn);
+}
 function onAuthModalBtnClick(e) {
   modalInstance.show();
   modalInstance.element().classList.add('basic-auth');
@@ -59,10 +73,3 @@ function onEscClick(e) {
     modalInstance.close();
   }
 }
-
-export {
-  onSignBtnWrapperClick,
-  onAuthModalBtnClick,
-  onModalCloseBtnClick,
-  onEscClick,
-};

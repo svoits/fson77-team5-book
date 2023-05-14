@@ -19,6 +19,10 @@
       max-width: none;
     }
   }
+  &.logged-in {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+  }
 }
 
 .header-box {
@@ -53,6 +57,9 @@
 }
 .authorized-box {
   display: none;
+  position: relative;
+  min-width: 184px;
+
   @media screen and (min-width: 768px) {
     display: block;
   }
@@ -73,10 +80,39 @@
   letter-spacing: -0.02em;
   align-items: center;
   cursor: pointer;
+  width: 100%;
+}
+
+.log-out-btn {
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  // display: none;
+  background: $white;
+  border: 1.5px solid $black;
+  border-radius: 18px;
+  padding: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: -0.04em;
+  font-size: 14px;
+  z-index: -1;
+  cursor: pointer;
+  transition: opacity $transition, visibility $transition, transform $transition;
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(100%);
+  }
 }
 .user-name {
   margin-left: 9px;
-  margin-right: 4px;
+  margin-right: auto;
 }
 .user-icon {
   fill: $main-accent-color;
@@ -91,12 +127,7 @@
   background-color: $lt-bg-color;
   border-radius: 50%;
 }
-// .authorized-box {
-//   // display: none;
-// }
-.log-out-btn {
-  display: none;
-}
+
 .mobile-menu-open-btn {
   // width: 28px;
   height: 28px;
@@ -257,7 +288,7 @@
   height: 100vh;
   opacity: 0;
   visibility: hidden;
-  z-index: -1;
+  z-index: 1001;
   transform: translateY(-100%);
   background-image: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
@@ -268,8 +299,6 @@
   padding: 20px;
   padding-top: 104px;
 
-  padding-top: 84px;
-
   transition: transform $transition, opacity $transition, visibility $transition;
   @media screen and (min-width: 768px) {
     display: none;
@@ -279,6 +308,9 @@
     visibility: visible;
     transform: translateY(0);
     z-index: 1001;
+  }
+  &.logged-in {
+    padding-top: 84px;
   }
 }
 
@@ -391,6 +423,7 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
+  cursor: pointer;
 }
 /* ----------------TABLET---------------- */
 
@@ -473,7 +506,8 @@
   background: $main-accent-color;
   cursor: pointer;
   transition: transform $transition;
-
+  // padding-top: 12px;
+  // padding-bottom: 12px;
   @media screen and (min-width: 768px) {
     display: flex;
     column-gap: 50px;

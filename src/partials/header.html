@@ -18,10 +18,10 @@
       <!----- Navigation ----->
       <nav class="header-nav-main">
         <ul class="header-nav-list list" hidden>
-          <li class="header-nav-item current">
+          <li class="header-nav-item header-home-btn">
             <a class="header-nav-link link" href="./index.html">Home</a>
           </li>
-          <li class="header-nav-item">
+          <li class="header-nav-item header-shopping-btn">
             <a class="header-nav-link link" href="./shopping-list.html"
               >Shopping List
               <svg class="logo-shop" width="20" height="20">
@@ -125,10 +125,10 @@
               <use href="./images/symbol-defs.svg#caret-down"></use>
             </svg>
           </button>
-          <button type="button" class="log-out-btn visually-hidden">
+          <button type="button" class="log-out-btn">
             Log out
-            <svg class="sign-up-icon">
-              <use href="./images/symbol-defs.svg#arrow-down"></use>
+            <svg class="sign-up-icon" width="20" height="20">
+              <use href="./images/symbol-defs.svg#arrow-right"></use>
             </svg>
           </button>
         </div>
@@ -140,11 +140,7 @@
 <!----- Mobile ----->
 <div class="mobile-menu-container js-menu-container" data-mobile-menu>
   <div class="sign-up-mobile-menu-box">
-    <button
-      type="button"
-      class="sign-up-btn-mobile signUpBtn"
-      data-modal-open-sign-mobile
-    >
+    <button type="button" class="sign-up-btn-mobile signUpBtn" sign-modal-open>
       Sign up
       <svg class="sign-up-icon">
         <use href="./images/symbol-defs.svg#arrow-right"></use>
@@ -162,10 +158,10 @@
       <p class="user-name user-name-mobile">Stephen</p>
     </div>
     <ul class="mobile-nav-list list">
-      <li class="mobile-nav-item current">
+      <li class="mobile-nav-item mobile-home-btn">
         <a class="mobile-nav-link link" href="./index.html">home</a>
       </li>
-      <li class="mobile-nav-item">
+      <li class="mobile-nav-item mobile-shopping-btn">
         <a class="mobile-nav-link link" href="./shopping-list.html"
           >shopping list
           <svg class="logo-shop logo-shop-mobile" width="20" height="20" hidden>
