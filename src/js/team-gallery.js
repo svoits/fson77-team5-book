@@ -29,8 +29,8 @@ export const teamGallery = [
     git: 'https://github.com/cutestsun',
   },
   {
-    original:  Artem,
-    username: 'Gergalo Artem',
+    original: Artem,
+    username: 'Artem Gergalo',
     position: 'Developer',
     git: 'https://github.com/ArtGer7',
   },
@@ -42,7 +42,7 @@ export const teamGallery = [
   },
   {
     original: SkepskaKateryna,
-    username: 'Skepska Kateryna',
+    username: 'Kateryna Skepska',
     position: 'Developer',
     git: 'https://github.com/wonderotter',
   },
@@ -58,7 +58,7 @@ export const teamGallery = [
     position: 'Developer',
     git: 'https://github.com/talask',
   },
-  
+
   {
     original: MykolaIvanyshyn,
     username: 'Mykola Ivanyshyn',
