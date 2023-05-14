@@ -2,10 +2,34 @@ import { supportArr } from './support-list';
 import Swiper from 'swiper';
 
 const supportListEl = document.querySelector('.js-support-list');
-const btnSwiperEl = document.querySelector('.swiper-button');
+const btnSwiperDownEl = document.querySelector('.swiper-button-down');
+const btnSwiperTopEl = document.querySelector('.swiper-button-top');
+let activeSwiperEl = 0;
 
-btnSwiperEl.addEventListener('click', () => {
+if (window.innerWidth >= 768) {
+  activeSwiperEl = 3;
+} else {
+  activeSwiperEl = 5;
+}
+btnSwiperDownEl.addEventListener('click', () => {
   swiper.slideNext();
+
+  if (
+    supportListEl.children[activeSwiperEl].classList.contains(
+      'swiper-slide-active'
+    )
+  ) {
+    btnSwiperDownEl.hidden = true;
+    btnSwiperTopEl.hidden = false;
+  }
+});
+
+btnSwiperTopEl.addEventListener('click', () => {
+  swiper.slidePrev();
+  if (supportListEl.children[0].classList.contains('swiper-slide-active')) {
+    btnSwiperDownEl.hidden = false;
+    btnSwiperTopEl.hidden = true;
+  }
 });
 
 let position = 0;
@@ -43,16 +67,13 @@ const swiper = new Swiper('.my-swiper', {
   direction: 'vertical',
   spaceBetween: 20,
   slidesPerView: 'auto',
-  // loop: true,
-  rewind: true,
 
   navigation: {
-    nextEl: '.swiper-button',
+    nextEl: '.swiper-button-down',
+    prevEl: '.swiper-button-top',
   },
 
   plugins: {
     scrollContainer: true,
   },
 });
-
-swiper.update();
