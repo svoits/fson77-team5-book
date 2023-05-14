@@ -4,13 +4,10 @@ import {
 } from './addToLocalStorage';
 import { parseDiv } from './parseDiv';
 import { markupCardBookInfo } from './markup-books-info';
-import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase-auth';
 import { Notify } from 'notiflix';
 
 export function onClickBtn(evt) {
-  console.log(auth.currentUser);
-
   if (!auth.currentUser) {
     return Notify.info(
       'Please Sign Up and/or Sign In to be able to add books to your shopping list'
