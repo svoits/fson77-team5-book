@@ -24,7 +24,6 @@ import {
   onSignInBtnClick,
 } from './modal-auth';
 
-console.log(usernameEl, emailEl, passwordEl, signUpBtn, signInBtn);
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyDSuPYb_47bekWUnoJH68ThjbTqZMeENy4',
@@ -39,7 +38,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const auth = getAuth();
+export const auth = getAuth();
 
 // const modalForm = document.querySelector('.modal-form');
 // const usernameEl = document.querySelector('.username-input');
@@ -69,10 +68,6 @@ export async function onSignUpFormSubmit(e) {
   const username = usernameEl.value.trim();
   const email = emailEl.value.trim();
   const password = passwordEl.value.trim();
-  // const userData = [];
-  // new FormData(e.currentTarget).forEach((value, name) => {
-  //   userData[name] = value;
-  // });
 
   await createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
@@ -92,33 +87,24 @@ export async function onSignUpFormSubmit(e) {
       Notify.success('Signed up!');
     })
     .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-      Notify.failure(
-        `Error Code: ${errorCode}, Error Message: ${errorMessage}`
-      );
+      Notify.failure(error.message);
     });
   await updateProfile(auth.currentUser, {
     displayName: username,
   });
 }
 
-export function onLoginFormSubmit(e) {
+export async function onLoginFormSubmit(e) {
   e.preventDefault();
 
   const email = emailEl.value.trim();
   const password = passwordEl.value.trim();
-  // const userData = [];
-  // new FormData(e.currentTarget).forEach((value, name) => {
-  //   userData[name] = value;
-  // });
 
-  signInWithEmailAndPassword(auth, email, password)
+  await signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       const user = userCredential.user;
-
       const currentDate = new Date();
+
       update(ref(database, 'users/' + user.uid), {
         last_login_date: currentDate,
       });
@@ -130,12 +116,9 @@ export function onLoginFormSubmit(e) {
       });
     })
     .catch(error => {
-      // const errorCode = error.code;
       Notify.failure(error.message);
     });
 }
-
-const user = auth.currentUser;
 
 onAuthStateChanged(auth, user => {
   if (user) {
@@ -149,8 +132,6 @@ onAuthStateChanged(auth, user => {
     authorizedMobileBox.hidden = false;
     mobileUsername.textContent = user.displayName;
     mobileMenuContainer.classList.add('logged-in');
-
-    console.log(user);
   } else {
     // User is signed out
     headerNavList.hidden = true;
@@ -173,8 +154,6 @@ function onLogOutBtnClick(e) {
 }
 
 function triggerEvent(elem, event) {
-  console.log(elem);
   const clickEvent = new Event(event);
   elem.dispatchEvent(clickEvent);
-  console.log(clickEvent);
 }
