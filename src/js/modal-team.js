@@ -37,12 +37,14 @@ function onModalCloseBtnClick() {
 function markup(data) {
   return data
     .map(({ original, username, position, git }) => {
-      return `<div class="team-box"> <li class="team-member">
+      return `<li class="team-member">
       <img class="team-member-img" src="${original}" alt="${username}" />
+      <div class="team-box">
       <p class="team-member-name">${username}</p>
       <p class="team-member-title">${position}</p>
       <a class="team-member-link" href="${git}">GitHub</a>
-    </li></div>`;
+      </div>
+      </li>`;
     })
     .join('');
 }
