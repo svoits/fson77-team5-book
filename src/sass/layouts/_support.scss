@@ -1,122 +1,135 @@
 .support {
-    max-width: 335px;
-    height: 352px;
-    padding: 24px 40px 20px;
-    display: flex;
-    flex-direction: column;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, $main-accent-color 18.03%, $white 100%);
-    box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
-    border-radius: 16px;
-  
-    @media screen and (min-width: 768px) {
-      max-width: none;
-      width: 335px;
-      height: 472px;
-      padding: 24px 40px 14px;
-    }
-  
-    @media screen and (min-width: 1440px) {
-      width: 356px;
-      height: 490px;
-      padding: 24px 40px;
-    }
+  max-width: 335px;
+  height: 352px;
+  padding: 24px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    $main-accent-color 18.03%,
+    $white 100%
+  );
+  box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+  border-radius: 16px;
+
+  @media screen and (min-width: 768px) {
+    max-width: none;
+    width: 335px;
+    height: 472px;
+    padding: 24px 40px 14px;
   }
- 
-  .support-wrap-title {
+
+  @media screen and (min-width: 1440px) {
+    width: 356px;
+    height: 490px;
+    padding: 24px 40px;
+  }
+}
+
+.support-wrap-title {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 32px;
+}
+
+.support-title {
+  font-size: 6.67vw;
+  line-height: 1.14;
+  color: $dt-main-text-color;
+
+  @media screen and (min-width: 375px) {
+    font-size: 28px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.support-icon {
+  fill: $white;
+}
+
+.swiper {
+  height: 188px;
+  margin-bottom: 16px;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    height: 292px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
     margin-bottom: 40px;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    height: 32px;
   }
-  
-  .support-title {
-    font-size:6.67vw;
-    line-height: 1.14;
-    color: $dt-main-text-color;
-  
-    @media screen and (min-width: 375px) {
-      font-size: 28px;
-    }
-  
-    @media screen and (min-width: 768px) {
-      font-size: 28px;
-    }
+}
+
+.js-support-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.support-link img {
+  width: auto;
+  filter: grayscale(100%) invert(50%) brightness(200%);
+
+  &:hover {
+    filter: none;
   }
-  
-  .support-icon {
-    fill: $white;
+}
+
+.support-list-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 32px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: $white;
+  &:nth-child(4).swiper-slide-active {
+    //
   }
-  
-  .swiper {
-    height: 188px;
-    margin-bottom: 16px;
-    overflow: hidden;
-  
-    @media screen and (min-width: 768px) {
-      height: 292px;
-      margin-bottom: 32px;
-    }
-  
-    @media screen and (min-width: 1440px) {
-      margin-bottom: 40px;
-    }
+}
+
+.support-btn {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: $white;
+  cursor: pointer;
+
+  transition: transform $transition;
+
+  &:hover {
+    transform: scale(1.2);
   }
 
-  .js-support-list {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  
+  @media screen and (min-width: 768px) {
+    width: 38px;
+    height: 38px;
   }
-   
-  .support-link img {
-    width: auto;
-    filter: grayscale(100%) invert(50%) brightness(200%);
-   
-
-    &:hover{
-      filter: none;
-    }
-    
+  &[hidden] {
+    display: none;
   }
-
-  .support-list-item {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    height: 32px;
-    font-size: 14px;
-    line-height: 1.3;
-    color: $white;
-  
-  }
-
-  .support-btn {
-    width: 32px;
-    height: 32px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 50%;
-    background-color:  $white;
-    cursor: pointer;
-
-    &:hover
-    {
-     transform: scale(1.2);
-     transition: 0.2s;
-   }
-  
-    @media screen and (min-width: 768px) {
-      width: 38px;
-      height: 38px;
-    }
-  }
-  
+}
+.swiper-button-top {
   .support-btn-icon {
-    fill: $main-accent-color;
+    transform: rotate(180deg);
   }
+}
+
+.support-btn-icon {
+  fill: $main-accent-color;
+  transition: transform $transition;
+}
