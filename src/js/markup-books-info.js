@@ -4,21 +4,22 @@ import apple from '../images/trading-platforms/apple-books.png';
 import apple_2x from '../images/trading-platforms/apple-books@2x.png';
 import bookshop from '../images/trading-platforms/bookshop.png';
 import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
-
-
+import logos from '../images/symbol-defs.svg';
 
 export function markupCardBookInfo(data) {
-    const { book_image, list_name, author, description, title, buy_links } = data;
-    return `
+  const { book_image, author, description, title, buy_links } = data;
+  return `
     <div class="book_info_card">
     <button class="modal-info-close" type="button" data-modal-close>
-    <svg class="close-modal-info" xmlns="http://www.w3.org/2000/svg" width="28" height="28" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M21 7 7 21M7 7l14 14"/></svg>
+    <svg class="info-modal-close-icon" width="24" height="24">
+    <use href="${logos}#close"></use>
+    </svg>
     </button>
     <div class="info_img-author_container">
-        <img src="${book_image}" alt="${title}" class="book_info_img">
+        <div class="book-info-img-wrap"><img src="${book_image}" alt="${title}" class="book_info_img"></div>
 
         <div class="info_about_book">
-            <h2 class="book_info_name">${list_name}</h2>
+            <h2 class="book_info_name">${title}</h2>
             <p class="book_info_author">${author}</p>
             <p class="book_info_description">${description}</p>
             <div class="info-logo-container">
@@ -26,13 +27,13 @@ export function markupCardBookInfo(data) {
                 <img srcset="${amazon} 1x,
                 ${amazon_2x} 2x"
               src="${amazon}"
-                alt="Amazon" class="store-info-book" width="62" height="19">
+                alt="Amazon" class="amazon-logo store-info-book" width="62" height="19">
             </a>
             <a href="${buy_links[1].url}" class="book-store-link" target="_blank">
                 <img srcset="${apple} 1x,
                 ${apple_2x} 2x"
               src="${apple}" 
-                alt="Apple Books" class="store-info-book" width="32" height="32">
+                alt="Apple Books" class="store-info-book" width="33" height="32">
             </a>
             <a href="${buy_links[4].url}" class="book-store-link" target="_blank">
                 <img srcset="${bookshop} 1x,
@@ -48,7 +49,7 @@ export function markupCardBookInfo(data) {
         Сongratulations! You have added the book to the shopping list. 
         To delete, press the button “Remove from the shopping list”.
         </p>
-    </div>`
+    </div>`;
 }
 
 // REMOVE FROM SHOPPING LIST

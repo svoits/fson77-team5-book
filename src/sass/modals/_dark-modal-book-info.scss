@@ -1,16 +1,16 @@
 body.dark-theme {
   .book_info_card {
     background-color: $dt-bg-color;
-    border: 2px solid $white;
+    border-color: $white;
   }
 
-  .close-modal-info{
+  .close-modal-info {
     stroke: $lt-bg-color;
   }
 
   .btn-book-info {
-    background-color: $lt-bg-color;
-    color: $dt-backdrop;
+    background-color: transparent;
+    color: inherit;
 
     &:hover,
     &:focus {
@@ -19,22 +19,39 @@ body.dark-theme {
     }
   }
 
-  .modal-info-close{
-    cursor: pointer;
-      
-    border: none;
-    background-color: transparent;
+  .book-infoBtn-explanation {
+    color: $dt-congrats-text-color;
+  }
+
+  .info-modal-close-icon {
+    stroke: $white;
+  }
+
+  .book-store-link {
+    transition: transform $transition;
+
     &:hover,
     &:focus {
-      .modal-close-icon {
-        stroke: $accent-text-color;
-      }
+      transform: scale(1.15);
     }
-    
-    @media screen and (min-width: 768px) {
-      top: 18px;
-      right: 18px;
+
+    &:hover .store-info-book,
+    &:focus .store-info-book {
+      filter: grayscale(0) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.25));
+    }
+
+    &:hover .store-info-book.amazon-logo,
+    &:focus .store-info-book.amazon-logo {
+      filter: invert(0) grayscale(0)
+        drop-shadow(0px 3px 7px rgba(255, 255, 255, 0.9));
     }
   }
-  
+
+  .store-info-book {
+    filter: grayscale(100%);
+  }
+
+  .store-info-book.amazon-logo {
+    filter: grayscale(100%) invert(1);
+  }
 }
