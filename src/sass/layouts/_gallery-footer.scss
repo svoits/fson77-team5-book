@@ -5,9 +5,14 @@ display: flex;
   box-sizing: border-box;
   flex-direction: column;
   flex-wrap: wrap;
-  background-attachment: scroll;
+  
   overflow: auto;
   margin-top: 40px;
+
+background-attachment: scroll;
+  overflow-y: scroll;
+    scroll-behavior: smooth;
+  // scroll-behavior: auto;
 
     // position: relative;
     background-color: #f6f6f6;
@@ -18,6 +23,8 @@ display: flex;
     max-width: 375px;
     min-width: 300px;
     transition: 250ms cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    height: 90%;
 
     @media screen and (min-width: 768px) {
       justify-content: space-between;
@@ -59,7 +66,12 @@ display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   background-attachment: scroll;
+  scroll-behavior: auto;
   overflow: auto;
+
+  background-attachment: scroll;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     /* Set gap between rows and columns */
     // gap: 10px;
     padding: 0;
@@ -162,7 +174,7 @@ display: flex;
   @media screen and (min-width: 1440px) {
     
       // flex-basis: calc((100% - 20px) / 5);
-      margin-left: 13px;
+      margin-left: 20px;
       
         &:nth-child(5) {
           margin-left: 0px;
@@ -172,7 +184,7 @@ display: flex;
       // max-height: 485px;
       overflow: hidden;
     
-      margin-bottom: 13px;
+      margin-bottom: 14px;
     
       border: 1px #b4afaf solid;
       border-radius: 8px;
@@ -218,206 +230,16 @@ font-weight: 400;
 // margin-bottom: 20px;
 }
 
-
-
-
-
-
-// .team-list {
-//   display: flex;
-//     // flex-wrap: wrap;
-//     justify-content: center;
-    
-  
-//   align-items: center;
-//   justify-content: flex-start;
-//   gap: 20px;
-  
-//   margin-bottom: 40px;
-// }
-// .team-member {
-//     position: relative;
-//     margin-bottom: 24px;
-//     // top: 15px;
-//     // width: 300px;
-//     // height: 500px;
-//     @media screen and (min-width: 768px) {
-//       margin-bottom: 28px;
-
-//       &:nth-child(3) {
-//         margin-bottom: 40px;
-//       }
-//     }
-//   }
-
-// {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-    
-// }
-
-
-
-
-
-// .team-box {
-//   background-color: #f6f6f6;
-// }
-// .modal-back {
-//   font-weight: 400;
-//   font-size: 20px;
-//   line-height: 1, 16;
-//   letter-spacing: 0.03em;
-//   text-align: center;
-//   color: #000000;
-//   text-decoration: none;
-// }
-// .team__logo {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-//   font-weight: 600;
-//   font-size: 30px;
-//   line-height: 1.16;
-//   letter-spacing: 0.03em;
-//   text-align: center;
-
-//   padding: 5% 10%;
-//   color: #ffffff;
-//   border-radius: 6px;
-//   background: #f6f6f6;
-//   box-shadow: 0 -150px 70px -120px #000000 inset,
-//     0 -220px 70px -120px #4f2ee8 inset, 0 -280px 70px -120px #b4afaf inset;
-//   animation: background 4s infinite alternate;
-// }
-// .team__container {
-//   display: flex;
-//   justify-content: center;
-
-//   margin-top: 10px;
-//   @media screen and (min-width: 768px) {
-//     margin-top: 20px;
-//   }
-//   @media screen and (min-width: 1024px) {
-//     margin-top: 20px;
-//   }
-// }
-
-// .team__list {
-//   padding: 0;
-
-//   @media screen and (max-width: 767px) {
-//     &:not(:last-child) {
-//       margin-bottom: 30px;
-//     }
-//   }
-//   @media (min-width: 768px) and (max-width: 1023px) {
-//     display: flex;
-//     flex-wrap: wrap;
-//     margin: -15px;
-//   }
-//   @media screen and (min-width: 1024px) {
-//     display: flex;
-//     flex-wrap: wrap;
-//     margin-left: -30px;
-//   }
-// }
-
-// .team__item {
-//   @media screen and (min-width: 320px) {
-//     margin-bottom: 10px;
-//   }
-//   @media (min-width: 768px) and (max-width: 1023px) {
-//     width: calc((100% - 2 * 30px) / 2);
-//     margin: 15px;
-//   }
-//   @media screen and (min-width: 1024px) {
-//     width: 230px;
-//     flex-basis: calc(100% / 3 - 30px);
-//     margin-left: 30px;
-//     &:nth-child(-n + 11) {
-//       margin-bottom: 30px;
-//     }
-//   }
-// }
-// .footer-gallery {
-//   list-style-type: none;
-// }
-// .gallery__link {
-//   font-weight: 400;
-//   font-size: 20px;
-//   line-height: 1, 16;
-//   letter-spacing: 0.03em;
-//   text-align: center;
-//   color: #000000;
-//   text-decoration: none;
-//   padding: 10px;
-// }
-// .gallery__title {
-//   font-weight: 80;
-//   font-size: 18px;
-//   line-height: 1, 16;
-//   letter-spacing: 0.03em;
-//   text-align: center;
-//   color: #000000;
-//   text-decoration: none;
-//   padding: 10px;
-// }
-// .gallery__git {
-//   font-weight: 100;
-//   font-size: 18px;
-//   line-height: 1, 16;
-//   letter-spacing: 0.03em;
-//   text-align: center;
-//   color: #000000;
-//   text-decoration: none;
-//   padding: 10px;
-// }
-
-
-// /* DARK THEME */
-// body.dark__theme {
-//   .team-box {
-//     background-color: #202024;
-//   }
-//   .modal-back {
-//     color: #ffffff99;
-//   }
-//   .team__logo {
-//     font-weight: 600;
-//     font-size: 30px;
-//     line-height: 1.16;
-//     letter-spacing: 0.03em;
-//     text-align: center;
-
-//     padding: 5% 10%;
-//     color: #ffffff;
-//     border-radius: 6px;
-//     background: #f6f6f6;
-//     box-shadow: 0 -150px 70px -120px #000000 inset,
-//       0 -220px 70px -120px #4f2ee8 inset, 0 -280px 70px -120px #b4afaf inset;
-//     animation: background 4s infinite alternate;
-//   }
-//   .gallery__link {
-//     font-weight: 100;
-//     font-size: 20px;
-//     line-height: 1, 16;
-//     letter-spacing: 0.03em;
-//     text-align: center;
-//     color: #ffffff;
-//     text-decoration: none;
-//     padding: 10px;
-//   }
-// }
-
-
 .team-modal-close {
+  cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  // display: flex;
+  // justify-content: flex-end;
+  // // justify-content: center;
+  //   align-items: end;
+
+  // top: 10px;
+  // right: 10px;
   width: 30px;
   height: 30px;
   background-color: transparent;
@@ -430,34 +252,6 @@ font-weight: 400;
     fill: #2196f3;
   }
 
-
-
-  // position: relative;
-  // position: absolute;
-  // left: 25%;
-  // right: 25%;
-  // top: 25%;
-  // bottom: 25%;
-  // fill: #111111;
-  // color: #111111;
-  // stroke: #111111;
-  // cursor: pointer;
-  // margin-right: 24px;
-  // padding: 0;
-  // border: none;
-  // background-color: transparent;
-
-  // &:hover,
-  // &:focus {
-  //   .team-modal-close {
-  //     stroke: #4f2ee8;
-  //   }
-  // }
-
-  // @media screen and (min-width: 768px) {
-  //   top: 24px;
-  //   right: 24px;
-  // }
 }
 
 .close-modal-info {
