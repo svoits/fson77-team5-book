@@ -9,6 +9,7 @@ const contentWrapper = document.querySelector('.js-content-wrapper');
 
 contentWrapper.addEventListener('click', onBookInfoClick);
 
+
 async function onBookInfoClick(evt) {
   try {
     evt.preventDefault();
@@ -22,11 +23,19 @@ async function onBookInfoClick(evt) {
     const infoMarkup = markupCardBookInfo(data, searchBook(data));
 
     const instance = basicLightbox.create(infoMarkup, {
-      onShow: () => window.addEventListener('keydown', onEscButtonClick),
+      onShow: () => {
+        window.addEventListener('keydown', onEscButtonClick)
+      },
       onClose: () => window.removeEventListener('keydown', onEscButtonClick),
     });
 
     instance.show();
+    const modalInfoClose = document.querySelector('[data-modal-close]');
+    modalInfoClose.addEventListener('click', onBookInfoModalCloses);
+
+    function onBookInfoModalCloses() {
+      instance.close();
+    }
 
     const actionBtn = document.querySelector('.btn-book-info');
 
@@ -41,6 +50,7 @@ async function onBookInfoClick(evt) {
     console.log(error);
   }
 }
+
 
 // let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
 

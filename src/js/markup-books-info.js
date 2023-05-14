@@ -1,30 +1,50 @@
-export function markupCardBookInfo(data, flag) {
+import amazon from '../images/trading-platforms/amazon.png';
+import amazon_2x from '../images/trading-platforms/amazon@2x.png';
+import apple from '../images/trading-platforms/apple-books.png';
+import apple_2x from '../images/trading-platforms/apple-books@2x.png';
+import bookshop from '../images/trading-platforms/bookshop.png';
+import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
+import logos from '../images/symbol-defs.svg';
+
+export function markupCardBookInfo(data) {
   const classDescription = flag ? '' : 'visually-hidden';
   const buttonText = flag
     ? 'REMOVE FROM SHOPPING LIST'
     : 'ADD TO SHOPPING LIST';
   const buttonClass = flag ? 'book_remove__from_list' : 'book_add__to_list';
-  const { book_image, list_name, author, description, title, buy_links } = data;
+  const { book_image, author, description, title, buy_links } = data;
   return `
     <div class="book_info_card">
-        <button class="modal-info-close" type="button" data-modal-close>
-            <svg class="close-modal-info" width="24" height="24">
-                <use href="./images/symbol-defs.svg#close"></use>
-            </svg>
-        </button>
-        <img src="${book_image}" alt="${title}" class="book_info_img">
-        <h2 class="book_info_name">${list_name}</h2>
-        <p class="book_info_author">${author}</p>
-        <p class="book_info_description">${description}</p>
-        <div class="info-logo-container">
+    <button class="modal-info-close" type="button" data-modal-close>
+    <svg class="info-modal-close-icon" width="24" height="24">
+    <use href="${logos}#close"></use>
+    </svg>
+    </button>
+    <div class="info_img-author_container">
+        <div class="book-info-img-wrap"><img src="${book_image}" alt="${title}" class="book_info_img"></div>
+
+        <div class="info_about_book">
+            <h2 class="book_info_name">${title}</h2>
+            <p class="book_info_author">${author}</p>
+            <p class="book_info_description">${description}</p>
+            <div class="info-logo-container">
             <a href="${buy_links[0].url}" class="book-store-link" target="_blank">
-                <img src="" alt="Amazon" class="store-info-book" width="62" height="19">
+                <img srcset="${amazon} 1x,
+                ${amazon_2x} 2x"
+              src="${amazon}"
+                alt="Amazon" class="amazon-logo store-info-book" width="62" height="19">
             </a>
             <a href="${buy_links[1].url}" class="book-store-link" target="_blank">
-                <img src="" alt="Apple Books" class="store-info-book" width="32" height="32">
+                <img srcset="${apple} 1x,
+                ${apple_2x} 2x"
+              src="${apple}" 
+                alt="Apple Books" class="store-info-book" width="33" height="32">
             </a>
             <a href="${buy_links[4].url}" class="book-store-link" target="_blank">
-                <img src="" alt="Bookshop" class="store-info-book" width="38" height="36">
+                <img srcset="${bookshop} 1x,
+                ${bookshop_2x} 2x"
+              src="${bookshop}"  
+                alt="Bookshop" class="store-info-book" width="38" height="36">
             </a>
         </div>
         <button class="btn-book-info ${buttonClass}" type="button" id="addRemoveBookButton">${buttonText}</button>

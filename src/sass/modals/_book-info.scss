@@ -1,116 +1,250 @@
 .book_info_card {
-    position: relative;
-    padding-top: 40px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 40px;
-    overflow: scroll;
+  position: relative;
+  padding-top: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 40px;
+  max-width: 335px;
+  background-color: $white;
+  border-radius: 18px;
+  border: 2px solid $black-accent-color;
+  //   overflow: scroll-y;
+  //   display: flex;
+  //   flex-direction: column;
+  max-height: 97%;
 
-    width: 100%;
-    max-width: 100vw;
-    background-color: $white;
+  @media screen and (min-width: 768px) {
+    max-width: none;
+    width: 579px;
+    padding: 40px;
+  }
+}
 
-    @media screen and (min-width: 768px) {
-        width: 579px;
-        height: 465px;
-        padding: 40px;
-    }
+.info_img-author_container {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.book-info-img-wrap {
+  margin-bottom: 14px;
+  width: 100%;
+  height: auto;
+  max-height: 408px;
+
+  border: 1px solid $lt-subtitle-color;
+  border-radius: 8px;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    min-width: 192px;
+    margin-bottom: 0;
+    height: 281px;
+    width: 192px;
+  }
 }
 
 .book_info_img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 14px;
-    width: 287px;
-    height: 408px;
-    object-fit: cover;
-    border: 1px $lt-subtitle-color solid;
-    @media screen and (min-width: 768px) {
-        width: 192px;
-        height: 281px;
-    }
-}
-
-.modal-info-close {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-}
-
-.close-modal-info {
-    stroke: black;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .book_info_name {
-    margin-bottom: 4px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: $lt-main-text-color;
+  margin-bottom: 4px;
+
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1.17;
+    margin-bottom: 8px;
+  }
 }
 
 .book_info_author {
-    margin-bottom: 18px;
-    font-family: 'DM Sans';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    color: $lt-subtitle-color;
+  margin-bottom: 18px;
+
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: $lt-subtitle-color;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
 }
 
 .book_info_description {
-    margin-bottom: 14px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -0.04em;
-    color: $lt-main-text-color;
+  margin-bottom: 14px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 }
 
-.info-logo-container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
+.info-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
 
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.book-store-link {
+  transition: transform $transition;
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+  }
+
+  &:hover .store-info-book,
+  &:focus .store-info-book {
+    filter: grayscale(0) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
+  }
+}
+
+.store-info-book {
+  filter: grayscale(1);
+
+  transition: filter $transition;
 }
 
 .btn-book-info {
-    margin-left: 62px;
-    margin-right: 62px;
-    margin-bottom: 8px;
-    padding: 14px 28px;
-    height: 46px;
-    border: 2px solid $accent-text-color;
-    border-radius: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  //   margin-bottom: 8px;
+  padding: 12px 26px;
+  //   height: 46px;
+  min-width: 211px;
+  min-height: 46px;
 
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -0.01em;
-    color: $lt-main-text-color;
-    background-color: $white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.19;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: inherit;
 
-    &_book_add__to_list {
-        width: 215px;
-    }
+  background-color: transparent;
+  border: 2px solid $main-accent-color;
+  border-radius: 40px;
 
-    &_book_remove_from_list {
-        width: 279px;
-    }
+  cursor: pointer;
 
-    @media screen and (min-width: 768px) {
-        width: 499px;
-        height: 64px;
-        padding: 20px 100px;
-    }
+  transition: color $transition, background-color $transition,
+    box-shadow $transition;
+
+  &_book_add__to_list {
+    width: 215px;
+  }
+
+  &_book_remove_from_list {
+    width: 279px;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $main-accent-color;
+  }
+
+  &:focus {
+    color: $white;
+    background-color: $main-accent-color;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 499px;
+    height: 64px;
+    padding: 20px 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.book-infoBtn-explanation {
+  margin-top: 8px;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.04em;
+
+  color: $lt-congrats-text-color;
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+// .book-infoBtn-explanation.is-hidden {
+//   position: absolute;
+//   width: 1px;
+//   height: 1px;
+//   margin: -1px;
+//   border: 0;
+//   padding: 0;
+
+//   white-space: nowrap;
+//   clip-path: inset(100%);
+//   clip: rect(0 0 0 0);
+//   overflow: hidden;
+// }
+
+.modal-info-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+
+  &:hover .info-modal-close-icon,
+  &:focus .info-modal-close-icon {
+    stroke: $accent-text-color;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 18px;
+    right: 18px;
+  }
+}
+
+.info-modal-close-icon {
+  stroke: $black-accent-color;
+  transition: stroke $transition;
+
+  width: 24px;
+  height: 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 28px;
+    height: 28px;
+  }
 }

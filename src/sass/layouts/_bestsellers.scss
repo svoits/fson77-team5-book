@@ -47,7 +47,7 @@
 
   margin-bottom: 14px;
 
-  border: 1px $lt-subtitle-color solid;
+  border: 1px solid $lt-subtitle-color;
   border-radius: 8px;
 
   @media screen and (min-width: 768px) {
@@ -64,8 +64,6 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
-
-  border: 1px $lt-subtitle-color solid;
 }
 
 .card-category-title {
