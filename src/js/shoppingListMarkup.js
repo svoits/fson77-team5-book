@@ -1,3 +1,11 @@
+import amazon from '../images/trading-platforms/amazon.png';
+import amazon_2x from '../images/trading-platforms/amazon@2x.png';
+import apple from '../images/trading-platforms/apple-books.png';
+import apple_2x from '../images/trading-platforms/apple-books@2x.png';
+import bookshop from '../images/trading-platforms/bookshop.png';
+import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
+import logos from '../images/symbol-defs.svg';
+
 export function shoppingListMarkup(books) {
   return books
     .map(({ book_image, title, list_name, description, author, buy_links }) => {
@@ -17,7 +25,7 @@ export function shoppingListMarkup(books) {
                 width="16"
                 height="16"
               >
-                <use href="./images/symbol-defs.svg#trash"></use>
+                <use href="${logos}#trash"></use>
               </svg>
             </button>
           </div>
@@ -38,10 +46,10 @@ export function shoppingListMarkup(books) {
                   <img
                     class="trading-platforms-list-item-img-amazon"
                     srcset="
-                      ./images/trading-platforms/amazon.png    1x,
-                      ./images/trading-platforms/amazon@2x.png 2x
+                      ${amazon}    1x,
+                      ${amazon_2x} 2x
                     "
-                    src="./images/trading-platforms/amazon.png"
+                    src="${amazon}"
                     alt="Amazon"
                   />
                 </a>
@@ -51,10 +59,10 @@ export function shoppingListMarkup(books) {
                 <img
                   class="trading-platforms-list-item-img-apple-books"
                   srcset="
-                    ./images/trading-platforms/apple-books.png    1x,
-                    ./images/trading-platforms/apple-books@2x.png 2x
+                    ${apple}    1x,
+                    ${apple_2x} 2x
                   "
-                  src="./images/trading-platforms/apple-books.png"
+                  src="${apple}"
                   alt="Apple books"
                 />
               </a>
@@ -64,10 +72,10 @@ export function shoppingListMarkup(books) {
                 <img
                   class="trading-platforms-list-item-img-bookshop"
                   srcset="
-                    ./images/trading-platforms/bookshop.png    1x,
-                    ./images/trading-platforms/bookshop@2x.png 2x
+                    ${bookshop}    1x,
+                    ${bookshop_2x} 2x
                   "
-                  src="./images/trading-platforms/bookshop.png"
+                  src="${bookshop_2x}"
                   alt="bookshop"
                 />
               </a>
