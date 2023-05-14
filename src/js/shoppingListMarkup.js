@@ -30,14 +30,7 @@ export function shoppingListMarkup(books) {
             </button>
           </div>
           <p class="wrap-about-category">${list_name}</p>
-          <p class="wrap-about-description">${description}
-            David Burroughs was once a devoted father to his three-year-old
-            son Matthew, living a dream life just a short drive away from
-            the working-class suburb where he and his wife, Cheryl, first
-            fell in love--until one fateful night when David woke suddenly
-            to discover Matthew had been murdered while David was asleep
-            just down the hall.
-          </p>
+          <p class="wrap-about-description">${description}</p>
           <div class="wrap-about-book-styles">
             <p class="wrap-about-author">${author}</p>
             <ul class="trading-platforms-list list">
