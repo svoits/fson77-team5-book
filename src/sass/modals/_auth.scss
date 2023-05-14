@@ -163,9 +163,9 @@
   z-index: 1003;
   background: radial-gradient(
       circle at -850 -850,
-      rgba(204, 236, 231, 0.5) -250,
-      #4f2ee8,
-      #4f2ee8 130%
+      rgba(204, 236, 231, 1) -150,
+      $main-accent-color,
+      $main-accent-color 130%
     )
     no-repeat;
 }
