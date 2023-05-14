@@ -42,7 +42,7 @@ function markup(data) {
 function teamMarkUp(data) {
   return `<div class="team-wrapper">
     <button class="team-modal-close" type="button" js-modal-close>
-      <svg class="close-modal-info" width="24" height="24">
+      <svg class="close-modal-info" width="24" height="24" alt="button-close-modal-team">
         <use class="close-modal-svg"  href="./images/symbol-defs.svg#close"></use>
       </svg>
     </button>
@@ -55,5 +55,5 @@ const modalCloseBtn = document.querySelector('[js-modal-close]');
 modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
 
 function onModalCloseBtnClick(e) {
-  modalInstance.close();
+  Instance.close();
 }

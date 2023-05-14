@@ -30,7 +30,7 @@ export const teamGallery = [
   },
   {
     original:  Artem,
-    username: 'Artem',
+    username: 'Gergalo Artem',
     position: 'Developer',
     git: 'https://github.com/ArtGer7',
   },
