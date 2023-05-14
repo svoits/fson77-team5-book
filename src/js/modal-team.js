@@ -3,10 +3,6 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import { teamGallery } from './team-gallery.js';
 import '../sass/layouts/_gallery-footer.scss';
 
-// import closeModalSvg from '../images/symbol-defs.svg#close';
-
-// const galleryContent = document.querySelector('ul.footer-gallery');
-
 const teamLogoEl = document.querySelector('.js-modal-team');
 
 teamLogoEl.addEventListener('click', onTeamLogoClick);
@@ -36,9 +32,17 @@ function onModalCloseBtnClick() {
 
 function markup(data) {
   return data
-    .map(({ original, username, position, git }) => {
+    .map(({ original, original_2x, username, position, git }) => {
       return `<li class="team-member">
-      <img class="team-member-img" src="${original}" alt="${username}" />
+      <img
+                  class="team-member-img"
+                  srcset="
+                    ${original}    1x,
+                    ${original_2x} 2x
+                  "
+                  src="${original}"
+                  alt="Apple books"
+                />
       <div class="team-box">
       <p class="team-member-name">${username}</p>
       <p class="team-member-title">${position}</p>
@@ -58,20 +62,3 @@ function teamMarkUp(data) {
     <ul class="team-list">${data}</ul>
   </div>`;
 }
-
-
-
-// <svg class="close-modal-info" width="24" height="24" alt="button-close-modal-team">
-    //     <use class="close-modal-svg"  href="${closeModalSvg}"></use></svg>
-
-// function teamMarkUp(data) {
-//   return `<div class="backdrop is-hidden"></div><div class="team-wrapper">
-//     <button class="team-modal-close" type="button" js-modal-close>
-//       <svg class="close-modal-info" width="24" height="24" alt="button-close-modal-team">
-//         <use class="close-modal-svg"  href="./images/symbol-defs.svg#close"></use>
-//       </svg>
-//     </button>
-//     <h2 class="team-modal-title">NOVEL DEVS</h2>
-//     <ul class="team-list">${data}</ul>
-//   </div></div>`;
-// }
