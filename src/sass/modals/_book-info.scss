@@ -8,15 +8,20 @@
   background-color: $white;
   border-radius: 18px;
   border: 2px solid $black-accent-color;
-  // overflow: auto;
-  //   display: flex;
-  //   flex-direction: column;
-  max-height: 97%;
+  overflow-y: scroll;
+  max-height: 85vh;
+  margin-top: 60px;
 
   @media screen and (min-width: 768px) {
+    margin-top: 85px;
     max-width: none;
     width: 579px;
     padding: 40px;
+    overflow-y: visible;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 0;
   }
 }
 
