@@ -59,6 +59,24 @@ function onMoreBtnClick(e) {
           ${currentCategoryArr.slice(-1)}</span>`;
 
   renderBooksByCategory(currentCategory);
+
+  if (window.innerWidth >= 1440) {
+    scrollToTargetAdjusted(110);
+  } else if (window.innerWidth >= 768) {
+    scrollToTargetAdjusted(110);
+  } else {
+    scrollToTargetAdjusted(90);
+  }
 }
 
 renderBestsellers();
+
+function scrollToTargetAdjusted(offset) {
+  const headerOffset = offset;
+  const elementPosition = mainTitleEl.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+}
