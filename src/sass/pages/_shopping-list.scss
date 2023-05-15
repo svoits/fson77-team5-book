@@ -266,6 +266,7 @@
   margin: 0;
   height: 100%;
   margin-bottom: 40px;
+
   @media screen and (min-width: 1440px) {
     margin-left: 396px;
   }
@@ -294,7 +295,13 @@
     width: 44px;
     height: 44px;
   }
+
 }
+// @media screen and (max-width: 767.98px) {
+
+//   margin-left: 14px;
+// }
+
 
 #pagination .tui-first {
   background-color: $black;
@@ -370,4 +377,14 @@
 .tui-page-btn:not(.tui-is-disabled) .tui-ico-first,
 .tui-page-btn:not(.tui-is-disabled) .tui-ico-prev {
   display: inline-block;
+}
+@media screen and (max-width: 767.98px) {
+  #pagination .tui-page-btn.tui-prev-is-ellip.tui-first-child{
+    display: none;
+  }
+}
+@media screen and (max-width: 374.98px) {
+  #pagination .tui-page-btn.tui-next-is-ellip.tui-last-child{
+    display: none;
+  }
 }
