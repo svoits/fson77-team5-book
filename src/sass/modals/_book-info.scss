@@ -8,7 +8,9 @@
   background-color: $white;
   border-radius: 18px;
   border: 2px solid $black-accent-color;
-  max-height: 97%;
+  max-height: 85vh;
+  overflow-y: scroll;
+  margin-top: 60px;
 
   @media screen and (min-width: 768px) {
     margin-top: 85px;
