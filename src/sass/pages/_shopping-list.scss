@@ -53,8 +53,12 @@
 .content-wrap {
   display: flex;
   flex-direction: column;
+
+  border-radius: 16px;
   @media screen and (min-width: 1440px) {
     width: 100%;
+    // overflow-y: scroll;
+    // height: 600px;
   }
 }
 
@@ -135,11 +139,22 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
   @media screen and (max-width: 374.98px) {
-    max-width: 35vw;
+    max-width: 37vw;
+  }
+  @media screen and (max-width: 354.98px) {
+    max-width: 34vw;
+  }
+  @media screen and (max-width: 334.98px) {
+    max-width: 32vw;
+  }
+  @media screen and (max-width: 319.98px) {
+    max-width: 102px;
   }
   @media screen and (min-width: 768px) {
     margin-bottom: 4px;
+    max-width: none;
   }
 }
 .wrap-about-category {
@@ -150,12 +165,24 @@
   color: $lt-subtitle-color;
   margin-bottom: 14px;
 
-  max-width: 165px;
+  max-width: 160px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   @media screen and (max-width: 374.98px) {
+    max-width: 40vw;
+  }
+  @media screen and (max-width: 354.98px) {
     max-width: 38vw;
+  }
+  @media screen and (max-width: 334.98px) {
+    max-width: 36vw;
+  }
+  @media screen and (max-width: 319.98px) {
+    max-width: 115px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: none;
   }
   @media screen and (min-width: 1440px) {
     margin-bottom: 8px;
@@ -203,6 +230,23 @@
   letter-spacing: -0.04em;
   color: $lt-subtitle-color;
   display: inline;
+  max-width: 100px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (max-width: 374.98px) {
+    max-width: 23vw;
+  }
+  @media screen and (max-width: 354.98px) {
+    max-width: 21vw;
+  }
+  @media screen and (max-width: 339.98px) {
+    max-width: 18vw;
+  }
+  @media screen and (max-width: 319.98px) {
+    max-width: 57.6px;
+  }
 }
 
 .wrap-about-book-remove {
@@ -235,47 +279,67 @@
 
 .trading-platforms-list {
   display: flex;
-  filter: grayscale(100%);
-  gap: 8px;
+
+  column-gap: 8px;
   align-items: center;
   justify-content: flex-end;
-
+  @media screen and (max-width: 360px) {
+    column-gap: 2vw;
+  }
+  @media screen and (max-width: 319.98px) {
+    column-gap: 6.4px;
+  }
   @media screen and (min-width: 768px) {
     gap: 16px;
   }
 
   &-item-img-amazon {
+    filter: grayscale(1);
     border-radius: 0px;
     width: 32px;
     height: 11px;
+    transition: transform $transition;
+
     @media screen and (min-width: 768px) {
       width: 48px;
       height: 15px;
     }
-    &:hover {
-      filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+    &:hover,
+    &:focus {
+      transform: scale(1.15);
+      filter: grayscale(0) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
     }
   }
   &-item-img-apple-books {
+    filter: grayscale(1);
     width: 16px;
     height: 16px;
+    transition: transform $transition;
+
     @media screen and (min-width: 768px) {
       width: 28px;
       height: 27px;
     }
-    &:hover {
-      filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+    &:hover,
+    &:focus {
+      transform: scale(1.15);
+      filter: grayscale(0) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
     }
   }
   &-item-img-bookshop {
+    filter: grayscale(1);
     width: 16px;
     height: 16px;
+    transition: transform $transition;
+
     @media screen and (min-width: 768px) {
       width: 32px;
       height: 30px;
     }
-    &:hover {
-      filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+    &:hover,
+    &:focus {
+      transform: scale(1.15);
+      filter: grayscale(0) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.25));
     }
   }
 }
@@ -283,9 +347,10 @@
 #pagination {
   margin: 0;
   height: 60px;
+  min-width: 320px;
   margin-bottom: 40px;
   @media screen and (min-width: 1440px) {
-    margin-left: 396px;
+    // margin-left: 396px;
   }
 }
 #pagination .tui-page-btn {
@@ -353,11 +418,7 @@
   color: $white;
 }
 
-#pagination .tui-first.tui-is-disabled,
-#pagination .tui-prev.tui-is-disabled,
-#pagination .tui-next.tui-is-disabled,
-#pagination .tui-last.tui-is-disabled {
-  opacity: 0.5;
+#pagination .tui-page-btn.tui-is-disabled {
   cursor: default;
   pointer-events: none;
 }
@@ -367,29 +428,63 @@
 #pagination .tui-next:not(.tui-is-disabled),
 #pagination .tui-last:not(.tui-is-disabled) {
   cursor: pointer;
-  opacity: 1;
   pointer-events: auto;
+  background-color: $secondary-accent-color;
 }
 
-// .tui-page-btn.tui-is-disabled .tui-ico-first,
-// .tui-page-btn.tui-is-disabled .tui-ico-prev {
-//   display: inline-block;
-// }
+.tui-page-btn.tui-is-disabled .tui-ico-first,
+.tui-page-btn.tui-is-disabled .tui-ico-prev,
+.tui-page-btn.tui-is-disabled .tui-ico-next,
+.tui-page-btn.tui-is-disabled .tui-ico-last {
+  opacity: 0.5;
+}
 
-// .tui-page-btn.tui-is-disabled .tui-ico-next,
-// .tui-page-btn.tui-is-disabled .tui-ico-last {
-//   background-position: 0 0;
-// }
+#pagination .tui-ico-next {
+  background-image: url(../images/arrow-next.svg);
+  background-position: center;
+  width: 22px;
+  height: 22px;
+}
+#pagination .tui-ico-last {
+  background-image: url(../images/arrow-last.svg);
+  background-position: center;
+  width: 14px;
+  height: 14px;
+}
+#pagination .tui-ico-first {
+  background-image: url(../images/arrow-first.svg);
+  background-position: center;
+  width: 14px;
+  height: 14px;
+}
+#pagination .tui-ico-prev {
+  background-image: url(../images/arrow-prev.svg);
+  background-position: center;
+  width: 22px;
+  height: 22px;
+}
+#pagination .tui-ico-ellip {
+  width: 13px;
+  height: auto;
+  font-size: 18px;
+  background: none;
+  margin: 0;
+}
 
-// .tui-page-btn:not(.tui-is-disabled) .tui-ico-next,
-// .tui-page-btn:not(.tui-is-disabled) .tui-ico-last {
-//   display: inline-block;
-// }
-// .tui-page-btn:not(.tui-is-disabled) .tui-ico-first,
-// .tui-page-btn:not(.tui-is-disabled) .tui-ico-prev {
-//   display: inline-block;
-// }
-
-// .tui-page-btn.tui-is-disabled.tui-next{
-
-// }
+#pagination {
+  .tui-page-btn.tui-is-disabled {
+    background-color: $black;
+    .tui-ico-first {
+      background-image: url(../images/arrow-first-white.svg);
+    }
+    .tui-ico-prev {
+      background-image: url(../images/arrow-prev-white.svg);
+    }
+    .tui-ico-next {
+      background-image: url(../images/arrow-next-white.svg);
+    }
+    .tui-ico-last {
+      background-image: url(../images/arrow-last-white.svg);
+    }
+  }
+}
