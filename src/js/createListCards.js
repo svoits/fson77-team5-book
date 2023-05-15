@@ -6,6 +6,7 @@ export function createListCards(books) {
             <a href="" class="card-category-link js-card-link link" data-id="${_id}">
                 <div class="card-category-img-wrap">
                   <img src="${book_image}" alt="${title}" class="card-category-img">
+                  <p class="card-category-img-text">quick view</p>
                 </div>
                 <p class="card-category-title">${title}</p>
                 <p class="card-category-author">${author}</p>
