@@ -8,9 +8,7 @@
   background-color: $white;
   border-radius: 18px;
   border: 2px solid $black-accent-color;
-  overflow-y: scroll;
-  max-height: 85vh;
-  margin-top: 60px;
+  max-height: 97%;
 
   @media screen and (min-width: 768px) {
     margin-top: 85px;
@@ -137,12 +135,9 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  //   margin-bottom: 8px;
-  padding: 12px 26px;
-  //   height: 46px;
+  padding: 12px 21px;
   min-width: 211px;
   min-height: 46px;
-
   font-weight: 700;
   font-size: 14px;
   line-height: 1.19;

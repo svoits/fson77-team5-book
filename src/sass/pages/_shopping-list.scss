@@ -12,14 +12,19 @@
 .js-back {
   display: block;
   margin: auto;
-  width: 322px;
+  width: 100%;
   height: 241px;
   background-image: url(../images/bg-shopping-list.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 265px 198px;
   @media screen and (min-width: 768px) {
+    // width: 322px;
+
     background-size: 322px 241px;
+  }
+  &.visually-hidden {
+    display: none;
   }
 }
 @media (min-device-pixel-ratio: 2),
@@ -124,9 +129,15 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-
   margin-bottom: 3px;
 
+  max-width: 151px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (max-width: 374.98px) {
+    max-width: 35vw;
+  }
   @media screen and (min-width: 768px) {
     margin-bottom: 4px;
   }
@@ -139,6 +150,13 @@
   color: $lt-subtitle-color;
   margin-bottom: 14px;
 
+  max-width: 165px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (max-width: 374.98px) {
+    max-width: 38vw;
+  }
   @media screen and (min-width: 1440px) {
     margin-bottom: 8px;
   }
@@ -264,7 +282,7 @@
 // ******************// tui-pagination//**************************//
 #pagination {
   margin: 0;
-  height: 100%;
+  height: 60px;
   margin-bottom: 40px;
   @media screen and (min-width: 1440px) {
     margin-left: 396px;
@@ -353,21 +371,25 @@
   pointer-events: auto;
 }
 
-.tui-page-btn.tui-is-disabled .tui-ico-first,
-.tui-page-btn.tui-is-disabled .tui-ico-prev {
-  display: inline-block;
-}
+// .tui-page-btn.tui-is-disabled .tui-ico-first,
+// .tui-page-btn.tui-is-disabled .tui-ico-prev {
+//   display: inline-block;
+// }
 
-.tui-page-btn.tui-is-disabled .tui-ico-next,
-.tui-page-btn.tui-is-disabled .tui-ico-last {
-  display: none;
-}
+// .tui-page-btn.tui-is-disabled .tui-ico-next,
+// .tui-page-btn.tui-is-disabled .tui-ico-last {
+//   background-position: 0 0;
+// }
 
-.tui-page-btn:not(.tui-is-disabled) .tui-ico-next,
-.tui-page-btn:not(.tui-is-disabled) .tui-ico-last {
-  display: inline-block;
-}
-.tui-page-btn:not(.tui-is-disabled) .tui-ico-first,
-.tui-page-btn:not(.tui-is-disabled) .tui-ico-prev {
-  display: inline-block;
-}
+// .tui-page-btn:not(.tui-is-disabled) .tui-ico-next,
+// .tui-page-btn:not(.tui-is-disabled) .tui-ico-last {
+//   display: inline-block;
+// }
+// .tui-page-btn:not(.tui-is-disabled) .tui-ico-first,
+// .tui-page-btn:not(.tui-is-disabled) .tui-ico-prev {
+//   display: inline-block;
+// }
+
+// .tui-page-btn.tui-is-disabled.tui-next{
+
+// }
