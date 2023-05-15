@@ -40,6 +40,7 @@
 }
 
 .card-category-img-wrap {
+  position: relative;
   width: 100%;
   height: auto;
   max-height: 485px;
@@ -114,5 +115,35 @@
     background-color: $main-accent-color;
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
     color: $white;
+  }
+}
+
+.card-category-img-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  background-color: $secondary-accent-color;
+  padding: 26px 52px;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  transition: transform $transition;
+}
+.card-category-link:hover,
+.card-category-link:focus {
+  .card-category-img-text {
+    transform: translateY(0);
+  }
+}
+
+body.dark-theme {
+  .card-category-img-text {
+    color: $lt-main-text-color;
   }
 }
