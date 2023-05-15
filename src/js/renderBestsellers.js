@@ -6,23 +6,33 @@ import renderBooksByCategory from './books-content-by-category';
 const contentWrapper = document.querySelector('.js-content-wrapper');
 const mainTitleEl = document.querySelector('.js-main-title');
 const backdropLoader = document.querySelector('.loader-backdrop');
+const target = document.querySelector(".js-guard");
+const countCategoriesInStack = 3;
+let data;
+let currentStackCategories;
+let options = {
+  root: null,
+  rootMargin: "80px",
+};
+let observer = new IntersectionObserver(loadMoreCategories, options);
 
 export async function renderBestsellers() {
   try {
     backdropLoader.classList.add('is-active');
-    const data = await getBookAPI('top');
+    data = await getBookAPI('top');
 
     if (!data.length) {
       contentWrapper.innerHTML = '';
-
       Notify.failure('Oops... Empty result');
       return;
     }
 
-    contentWrapper.innerHTML = createMarkUpTop(data);
+    currentStackCategories = 1;
+    contentWrapper.innerHTML = createMarkUpTop(data.slice(0, countCategoriesInStack));
     backdropLoader.classList.remove('is-active');
-
+    observer.observe(target);
     addEventsListenersToLoadMoreBtns();
+
   } catch (e) {
     console.log(e);
   }
@@ -59,6 +69,18 @@ function onMoreBtnClick(e) {
           ${currentCategoryArr.slice(-1)}</span>`;
 
   renderBooksByCategory(currentCategory);
+}
+
+function loadMoreCategories(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      currentStackCategories += 1;
+      contentWrapper.insertAdjacentHTML("beforeend", createMarkUpTop(data.slice(countCategoriesInStack * (currentStackCategories - 1), countCategoriesInStack * currentStackCategories)));
+      if ((currentStackCategories -1) >= data.length / (currentStackCategories - 1)) {
+        observer.unobserve(target);
+      }
+    }
+  });
 }
 
 renderBestsellers();
