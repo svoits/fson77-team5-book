@@ -1,3 +1,4 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { teamGallery } from './team-gallery.js';
@@ -10,8 +11,15 @@ function onTeamLogoClick(e) {
   e.preventDefault();
 
   const instance = basicLightbox.create(teamMarkUp(markup(teamGallery)), {
-    onShow: () => window.addEventListener('keydown', onEscButton),
-    onClose: () => window.removeEventListener('keydown', onEscButton),
+    onShow: () => {
+      disableBodyScroll(document.body);
+
+      window.addEventListener('keydown', onEscButton);
+    },
+    onClose: () => {
+      enableBodyScroll(document.body);
+      window.removeEventListener('keydown', onEscButton);
+    },
   });
 
   instance.show();
