@@ -1,7 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { teamGallery } from './team-gallery.js';
-import '../sass/layouts/_gallery-footer.scss';
 
 const teamLogoEl = document.querySelector('.js-modal-team');
 
@@ -15,13 +14,13 @@ function onTeamLogoClick(e) {
     onClose: () => window.removeEventListener('keydown', onEscButton),
   });
 
-instance.show();
-const modalCloseBtn = document.querySelector('.js-modal-close');
-modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
+  instance.show();
+  const modalCloseBtn = document.querySelector('.js-modal-close');
+  modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
 
-function onModalCloseBtnClick() {
-  instance.close();
-}
+  function onModalCloseBtnClick() {
+    instance.close();
+  }
 
   function onEscButton(e) {
     if (e.code === 'Escape') {

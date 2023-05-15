@@ -4,7 +4,7 @@ body.dark-theme {
     border: 2px solid $white;
   }
   .close-modal-info {
-    stroke: blue($color: #f6f6f6);
+    stroke: $lt-bg-color;
   }
   .team-member {
     background-color: #202024;
