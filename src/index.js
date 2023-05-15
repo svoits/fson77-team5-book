@@ -9,3 +9,4 @@ import './js/modal-auth';
 import './js/firebase-auth';
 import './js/addToLocalStorage.js';
 import './js/scroll-to-top';
+import './js/modal-team';

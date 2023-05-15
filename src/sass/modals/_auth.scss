@@ -1,5 +1,5 @@
 .auth-modal {
-  position: relative;
+  position: relative; 
   background-color: $lt-bg-color;
   padding: 40px 20px;
   border: 2px solid $black-accent-color;
@@ -14,7 +14,7 @@
   }
   @media screen and (min-width: 1440px) {
     max-width: 580px;
-  }
+  }  
 }
 
 .input-wrapper {
@@ -101,7 +101,7 @@
 }
 
 .modal-sign-btn {
-  cursor: pointer;
+  cursor: pointer;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
   background-color: transparent;
   border-style: none;
   font-weight: 700;

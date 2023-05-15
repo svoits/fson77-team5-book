@@ -1,0 +1,15 @@
+body.dark-theme {
+  .team-wrapper {
+    background-color: $dt-bg-color;
+    border: 2px solid $white;
+  }
+  .close-modal-info {
+    stroke: $lt-bg-color;
+  }
+  .team-member {
+    background-color: #202024;
+    box-shadow: 0px 1px 6px rgba(177, 177, 180, 0.08),
+      0px 1px 1px rgba(186, 187, 193, 0.16),
+      0px 2px 1px rgba(211, 211, 214, 0.08);
+  }
+}

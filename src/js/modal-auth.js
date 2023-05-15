@@ -63,7 +63,7 @@ function onAuthModalBtnClick(e) {
 }
 
 function onModalCloseBtnClick(e) {
-  modalInstance.close();
+  modalInst ance.close();
 }
 
 function onEscClick(e) {
