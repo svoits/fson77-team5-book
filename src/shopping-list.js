@@ -6,3 +6,4 @@ import './js/modal-auth';
 import './js/onRemoveClick';
 import './js/tui-pagination';
 import './js/modal-team';
+import './js/window-resize';
