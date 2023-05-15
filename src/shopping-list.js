@@ -5,3 +5,4 @@ import './js/firebase-auth';
 import './js/modal-auth';
 import './js/onRemoveClick';
 import './js/tui-pagination';
+import './js/modal-team';

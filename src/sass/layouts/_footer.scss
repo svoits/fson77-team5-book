@@ -1,4 +1,8 @@
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   padding: 50px 0;
   color: #fff;
   background-color: #4f2ee8;
@@ -35,19 +39,19 @@
 }
 .footer-logo__team {
   margin-right: 150px;
- fill: #fff; 
+  fill: #fff;
   color: #fff;
-   @media screen and (min-width: 320px) and (max-width: 767px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     margin: 0 0 30px 0;
   }
 }
 .footer__link {
- &:hover,
- &:focus {
-  box-shadow: 0 -150px 70px -120px rgba(245, 245, 247, 0.1) inset,
+  &:hover,
+  &:focus {
+    box-shadow: 0 -150px 70px -120px rgba(245, 245, 247, 0.1) inset,
       0 -220px 70px -120px #4f2ee8 inset, 0 -280px 70px -120px #b4afaf inset;
     animation: background 4s infinite alternate;
- }
+  }
 }
 .footer__copyright {
   display: flex;
@@ -73,7 +77,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  }
+}
 
 /* DARK THEME */
 body.dark__theme {
