@@ -1,3 +1,4 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { markupCardBookInfo } from './markup-books-info';
 import getBookAPI from './getBookAPI';
 import * as basicLightbox from 'basiclightbox';
@@ -23,9 +24,13 @@ async function onBookInfoClick(evt) {
 
     const instance = basicLightbox.create(infoMarkup, {
       onShow: () => {
+        disableBodyScroll(document.body);
         window.addEventListener('keydown', onEscButtonClick);
       },
-      onClose: () => window.removeEventListener('keydown', onEscButtonClick),
+      onClose: () => {
+        enableBodyScroll(document.body);
+        window.removeEventListener('keydown', onEscButtonClick);
+      },
     });
 
     instance.show();
