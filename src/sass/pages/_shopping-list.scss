@@ -310,7 +310,8 @@
   width: 28px;
   height: 28px;
   transition: transform $transition;
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.15);
   }
 
