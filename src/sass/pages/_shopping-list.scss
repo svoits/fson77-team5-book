@@ -12,7 +12,9 @@
 .shopping-list-main {
   flex: 1 1 auto;
 }
+
 // ***************backgroud shopping list********************
+
 .shopping-list-content-wrapper {
   width: 100%;
 }
@@ -65,8 +67,6 @@
   border-radius: 16px;
   @media screen and (min-width: 1440px) {
     width: 100%;
-    overflow-y: scroll;
-    height: 600px;
   }
 }
 
