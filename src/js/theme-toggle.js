@@ -1,5 +1,4 @@
-const checkBoxEl = document.querySelector('.js-theme-toggle');
-const body = document.querySelector('body');
+import refs from './refs';
 
 const STORAGE_KEY = 'theme';
 const theme = {
@@ -7,16 +6,16 @@ const theme = {
   DARK: 'dark-theme',
 };
 
-checkBoxEl.addEventListener('click', onCheckBoxClick);
+refs.checkBoxThemeToggle.addEventListener('click', onCheckBoxClick);
 
 export default function onCheckBoxClick(e) {
   let themeValue = '';
   if (e.currentTarget.checked) {
     themeValue = theme.DARK;
-    body.classList.add(themeValue);
+    refs.body.classList.add(themeValue);
   } else {
     themeValue = theme.LIGHT;
-    body.classList.remove(theme.DARK);
+    refs.body.classList.remove(theme.DARK);
   }
   localStorage.setItem(STORAGE_KEY, themeValue);
 }
@@ -25,8 +24,8 @@ function savedThemeOnPageReload() {
   const savedTheme = localStorage.getItem(STORAGE_KEY);
 
   if (savedTheme === theme.DARK) {
-    body.classList.add(savedTheme);
-    checkBoxEl.setAttribute('checked', true);
+    refs.body.classList.add(savedTheme);
+    refs.checkBoxThemeToggle.setAttribute('checked', true);
   }
 }
 

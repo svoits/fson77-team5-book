@@ -1,3 +1,4 @@
+import refs from './refs';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getDatabase, set, ref, update } from 'firebase/database';
@@ -10,19 +11,16 @@ import {
   updateProfile,
 } from 'firebase/auth';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { modalInstance } from './modal-auth';
 
-import {
-  username as usernameEl,
-  email as emailEl,
-  password as passwordEl,
-  submitUpBtn as signUpBtn,
-  submitInBtn as signInBtn,
-  signIn as toggleToSignInForm,
-  signUp as toggleToSignUpForm,
-  modalInstance,
-  modalForm,
-  onSignInBtnClick,
-} from './modal-auth';
+const {
+  username: usernameEl,
+  email: emailEl,
+  password: passwordEl,
+  signIn: toggleToSignInForm,
+  submitInBtn: signInBtn,
+  submitUpBtn: signUpBtn,
+} = refs.modalForm.elements;
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -39,21 +37,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 export const auth = getAuth();
-
-const headerNavList = document.querySelector('.header-nav-list');
-const signUpHeader = document.querySelector('.sign-up-box');
-const authorizedHeader = document.querySelector('.authorized-box');
-const logOutBtn = document.querySelector('.log-out-btn');
-const headerUsername = document.querySelector('.user-name');
-const pageHeader = document.querySelector('.page-header');
-const signUpMobileBox = document.querySelector('.sign-up-mobile-menu-box');
-const authorizedMobileBox = document.querySelector(
-  '.authorized-mobile-menu-box'
-);
-const mobileUsername = document.querySelector('.user-name-mobile');
-const logOutMobileBtn = document.querySelector('.log-out-mobile-btn');
-const mobileMenuContainer = document.querySelector('.mobile-menu-container');
-const backdropLoader = document.querySelector('.loader-backdrop');
 
 signUpBtn.addEventListener('click', onSignUpFormSubmit);
 signInBtn.addEventListener('click', onLoginFormSubmit);
@@ -75,7 +58,7 @@ export async function onSignUpFormSubmit(e) {
       });
       signOut(auth);
 
-      modalForm.reset();
+      refs.modalForm.reset();
 
       // Simulate clicking on the specified element.
       triggerEvent(toggleToSignInForm, 'click');
@@ -98,7 +81,7 @@ export async function onLoginFormSubmit(e) {
 
   await signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
-      backdropLoader.classList.add('is-active');
+      refs.backdropLoader.classList.add('is-active');
 
       const user = userCredential.user;
       const currentDate = new Date();
@@ -107,9 +90,9 @@ export async function onLoginFormSubmit(e) {
         last_login_date: currentDate,
       });
       modalInstance.close();
-      modalForm.reset();
+      refs.modalForm.reset();
 
-      backdropLoader.classList.remove('is-active');
+      refs.backdropLoader.classList.remove('is-active');
       Notify.success('Logged in!', {
         timeout: 2500,
       });
@@ -122,30 +105,30 @@ export async function onLoginFormSubmit(e) {
 onAuthStateChanged(auth, user => {
   if (user) {
     // User is signed in, see docs for a list of available properties
-    headerNavList.hidden = false;
-    signUpHeader.hidden = true;
-    authorizedHeader.hidden = false;
-    headerUsername.textContent = user.displayName;
-    pageHeader.classList.add('logged-in');
-    signUpMobileBox.hidden = true;
-    authorizedMobileBox.hidden = false;
-    mobileUsername.textContent = user.displayName;
-    mobileMenuContainer.classList.add('logged-in');
+    refs.headerNavList.hidden = false;
+    refs.signUpHeader.hidden = true;
+    refs.authorizedHeader.hidden = false;
+    refs.headerUsername.textContent = user.displayName;
+    refs.pageHeader.classList.add('logged-in');
+    refs.signUpMobileBox.hidden = true;
+    refs.authorizedMobileBox.hidden = false;
+    refs.mobileUsername.textContent = user.displayName;
+    refs.mobileMenuContainer.classList.add('logged-in');
   } else {
     // User is signed out
-    headerNavList.hidden = true;
-    signUpHeader.hidden = false;
-    authorizedHeader.hidden = true;
-    pageHeader.classList.remove('logged-in');
-    logOutBtn.classList.remove('is-active');
-    signUpMobileBox.hidden = false;
-    authorizedMobileBox.hidden = true;
-    mobileMenuContainer.classList.remove('logged-in');
+    refs.headerNavList.hidden = true;
+    refs.signUpHeader.hidden = false;
+    refs.authorizedHeader.hidden = true;
+    refs.pageHeader.classList.remove('logged-in');
+    refs.logOutBtn.classList.remove('is-active');
+    refs.signUpMobileBox.hidden = false;
+    refs.authorizedMobileBox.hidden = true;
+    refs.mobileMenuContainer.classList.remove('logged-in');
   }
 });
 
-logOutBtn.addEventListener('click', onLogOutBtnClick);
-logOutMobileBtn.addEventListener('click', onLogOutBtnClick);
+refs.logOutBtn.addEventListener('click', onLogOutBtnClick);
+refs.logOutMobileBtn.addEventListener('click', onLogOutBtnClick);
 
 function onLogOutBtnClick(e) {
   signOut(auth);

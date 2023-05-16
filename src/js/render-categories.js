@@ -2,9 +2,7 @@ import getBookAPI from './getBookAPI';
 import categoriesListMarkup from './categories-markup';
 import { renderBestsellers } from './renderBestsellers';
 import renderBooksByCategory from './books-content-by-category';
-
-const categoriesListEl = document.querySelector('.js-categories-list');
-const mainTitleEl = document.querySelector('.js-main-title');
+import refs from './refs';
 
 async function renderCategoriesList() {
   try {
@@ -14,7 +12,7 @@ async function renderCategoriesList() {
       return a.list_name.localeCompare(b.list_name);
     });
 
-    categoriesListEl.insertAdjacentHTML(
+    refs.categoriesList.insertAdjacentHTML(
       'beforeend',
       categoriesListMarkup(sortedData)
     );
@@ -26,7 +24,7 @@ async function renderCategoriesList() {
 }
 
 function addListenersToAllBtns() {
-  categoriesListEl.addEventListener('click', e => {
+  refs.categoriesList.addEventListener('click', e => {
     if (e.target.nodeName === 'BUTTON') {
       const activeCategory = document.querySelector(
         '.js-category-btn.is-active'
@@ -40,10 +38,10 @@ function addListenersToAllBtns() {
       const arrLength = currentCategoryArr.length;
 
       if (currentCategory === 'All categories') {
-        mainTitleEl.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
+        refs.mainTitle.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
         renderBestsellers();
       } else {
-        mainTitleEl.innerHTML = `${currentCategoryArr
+        refs.mainTitle.innerHTML = `${currentCategoryArr
           .slice(0, arrLength - 1)
           .join(' ')} 
           <span class="main-title-accent">
@@ -70,10 +68,10 @@ function addListenersToAllBtns() {
 //   const arrLength = currentCategoryArr.length;
 
 //   if (currentCategory === 'All categories') {
-//     mainTitleEl.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
+//     refs.mainTitle.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
 //     renderBestsellers();
 //   } else {
-//     mainTitleEl.innerHTML = `${currentCategoryArr
+//     refs.mainTitle.innerHTML = `${currentCategoryArr
 //       .slice(0, arrLength - 1)
 //       .join(' ')}
 //           <span class="main-title-accent">

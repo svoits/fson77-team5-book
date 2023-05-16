@@ -1,11 +1,10 @@
-const footerToggleBtn = document.querySelector('.footer-toggle-btn');
-const footerContainer = document.querySelector('.footer');
+import refs from './refs';
 
-footerToggleBtn.addEventListener('click', onFooterToggleBtnClick);
+refs.footerToggleBtn.addEventListener('click', onFooterToggleBtnClick);
 
 function onFooterToggleBtnClick(e) {
-  if (footerContainer.classList.contains('is-open')) {
-    footerContainer.classList.toggle('is-open');
+  if (refs.footerContainer.classList.contains('is-open')) {
+    refs.footerContainer.classList.toggle('is-open');
     const body = document.body;
     const html = document.documentElement;
     const height = Math.max(
@@ -21,19 +20,10 @@ function onFooterToggleBtnClick(e) {
       behavior: 'smooth',
     });
   } else {
-    footerContainer.classList.toggle('is-open');
-    footerContainer.scrollIntoView({
+    refs.footerContainer.classList.toggle('is-open');
+    refs.footerContainer.scrollIntoView({
       behavior: 'smooth',
       block: 'end',
     });
   }
 }
-
-// function onFooterToggleBtnClick(e) {
-//   console.log(e);
-//   footerContainer.classList.toggle('is-open');
-//   footerContainer.scrollIntoView({
-//     behavior: 'smooth',
-//     block: 'end',
-//   });
-// }
