@@ -10,3 +10,4 @@ import './js/firebase-auth';
 import './js/addToLocalStorage.js';
 import './js/scroll-to-top';
 import './js/modal-team';
+import './js/footer-toggle.js';

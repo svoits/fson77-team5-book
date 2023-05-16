@@ -1,5 +1,6 @@
 .shopping-list-container {
   padding-top: 104px;
+
   @media screen and (min-width: 768px) {
     padding-top: 112px;
   }
@@ -7,6 +8,9 @@
     display: flex;
     gap: 40px;
   }
+}
+.shopping-list-main {
+  flex: 1 1 auto;
 }
 // ***************backgroud shopping list********************
 .js-back {
@@ -347,8 +351,6 @@
 #pagination {
   margin: 0;
   height: 60px;
-
-  margin-bottom: 40px;
 }
 #pagination .tui-page-btn {
   display: inline-flex;
