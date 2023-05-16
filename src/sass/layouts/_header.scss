@@ -118,8 +118,12 @@
   fill: $main-accent-color;
 }
 .user-icon-arrow {
+  transition: transform $transition;
   fill: $white;
   stroke: $white;
+  &.is-active {
+    transform: rotate(-180deg);
+  }
 }
 .user-icon-box {
   display: inline-flex;

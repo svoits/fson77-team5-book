@@ -6,6 +6,7 @@ const headerHomeBtn = document.querySelector('.header-home-btn');
 const headerShoppingBtn = document.querySelector('.header-shopping-btn');
 const mobileHomeBtn = document.querySelector('.mobile-home-btn');
 const mobileShoppingBtn = document.querySelector('.mobile-shopping-btn');
+const userIconArrow = document.querySelector('.user-icon-arrow');
 
 function checkCurrentPage() {
   if (document.URL.includes('shopping-list.html')) {
@@ -25,5 +26,6 @@ checkCurrentPage();
 authorizedBtn.addEventListener('click', onAuthorizedBtnClick);
 
 function onAuthorizedBtnClick(e) {
+  userIconArrow.classList.toggle('is-active');
   logOutBtn.classList.toggle('is-active');
 }
