@@ -6,6 +6,7 @@ const paginationContainer = document.getElementById('pagination');
 const backdropLoader = document.querySelector('.loader-backdrop');
 const imageForEmpty = document.querySelector('.js-back');
 const textForEmpty = document.querySelector('.js-text');
+const contentWrap = document.querySelector('.content-wrap');
 
 export async function renderShoppingList(pageNumber) {
   backdropLoader.classList.add('is-active');
@@ -26,6 +27,7 @@ export async function renderShoppingList(pageNumber) {
     paginationContainer.classList.add('visually-hidden');
     imageForEmpty.classList.remove('visually-hidden');
     textForEmpty.classList.remove('visually-hidden');
+    contentWrap.style.height = 'auto';
   } else if (getItemsFromLocaleStorage.length <= 3) {
     paginationContainer.classList.add('visually-hidden');
 
