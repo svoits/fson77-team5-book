@@ -69,7 +69,10 @@ function addEventsListenersToLoadMoreBtns() {
           <span class="main-title-accent">
           ${currentCategoryArr.slice(-1)}</span>`;
 
-      renderBooksByCategory(currentCategory);
+      setTimeout(() => {
+        renderBooksByCategory(currentCategory);
+      }, 500);
+      // renderBooksByCategory(currentCategory);
 
       if (window.innerWidth >= 1440) {
         scrollToTargetAdjusted(110);
