@@ -26,35 +26,61 @@ async function renderCategoriesList() {
 }
 
 function addListenersToAllBtns() {
-  const allCategoriesEl = document.querySelectorAll('.js-category-btn');
+  categoriesListEl.addEventListener('click', e => {
+    if (e.target.nodeName === 'BUTTON') {
+      const activeCategory = document.querySelector(
+        '.js-category-btn.is-active'
+      );
 
-  allCategoriesEl.forEach(categoryBtn => {
-    categoryBtn.addEventListener('click', onCategoryBtnClick);
-  });
-}
+      activeCategory.classList.remove('is-active');
+      e.target.classList.add('is-active');
 
-function onCategoryBtnClick(e) {
-  const activeCategory = document.querySelector('.js-category-btn.is-active');
+      const currentCategory = e.target.dataset.category.trim();
+      const currentCategoryArr = currentCategory.split(' ');
+      const arrLength = currentCategoryArr.length;
 
-  activeCategory.classList.remove('is-active');
-  e.target.classList.add('is-active');
-
-  const currentCategory = e.target.dataset.category.trim();
-  const currentCategoryArr = currentCategory.split(' ');
-  const arrLength = currentCategoryArr.length;
-
-  if (currentCategory === 'All categories') {
-    mainTitleEl.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
-    renderBestsellers();
-  } else {
-    mainTitleEl.innerHTML = `${currentCategoryArr
-      .slice(0, arrLength - 1)
-      .join(' ')} 
+      if (currentCategory === 'All categories') {
+        mainTitleEl.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
+        renderBestsellers();
+      } else {
+        mainTitleEl.innerHTML = `${currentCategoryArr
+          .slice(0, arrLength - 1)
+          .join(' ')} 
           <span class="main-title-accent">
           ${currentCategoryArr.slice(-1)}</span>`;
 
-    renderBooksByCategory(currentCategory);
-  }
+        renderBooksByCategory(currentCategory);
+      }
+    }
+  });
+
+  // allCategoriesEl.forEach(categoryBtn => {
+  //   categoryBtn.addEventListener('click', onCategoryBtnClick);
+  // });
 }
+
+// function onCategoryBtnClick(e) {
+//   const activeCategory = document.querySelector('.js-category-btn.is-active');
+
+//   activeCategory.classList.remove('is-active');
+//   e.target.classList.add('is-active');
+
+//   const currentCategory = e.target.dataset.category.trim();
+//   const currentCategoryArr = currentCategory.split(' ');
+//   const arrLength = currentCategoryArr.length;
+
+//   if (currentCategory === 'All categories') {
+//     mainTitleEl.innerHTML = `Best Sellers <span class="main-title-accent">Books</span>`;
+//     renderBestsellers();
+//   } else {
+//     mainTitleEl.innerHTML = `${currentCategoryArr
+//       .slice(0, arrLength - 1)
+//       .join(' ')}
+//           <span class="main-title-accent">
+//           ${currentCategoryArr.slice(-1)}</span>`;
+
+//     renderBooksByCategory(currentCategory);
+//   }
+// }
 
 renderCategoriesList();
