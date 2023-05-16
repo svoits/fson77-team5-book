@@ -25,6 +25,11 @@ body.dark-theme {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 1440px) {
+    overflow: hidden;
+    height: 100vh;
+  }
 }
 /* Hide scrollbar background */
 ::-webkit-scrollbar {
