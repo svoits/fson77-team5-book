@@ -13,6 +13,10 @@
   flex: 1 1 auto;
 }
 // ***************backgroud shopping list********************
+.shopping-list-content-wrapper {
+  width: 100%;
+}
+
 .js-back {
   display: block;
   margin: auto;
@@ -102,14 +106,15 @@
 .wrap-about-book {
   background-color: $white;
   max-width: 335px;
-  padding: 14px;
+  min-height: 213px;
+  padding: 10px;
   display: flex;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   @media screen and (min-width: 768px) {
     max-width: none;
     width: 704px;
-    padding: 24px;
+    padding: 20px;
   }
   @media screen and (min-width: 1440px) {
     width: 996px;
