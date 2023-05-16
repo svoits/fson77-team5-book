@@ -11,11 +11,13 @@ export function shoppingListMarkup(books) {
     .map(({ book_image, title, list_name, description, author, buy_links }) => {
       return `
         <li class="wrap-about-book">
+        <div class="img-about-wrapper">
         <img
-          class="wrap-about-img"
+          class="about-book-img"
           src="${book_image}"
           alt="${title}"
         />
+        </div>
         <div class="wrap-about-book-info">
           <div class="wrap-about-book-style">
             <p class="wrap-about-title">${title}</p>
