@@ -146,7 +146,7 @@
 }
 
 .img-about-wrapper {
-  min-width: 100px;
+  width: 100px;
   height: auto;
   max-height: 142px;
   overflow: hidden;
@@ -157,6 +157,7 @@
   @media screen and (min-width: 768px) {
     width: 116px;
     height: 165px;
+    max-height: none;
     // margin-right: 24px;
   }
 }
@@ -476,6 +477,11 @@
 .tui-pagination strong {
   background-color: $black;
   color: $white;
+  // cursor: default;
+  &:hover,
+  &:focus {
+    transform: scale(1);
+  }
 }
 
 #pagination .tui-page-btn.tui-is-disabled {
