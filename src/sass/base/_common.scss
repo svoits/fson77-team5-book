@@ -7,12 +7,25 @@ body {
   color: $lt-main-text-color;
   background-color: $lt-bg-color;
 }
+html,
+body {
+  height: 100%;
+}
 
 body.dark-theme {
   color: $dt-main-text-color;
   background-color: $dt-bg-color;
 }
-
+.body-shopping-container,
+.body-home-container {
+  position: relative;
+  min-width: 320px;
+}
+.body-shopping-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 /* Hide scrollbar background */
 ::-webkit-scrollbar {
   background-color: transparent; /* For Chrome, Safari, and Opera */
