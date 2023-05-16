@@ -49,8 +49,7 @@ export async function renderBestsellers() {
 
 function addEventsListenersToLoadMoreBtns() {
   contentWrapper.addEventListener('click', e => {
-    console.dir(e.target);
-    if (e.taget.nodeName === 'BUTTON') {
+    if (e.target.nodeName === 'BUTTON') {
       const currentCategory = e.target.dataset.category.trim();
 
       const allCategoriesEl = document.querySelectorAll('.js-category-btn');
