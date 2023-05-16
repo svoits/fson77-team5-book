@@ -3,11 +3,9 @@ body.dark-theme {
     background-color: $black-accent-color;
     border: 1.5px solid $white;
   }
-  .logo-light {
-    display: none;
-  }
-  .logo-dark {
-    display: inline-block;
+
+  .logo-link {
+    color: $dt-main-text-color;
   }
   .burger-icon {
     stroke: $white;
