@@ -14,7 +14,7 @@ let options = {
   root: null,
   rootMargin: '80px',
 };
-let observer = new IntersectionObserver(loadMoreCategories, options);
+// let observer = new IntersectionObserver(loadMoreCategories, options);
 
 export async function renderBestsellers() {
   try {
@@ -28,11 +28,9 @@ export async function renderBestsellers() {
     }
 
     currentStackCategories = 1;
-    contentWrapper.innerHTML = createMarkUpTop(
-      data.slice(0, countCategoriesInStack)
-    );
+    contentWrapper.innerHTML = createMarkUpTop(data);
     backdropLoader.classList.remove('is-active');
-    observer.observe(target);
+    // observer.observe(target);
     addEventsListenersToLoadMoreBtns();
   } catch (e) {
     console.log(e);
@@ -121,28 +119,28 @@ function addEventsListenersToLoadMoreBtns() {
 //   }
 // }
 
-function loadMoreCategories(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      currentStackCategories += 1;
-      contentWrapper.insertAdjacentHTML(
-        'beforeend',
-        createMarkUpTop(
-          data.slice(
-            countCategoriesInStack * (currentStackCategories - 1),
-            countCategoriesInStack * currentStackCategories
-          )
-        )
-      );
-      if (
-        currentStackCategories - 1 >=
-        data.length / (currentStackCategories - 1)
-      ) {
-        observer.unobserve(target);
-      }
-    }
-  });
-}
+// function loadMoreCategories(entries, observer) {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       currentStackCategories += 1;
+//       contentWrapper.insertAdjacentHTML(
+//         'beforeend',
+//         createMarkUpTop(
+//           data.slice(
+//             countCategoriesInStack * (currentStackCategories - 1),
+//             countCategoriesInStack * currentStackCategories
+//           )
+//         )
+//       );
+//       if (
+//         currentStackCategories - 1 >=
+//         data.length / (currentStackCategories - 1)
+//       ) {
+//         observer.unobserve(target);
+//       }
+//     }
+//   });
+// }
 
 renderBestsellers();
 
