@@ -63,6 +63,7 @@
   text-align: center;
   letter-spacing: -0.02em;
   color: rgba(0, 0, 0, 0.6);
+  user-select: none;
   @media screen and (min-width: 768px) {
     margin-top: 100px;
     margin-bottom: 20px;
@@ -308,6 +309,10 @@
   align-items: center;
   width: 28px;
   height: 28px;
+  transition: transform $transition;
+  &:hover {
+    transform: scale(1.15);
+  }
 
   @media screen and (min-width: 768px) {
     right: 24px;
