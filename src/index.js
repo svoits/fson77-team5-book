@@ -1,3 +1,4 @@
+import './js/to-top-before-unload';
 import './js/window-resize.js';
 import './js/header';
 import './js/render-support';
