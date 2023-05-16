@@ -9,7 +9,7 @@ import logos from '../images/symbol-defs.svg';
 export function markupCardBookInfo(data, flag) {
   const classDescription = flag ? '' : 'visually-hidden';
   const buttonText = flag
-    ? 'REMOVE FROM SHOPPING LIST'
+    ? 'REMOVE FROM THE SHOPPING LIST'
     : 'ADD TO SHOPPING LIST';
   const buttonClass = flag ? 'book_remove__from_list' : 'book_add__to_list';
   const { book_image, author, description, title, buy_links, list_name } = data;
