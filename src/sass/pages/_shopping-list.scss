@@ -422,10 +422,15 @@
   font-size: 18px;
   line-height: 1.22;
   color: $black;
+  transition: transform $transition;
   @media screen and (min-width: 768px) {
     margin-right: 10px;
     width: 44px;
     height: 44px;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
   }
 }
 // @media screen and (max-width: 767.98px) {
