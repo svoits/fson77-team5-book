@@ -6,15 +6,28 @@
   }
   @media screen and (min-width: 1440px) {
     display: flex;
-    gap: 40px;
+    // gap: 40px;
   }
 }
+
 .shopping-list-main {
   flex: 1 1 auto;
 }
+
+.support-wrap .support {
+  @media screen and (min-width: 1440px) {
+    position: fixed;
+  }
+}
+
 // ***************backgroud shopping list********************
+
 .shopping-list-content-wrapper {
   width: 100%;
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 396px;
+  }
 }
 
 .js-back {
@@ -61,12 +74,16 @@
 .content-wrap {
   display: flex;
   flex-direction: column;
+  height: 798px;
+  justify-content: space-between;
 
   border-radius: 16px;
+
+  @media screen and (min-width: 768px) {
+    height: 763px;
+  }
   @media screen and (min-width: 1440px) {
     width: 100%;
-    overflow-y: scroll;
-    height: 600px;
   }
 }
 
@@ -80,9 +97,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 20px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 40px;
+  @media screen and (max-width: 767.98px) {
+    // margin-bottom: 20px;
+  }
+  @media screen and (max-width: 1439.98px) {
+    // margin-bottom: 40px;
   }
 }
 .shopping-list-title {
@@ -104,30 +123,50 @@
 }
 
 .wrap-about-book {
+  position: relative;
   background-color: $white;
   max-width: 335px;
-  min-height: 213px;
+  min-height: 170px;
   padding: 10px;
   display: flex;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
+  gap: 14px;
   @media screen and (min-width: 768px) {
     max-width: none;
+    min-height: 213px;
     width: 704px;
     padding: 20px;
+    gap: 24px;
   }
   @media screen and (min-width: 1440px) {
-    width: 996px;
+    width: 100%;
   }
 }
-.wrap-about-img {
-  width: 100px;
-  display: inline-block;
-  margin-right: 14px;
+
+.img-about-wrapper {
+  min-width: 100px;
+  height: auto;
+  max-height: 142px;
+  overflow: hidden;
+  border: 1px solid $lt-subtitle-color;
+  border-radius: 8px;
+  // margin-right: 14px;
+
   @media screen and (min-width: 768px) {
     width: 116px;
-    margin-right: 24px;
+    height: 165px;
+    // margin-right: 24px;
   }
+}
+
+.about-book-img {
+  // width: 100px;
+  // display: inline-block;
+
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 .wrap-about-book-info {
   display: flex;
@@ -142,7 +181,7 @@
   line-height: 1.12;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 
   max-width: 151px;
   white-space: nowrap;
@@ -162,7 +201,6 @@
     max-width: 102px;
   }
   @media screen and (min-width: 768px) {
-    margin-bottom: 4px;
     max-width: none;
   }
 }
@@ -172,7 +210,7 @@
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: $lt-subtitle-color;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 
   max-width: 160px;
   white-space: nowrap;
@@ -192,9 +230,7 @@
   }
   @media screen and (min-width: 768px) {
     max-width: none;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 8px;
+    margin-bottom: 14px;
   }
 }
 
@@ -259,6 +295,9 @@
 }
 
 .wrap-about-book-remove {
+  position: absolute;
+  right: 14px;
+  top: 14px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -271,6 +310,8 @@
   height: 28px;
 
   @media screen and (min-width: 768px) {
+    right: 24px;
+    top: 24px;
     padding: 8px;
     width: 34px;
     height: 34px;
@@ -355,7 +396,7 @@
 // ******************// tui-pagination//**************************//
 #pagination {
   margin: 0;
-  height: 60px;
+  height: 44px;
 }
 #pagination .tui-page-btn {
   display: inline-flex;

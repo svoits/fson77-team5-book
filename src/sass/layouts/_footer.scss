@@ -142,6 +142,7 @@ body.dark__theme {
   margin: 0 auto;
   padding: 4px 8px;
   background-color: $main-accent-color;
+  opacity: 0;
 
   border: none;
   border-radius: 12px 12px 0 0;
@@ -151,8 +152,9 @@ body.dark__theme {
   // text-transform: uppercase;
   font-weight: 500;
   transition: background-color $transition, color $transition,
-    transform $transition;
+    transform $transition, opacity $transition;
   &:hover {
+    opacity: 1;
     // color: inherit;
 
     transform: scale(1.1);

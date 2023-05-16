@@ -1,5 +1,10 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
@@ -7,30 +12,24 @@ body {
   color: $lt-main-text-color;
   background-color: $lt-bg-color;
 }
-html,
-body {
-  height: 100%;
-}
 
 body.dark-theme {
   color: $dt-main-text-color;
   background-color: $dt-bg-color;
 }
+
 .body-shopping-container,
 .body-home-container {
   position: relative;
   min-width: 320px;
 }
+
 .body-shopping-container {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-
-  @media screen and (min-width: 1440px) {
-    overflow: hidden;
-    height: 100vh;
-  }
 }
+
 /* Hide scrollbar background */
 ::-webkit-scrollbar {
   background-color: transparent; /* For Chrome, Safari, and Opera */
