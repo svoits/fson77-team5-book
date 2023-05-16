@@ -1,4 +1,9 @@
 import { renderShoppingList } from './renderShoppingList';
+import { pagination, options } from './tui-pagination';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+const imageForEmpty = document.querySelector('.js-back');
+const textForEmpty = document.querySelector('.js-text');
 
 const SHOP_LIST_KEY = 'shopping-list';
 
@@ -27,9 +32,24 @@ export function onRemoveClick(evt) {
 
   localStorage.setItem(SHOP_LIST_KEY, updatedDataString);
 
+  options.totalItems -= 1;
   if (deletePaginationPageByWrapper.children.length > 1) {
-    renderShoppingList(selectedPaginationBtn.innerText);
+    // renderShoppingList(selectedPaginationBtn.innerText);
+    let pageCurrent = pagination.getCurrentPage();
+    pagination.reset(options.totalItems);
+    pagination.movePageTo(pageCurrent);
   } else {
-    location.reload();
+    let pageCurrent = pagination.getCurrentPage() - 1;
+    pagination.reset(options.totalItems);
+    pagination.movePageTo(pageCurrent);
+  }
+  console.log(options.totalItems);
+  if (!options.totalItems) {
+    imageForEmpty.classList.remove('visually-hidden');
+    textForEmpty.classList.remove('visually-hidden');
   }
 }
+
+// function movePagination(total, current) {
+
+// }

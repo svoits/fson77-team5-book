@@ -24,10 +24,11 @@ export async function renderShoppingList(pageNumber) {
 
   if (!getItemsFromLocaleStorage.length) {
     paginationContainer.classList.add('visually-hidden');
+    imageForEmpty.classList.remove('visually-hidden');
+    textForEmpty.classList.remove('visually-hidden');
   } else if (getItemsFromLocaleStorage.length <= 3) {
     paginationContainer.classList.add('visually-hidden');
-    imageForEmpty.classList.add('visually-hidden');
-    textForEmpty.classList.add('visually-hidden');
+
     shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(
@@ -38,8 +39,6 @@ export async function renderShoppingList(pageNumber) {
       )
     );
   } else {
-    imageForEmpty.classList.add('visually-hidden');
-    textForEmpty.classList.add('visually-hidden');
     shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(

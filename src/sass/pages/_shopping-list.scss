@@ -349,6 +349,7 @@
   height: 60px;
   min-width: 320px;
   margin-bottom: 40px;
+
   @media screen and (min-width: 1440px) {
     // margin-left: 396px;
   }
@@ -377,7 +378,13 @@
     width: 44px;
     height: 44px;
   }
+
 }
+// @media screen and (max-width: 767.98px) {
+
+//   margin-left: 14px;
+// }
+
 
 #pagination .tui-first {
   background-color: $black;
@@ -486,5 +493,15 @@
     .tui-ico-last {
       background-image: url(../images/arrow-last-white.svg);
     }
+  }
+}
+@media screen and (max-width: 767.98px) {
+  #pagination .tui-page-btn.tui-prev-is-ellip.tui-first-child{
+    display: none;
+  }
+}
+@media screen and (max-width: 374.98px) {
+  #pagination .tui-page-btn.tui-next-is-ellip.tui-last-child{
+    display: none;
   }
 }
