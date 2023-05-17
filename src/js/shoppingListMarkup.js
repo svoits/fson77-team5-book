@@ -16,6 +16,7 @@ export function shoppingListMarkup(books) {
           class="about-book-img"
           src="${book_image}"
           alt="${title}"
+          loading="lazy"
         />
         </div>
         <div class="wrap-about-book-info">
