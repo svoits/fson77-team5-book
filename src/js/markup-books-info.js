@@ -5,6 +5,17 @@ import apple_2x from '../images/trading-platforms/apple-books@2x.png';
 import bookshop from '../images/trading-platforms/bookshop.png';
 import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
 import logos from '../images/symbol-defs.svg';
+import placeholderMobile from '../images/book-placeholder-mobile.jpg';
+import placeholderTablet from '../images/book-placeholder-tablet.jpg';
+import placeholderDesk from '../images/book-placeholder-desk.jpg';
+
+export let imagePlaceholder = placeholderMobile;
+
+if (window.innerWidth >= 1440) {
+  imagePlaceholder = placeholderDesk;
+} else if (window.innerWidth >= 768) {
+  imagePlaceholder = placeholderTablet;
+}
 
 export function markupCardBookInfo(data, flag) {
   const classDescription = flag ? '' : 'visually-hidden';
@@ -21,15 +32,24 @@ export function markupCardBookInfo(data, flag) {
   </button>
   <div class="info_img-author_container">
     <div class="book-info-img-wrap">
-      <img src="${book_image}" alt="${title}"  class="book_info_img" />
+      <img src="${book_image || imagePlaceholder}" alt="${
+    title || 'NO TITLE'
+  }"  class="book_info_img" />
     </div>
 
     <div class="info_about_book">
-      <h2 class="book_info_name" data-category="${list_name}">${title}</h2>
-      <p class="book_info_author">${author}</p>
-      <p class="book_info_description">${description}</p>
+      <h2 class="book_info_name" data-category="${
+        list_name || 'No category'
+      }">${title}</h2>
+      <p class="book_info_author">${author || 'No author'}</p>
+      <p class="book_info_description">${
+        description ||
+        'Sorry, there is no description. You can visit any of the following sites below for more information about book.'
+      }</p>
       <div class="info-logo-container">
-        <a href="${buy_links[0].url}" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
+        <a href="${
+          buy_links[0].url
+        }" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
           <img
             srcset="${amazon} 1x, ${amazon_2x} 2x"
             src="${amazon}"
@@ -39,7 +59,9 @@ export function markupCardBookInfo(data, flag) {
             height="19"
           />
         </a>
-        <a href="${buy_links[1].url}" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
+        <a href="${
+          buy_links[1].url
+        }" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
           <img
             srcset="${apple} 1x, ${apple_2x} 2x"
             src="${apple}"
@@ -49,7 +71,9 @@ export function markupCardBookInfo(data, flag) {
             height="32"
           />
         </a>
-        <a href="${buy_links[4].url}" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
+        <a href="${
+          buy_links[4].url
+        }" class="book-store-link" target="_blank" rel="noreferrer noopener nofollow">
           <img
             srcset="${bookshop} 1x, ${bookshop_2x} 2x"
             src="${bookshop}"

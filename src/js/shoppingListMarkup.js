@@ -5,6 +5,7 @@ import apple_2x from '../images/trading-platforms/apple-books@2x.png';
 import bookshop from '../images/trading-platforms/bookshop.png';
 import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
 import logos from '../images/symbol-defs.svg';
+import { imagePlaceholder } from './markup-books-info';
 
 export function shoppingListMarkup(books) {
   return books
@@ -14,7 +15,7 @@ export function shoppingListMarkup(books) {
         <div class="img-about-wrapper">
         <img
           class="about-book-img"
-          src="${book_image}"
+          src="${book_image || imagePlaceholder}"
           alt="${title}"
           loading="lazy"
         />
@@ -38,7 +39,9 @@ export function shoppingListMarkup(books) {
             <p class="wrap-about-author">${author}</p>
             <ul class="trading-platforms-list list">
               <li class="trading-platforms-list-item">
-                <a class="trading-platforms-list-item-link" href="${buy_links[0]}" target="_blank" rel="noreferrer noopener nofollow">
+                <a class="trading-platforms-list-item-link" href="${
+                  buy_links[0]
+                }" target="_blank" rel="noreferrer noopener nofollow">
                   <img
                     class="trading-platforms-list-item-img-amazon"
                     srcset="
@@ -51,7 +54,9 @@ export function shoppingListMarkup(books) {
                 </a>
               </li>
               <li class="trading-platforms-list-item">
-              <a class="trading-platforms-list-item-link" href="${buy_links[1]}" target="_blank" rel="noreferrer noopener nofollow">
+              <a class="trading-platforms-list-item-link" href="${
+                buy_links[1]
+              }" target="_blank" rel="noreferrer noopener nofollow">
                 <img
                   class="trading-platforms-list-item-img-apple-books"
                   srcset="
@@ -64,7 +69,9 @@ export function shoppingListMarkup(books) {
               </a>
             </li>
             <li class="trading-platforms-list-item">
-              <a class="trading-platforms-list-item-link" href="${buy_links[2]}" target="_blank" rel="noreferrer noopener nofollow">
+              <a class="trading-platforms-list-item-link" href="${
+                buy_links[2]
+              }" target="_blank" rel="noreferrer noopener nofollow">
                 <img
                   class="trading-platforms-list-item-img-bookshop"
                   srcset="
