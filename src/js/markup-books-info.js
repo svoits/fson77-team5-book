@@ -6,6 +6,8 @@ import bookshop from '../images/trading-platforms/bookshop.png';
 import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
 import logos from '../images/symbol-defs.svg';
 
+let imagePlaceholder = '';
+
 export function markupCardBookInfo(data, flag) {
   const classDescription = flag ? '' : 'visually-hidden';
   const buttonText = flag
@@ -21,16 +23,19 @@ export function markupCardBookInfo(data, flag) {
   </button>
   <div class="info_img-author_container">
     <div class="book-info-img-wrap">
-      <img src="${book_image}" alt="${title}"  class="book_info_img" />
+      <img src="${book_image || imagePlaceholder}" alt="${
+    title || 'NO TITLE'
+  }"  class="book_info_img" />
     </div>
 
     <div class="info_about_book">
-      <h2 class="book_info_name" data-category="${list_name}">${title}</h2>
-      <p class="book_info_author">${author}</p>
+      <h2 class="book_info_name" data-category="${
+        list_name || 'No category'
+      }">${title}</h2>
+      <p class="book_info_author">${author || 'No author'}</p>
       <p class="book_info_description">${
-        description
-          ? description
-          : 'Sorry, there is no description. You can visit any of the following sites below for more information about book.'
+        description ||
+        'Sorry, there is no description. You can visit any of the following sites below for more information about book.'
       }</p>
       <div class="info-logo-container">
         <a href="${
