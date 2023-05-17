@@ -5,8 +5,17 @@ import apple_2x from '../images/trading-platforms/apple-books@2x.png';
 import bookshop from '../images/trading-platforms/bookshop.png';
 import bookshop_2x from '../images/trading-platforms/bookshop@2x.png';
 import logos from '../images/symbol-defs.svg';
+import placeholderMobile from '../images/book-placeholder-mobile.jpg';
+import placeholderTablet from '../images/book-placeholder-tablet.jpg';
+import placeholderDesk from '../images/book-placeholder-desk.jpg';
 
-let imagePlaceholder = '';
+export let imagePlaceholder = placeholderMobile;
+
+if (window.innerWidth >= 1440) {
+  imagePlaceholder = placeholderDesk;
+} else if (window.innerWidth >= 768) {
+  imagePlaceholder = placeholderTablet;
+}
 
 export function markupCardBookInfo(data, flag) {
   const classDescription = flag ? '' : 'visually-hidden';
