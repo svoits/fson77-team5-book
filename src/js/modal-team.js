@@ -2,10 +2,9 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { teamGallery } from './team-gallery.js';
+import refs from './refs.js';
 
-const teamLogoEl = document.querySelector('.js-modal-team');
-
-teamLogoEl.addEventListener('click', onTeamLogoClick);
+refs.teamLogoEl.addEventListener('click', onTeamLogoClick);
 
 function onTeamLogoClick(e) {
   e.preventDefault();

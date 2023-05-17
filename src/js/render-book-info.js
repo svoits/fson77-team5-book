@@ -5,10 +5,9 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { onClickBtn } from './onClickBtn';
 import { searchBook } from './addToLocalStorage';
+import refs from './refs';
 
-const contentWrapper = document.querySelector('.js-content-wrapper');
-
-contentWrapper.addEventListener('click', onBookInfoClick);
+refs.contentWrapper.addEventListener('click', onBookInfoClick);
 
 async function onBookInfoClick(evt) {
   try {
@@ -54,16 +53,3 @@ async function onBookInfoClick(evt) {
     console.log(error);
   }
 }
-
-// let addRemoveBookButton = document.querySelector('#addRemoveBookButton');
-
-// addRemoveBookButton.addEventListener('click', e => {
-//   if (addRemoveBookButton.innerHTML === 'ADD TO SHOPPING LIST') {
-//     addRemoveBookButton.innerHTML = 'REMOVE FROM SHOPPING LIST';
-//     document.querySelector('#addRemoveBookButton').innerHTML =
-//       'Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-//   } else {
-//     addRemoveBookButton.innerHTML = 'ADD TO SHOPPING LIST';
-//     document.querySelector('#addRemoveBookButton').innerHTML = '';
-//   }
-// });

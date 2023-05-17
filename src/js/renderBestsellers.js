@@ -2,11 +2,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import getBookAPI from './getBookAPI';
 import { createMarkUpTop } from './createMarkUpTop';
 import renderBooksByCategory from './books-content-by-category';
+import refs from './refs';
 
-const contentWrapper = document.querySelector('.js-content-wrapper');
-const mainTitleEl = document.querySelector('.js-main-title');
-const backdropLoader = document.querySelector('.loader-backdrop');
-const target = document.querySelector('.js-guard');
 const countCategoriesInStack = 3;
 let data;
 let currentStackCategories;
@@ -19,21 +16,21 @@ export let observer = new IntersectionObserver(loadMoreCategories, options);
 
 export async function renderBestsellers() {
   try {
-    backdropLoader.classList.add('is-active');
+    refs.backdropLoader.classList.add('is-active');
     data = await getBookAPI('top');
 
     if (!data.length) {
-      contentWrapper.innerHTML = '';
+      refs.contentWrapper.innerHTML = '';
       Notify.failure('Oops... Empty result');
       return;
     }
 
     currentStackCategories = 1;
-    contentWrapper.innerHTML = createMarkUpTop(
+    refs.contentWrapper.innerHTML = createMarkUpTop(
       data.slice(0, countCategoriesInStack)
     );
-    backdropLoader.classList.remove('is-active');
-    observer.observe(target);
+    refs.backdropLoader.classList.remove('is-active');
+    observer.observe(refs.guard);
     addEventsListenersToLoadMoreBtns();
   } catch (e) {
     console.log(e);
@@ -41,7 +38,7 @@ export async function renderBestsellers() {
 }
 
 function addEventsListenersToLoadMoreBtns() {
-  contentWrapper.addEventListener('click', e => {
+  refs.contentWrapper.addEventListener('click', e => {
     if (e.target.nodeName === 'BUTTON') {
       const currentCategory = e.target.dataset.category.trim();
 
@@ -58,13 +55,13 @@ function addEventsListenersToLoadMoreBtns() {
       const currentCategoryArr = currentCategory.split(' ');
       const arrLength = currentCategoryArr.length;
 
-      mainTitleEl.innerHTML = `${currentCategoryArr
+      refs.mainTitle.innerHTML = `${currentCategoryArr
         .slice(0, arrLength - 1)
         .join(' ')} 
           <span class="main-title-accent">
           ${currentCategoryArr.slice(-1)}</span>`;
 
-      observer.unobserve(target);
+      observer.unobserve(refs.guard);
       setTimeout(() => {
         renderBooksByCategory(currentCategory);
       }, 500);
@@ -84,7 +81,7 @@ function loadMoreCategories(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       currentStackCategories += 1;
-      contentWrapper.insertAdjacentHTML(
+      refs.contentWrapper.insertAdjacentHTML(
         'beforeend',
         createMarkUpTop(
           data.slice(
@@ -97,7 +94,7 @@ function loadMoreCategories(entries, observer) {
         currentStackCategories - 1 >=
         data.length / (currentStackCategories - 1)
       ) {
-        observer.unobserve(target);
+        observer.unobserve(refs.guard);
       }
     }
   });
@@ -107,7 +104,7 @@ renderBestsellers();
 
 function scrollToTargetAdjusted(offset) {
   const headerOffset = offset;
-  const elementPosition = mainTitleEl.getBoundingClientRect().top;
+  const elementPosition = refs.mainTitle.getBoundingClientRect().top;
   const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
   window.scrollTo({
     top: offsetPosition,

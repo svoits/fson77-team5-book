@@ -1,9 +1,7 @@
 import { supportArr } from './support-list';
 import Swiper from 'swiper';
+import refs from './refs';
 
-const supportListEl = document.querySelector('.js-support-list');
-const btnSwiperDownEl = document.querySelector('.swiper-button-down');
-const btnSwiperTopEl = document.querySelector('.swiper-button-top');
 let activeSwiperEl = 0;
 
 if (window.innerWidth >= 768) {
@@ -11,24 +9,24 @@ if (window.innerWidth >= 768) {
 } else {
   activeSwiperEl = 5;
 }
-btnSwiperDownEl.addEventListener('click', () => {
+refs.btnSwiperDown.addEventListener('click', () => {
   swiper.slideNext();
 
   if (
-    supportListEl.children[activeSwiperEl].classList.contains(
+    refs.supportList.children[activeSwiperEl].classList.contains(
       'swiper-slide-active'
     )
   ) {
-    btnSwiperDownEl.hidden = true;
-    btnSwiperTopEl.hidden = false;
+    refs.btnSwiperDown.hidden = true;
+    refs.btnSwiperTop.hidden = false;
   }
 });
 
-btnSwiperTopEl.addEventListener('click', () => {
+refs.btnSwiperTop.addEventListener('click', () => {
   swiper.slidePrev();
-  if (supportListEl.children[0].classList.contains('swiper-slide-active')) {
-    btnSwiperDownEl.hidden = false;
-    btnSwiperTopEl.hidden = true;
+  if (refs.supportList.children[0].classList.contains('swiper-slide-active')) {
+    refs.btnSwiperDown.hidden = false;
+    refs.btnSwiperTop.hidden = true;
   }
 });
 
@@ -61,7 +59,7 @@ const markupSetFunds = supportArr
   })
   .join('');
 
-supportListEl.innerHTML = markupSetFunds;
+refs.supportList.innerHTML = markupSetFunds;
 
 const swiper = new Swiper('.my-swiper', {
   direction: 'vertical',

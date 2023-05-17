@@ -1,15 +1,10 @@
 import { shoppingListMarkup } from './shoppingListMarkup';
+import refs from './refs';
+
 const SHOP_LIST_KEY = 'shopping-list';
 
-const shoppingListWrapper = document.querySelector('.shopping-list-wrap');
-const paginationContainer = document.getElementById('pagination');
-const backdropLoader = document.querySelector('.loader-backdrop');
-const imageForEmpty = document.querySelector('.js-back');
-const textForEmpty = document.querySelector('.js-text');
-const contentWrap = document.querySelector('.content-wrap');
-
 export async function renderShoppingList(pageNumber) {
-  backdropLoader.classList.add('is-active');
+  refs.backdropLoader.classList.add('is-active');
 
   let getItemsFromLocaleStorage;
   let perPage;
@@ -18,20 +13,20 @@ export async function renderShoppingList(pageNumber) {
   } else {
     perPage = 4;
   }
-  shoppingListWrapper.innerHTML = '';
+  refs.shoppingListWrapper.innerHTML = '';
 
   getItemsFromLocaleStorage =
     (await JSON.parse(localStorage.getItem(SHOP_LIST_KEY))) ?? [];
 
   if (!getItemsFromLocaleStorage.length) {
-    paginationContainer.classList.add('visually-hidden');
-    imageForEmpty.classList.remove('visually-hidden');
-    textForEmpty.classList.remove('visually-hidden');
-    contentWrap.style.height = 'auto';
+    refs.paginationContainer.classList.add('visually-hidden');
+    refs.imageForEmpty.classList.remove('visually-hidden');
+    refs.textForEmpty.classList.remove('visually-hidden');
+    refs.contentWrap.style.height = 'auto';
   } else if (getItemsFromLocaleStorage.length <= 3) {
-    paginationContainer.classList.add('visually-hidden');
+    refs.paginationContainer.classList.add('visually-hidden');
 
-    shoppingListWrapper.insertAdjacentHTML(
+    refs.shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(
         getItemsFromLocaleStorage.slice(
@@ -41,7 +36,7 @@ export async function renderShoppingList(pageNumber) {
       )
     );
   } else {
-    shoppingListWrapper.insertAdjacentHTML(
+    refs.shoppingListWrapper.insertAdjacentHTML(
       'beforeend',
       shoppingListMarkup(
         getItemsFromLocaleStorage.slice(
@@ -51,5 +46,5 @@ export async function renderShoppingList(pageNumber) {
       )
     );
   }
-  backdropLoader.classList.remove('is-active');
+  refs.backdropLoader.classList.remove('is-active');
 }

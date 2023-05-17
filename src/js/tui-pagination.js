@@ -1,9 +1,10 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { renderShoppingList } from './renderShoppingList';
+import refs from './refs';
 
 const SHOP_LIST_KEY = 'shopping-list';
-const paginationContainer = document.getElementById('pagination');
+
 const perPage = window.innerWidth >= 768 ? 3 : 4;
 let visiblePageBtns = window.innerWidth >= 768 ? 3 : 2;
 
@@ -35,7 +36,7 @@ export const options = {
 };
 
 export const pagination = new Pagination(
-  paginationContainer,
+  refs.paginationContainer,
   paginationOptions()
 );
 
