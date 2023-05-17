@@ -174,7 +174,12 @@
     background-color: $main-accent-color;
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
   }
-
+  @media screen and (max-width: 350px) {
+    font-size: 4vw;
+  }
+  @media screen and (max-width: 319.98px) {
+    font-size: 12.8px;
+  }
   @media screen and (min-width: 768px) {
     width: 499px;
     height: 64px;
