@@ -1,3 +1,7 @@
+# Presentation and acknowledgements
+- Video presentation of the project: [YouTube](https://youtu.be/GjE7edqeVHY)
+- Thanks to the whole team for your great work and persistence!
+
 # Parcel template
 
 This project was created with Parcel. For familiarization and setting additional
